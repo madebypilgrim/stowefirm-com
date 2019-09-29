@@ -1,0 +1,99 @@
+/* Breakpoints */
+
+$screen-sm-min: 768px;
+$screen-xs-max: $screen-sm-min - 1;
+$screen-md-min: 1024px;
+$screen-sm-max: $screen-md-min - 1;
+$screen-lg-min: 1440px;
+$screen-md-max: $screen-lg-min - 1;
+
+/* Spacing */
+
+$spacing-xs: 12px;
+$spacing-sm: 24px;
+$spacing-md: 48px;
+$spacing-lg: 96px;
+$spacing-xl: 128px;
+
+/* Layout */
+
+$min-page-width: 320px;
+$max-page-width: 1900px;
+$max-width-xs: 220px;
+$max-width-sm: 440px;
+$max-width-md: 550px;
+$max-width-lg: 770px;
+$max-width-xl: 990px;
+$gutter-sm: $spacing-sm;
+$gutter-md: $spacing-sm;
+$gutter-lg: $spacing-sm;
+$grid-xs: (
+    base: 6,
+    cont-spread: "wider",
+    gutter: $gutter-sm,
+);
+$grid-sm: (
+    base: 6,
+    cont-spread: "wider",
+    gutter: $gutter-sm,
+);
+$grid-md: (
+    base: 8,
+    cont-spread: "wider",
+    gutter: $gutter-md,
+);
+$grid-lg: (
+    base: 12,
+    cont-spread: "wider",
+    gutter: $gutter-lg,
+);
+$nav-height-sm: $spacing-xs * 3;
+$nav-height-md: $spacing-xs * 5;
+$nav-height-lg: $spacing-xs * 6;
+$button-size: $spacing-xs * 4;
+$button-padding: $spacing-xs * 3;
+$action-button-size: $spacing-xs * 4;
+$input-height: $button-size;
+
+/* Colors */
+
+$color-white: #FFF;
+$color-black: #333;
+$color-gold: #5f983a;
+$color-fg-gray-lt: #DCE1E5;
+$color-fg-gray-md: #999;
+$color-fg-gray-dk: #373232;
+$color-bg-gray-lt: #F4F5F7;
+$color-bg-gray-md: #333;
+$color-bg-gray-dk: #1c1c1c;
+$color-br-gray-lt: #DEDEDE;
+$color-br-gray-dk: #111;
+
+/* Font */
+
+$font-family-sans-lt: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", helvetica, arial, "Lucida Grande", sans-serif;
+$font-family-sans-lt-it: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", helvetica, arial, "Lucida Grande", sans-serif;
+$font-family-sans-md: "HelveticaNeueLTStd-Md", sans-serif;
+$font-family-sans-md-it: "HelveticaNeueLTStd-Md", sans-serif;
+$font-family-sans-bd: "HelveticaNeueLTStd-Bd", sans-serif;
+$font-family-sans-bd-it: "HelveticaNeueLTStd-Bd", sans-serif;
+$font-family-sans-bd-cn: "HelveticaNeueLTStd-BdCn", sans-serif;
+$font-family-serif-md: times, serif;;
+$font-family-serif-md-it: times, serif;;
+$font-family-serif-bd: times, serif;;
+$font-family-serif-bd-it: times, serif;;
+$font-weight-lt: 200;
+$font-weight-md: 500;
+$font-weight-bd: 700;
+
+/* Animations */
+
+$animate-profile: ease-out;
+$animate-speed-sm: 0.2s;
+$animate-speed-md: 0.3s;
+$animate-speed-lg: 0.5s;
+$animate-speed-xl: 0.8s;
+$animate-sm: $animate-speed-sm $animate-profile;
+$animate-md: $animate-speed-md $animate-profile;
+$animate-lg: $animate-speed-lg $animate-profile;
+$animate-xl: $animate-speed-xl $animate-profile;

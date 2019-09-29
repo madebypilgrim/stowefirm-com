@@ -1,0 +1,61 @@
+{##
+ # Main layout
+ # @block {string} left
+ # @block {string} right
+ #}
+
+{% import '_macros/components' as components %}
+
+{# Params #}
+{% set content %}
+    {% block content %}{% endblock %}
+{% endset %}
+
+{# Markup #}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+    <head>
+        {% include '_meta/data' %}
+        {#
+        {% include '_meta/favicons' %}
+        #}
+
+        {# Main stylesheet #}
+        <link rel="stylesheet" type="text/css" href="/styles/index.css?build=1536262109825" />
+    </head>
+
+    <body data-no-js="true">
+        <script type="text/javascript">
+            document.body.setAttribute('data-no-js', false);
+        </script>
+
+        {{ components.scaffold() }}
+
+        <a
+            style="position:absolute;opacity:0;z-index:-1;width:1px;height:1px;"
+            href="#main-content">
+            Skip to main content</a>
+
+        <header>
+            {% include '_components/header' %}
+        </header>
+
+        <main id="main-content">
+            {% include '_components/main' with {
+                content: content,
+            } %}
+        </main>
+
+        <footer>
+            {% include '_components/footer' %}
+        </footer>
+
+        {# Main scripts #}
+        <script type="text/javascript" src="/scripts/index.js?build=1536262109825"></script>
+
+        {# LiveReload (development only) #}
+        {% if constant('CRAFT_ENVIRONMENT') == 'development' %}
+            <script>document.write('<script src=\"http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1\"></' + 'script>')</script>
+        {% endif %}
+    </body>
+</html>

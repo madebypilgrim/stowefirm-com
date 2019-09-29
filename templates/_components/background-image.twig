@@ -1,0 +1,53 @@
+{##
+ # Background image component
+ # @param {string} url
+ # @param {string} url2x
+ # @param {string} position
+ # @param {string} repeat
+ # @param {string} size
+ # @param {float} breakpoint
+ # @return {html}
+ #}
+
+{# Params #}
+{% set url = url|default('') %}
+{% set url2x = url2x|default(url) %}
+{% set position = position|default('center center') %}
+{% set size = size|default('cover') %}
+{% set repeat = repeat|default('no-repeat') %}
+{% set breakpoint = breakpoint|default(992) %}
+
+{# Variables #}
+{% set uniqueClass = craft.utilities.uniqueId() %}
+{% set handle = 'background-image' %}
+
+{# Markup #}
+<style>
+    .{{ uniqueClass }} {
+        background-position: {{ position }};
+        background-size: {{ size }};
+        background-repeat: {{ repeat }};
+    }
+</style>
+
+{# Load images directly w/o JS #}
+<noscript>
+    <style>
+        @media (max-width: {{ breakpoint - 1 }}px) {
+            .{{ uniqueClass }} {
+                background-image: url({{ url }});
+            }
+        }
+
+        @media (min-width: {{ breakpoint }}px) {
+            .{{ uniqueClass }} {
+                background-image: url({{ url2x }});
+            }
+        }
+    </style>
+</noscript>
+
+<div class="{{ handle }}-cont">
+    <div class="{{ uniqueClass }} {{ handle }} {{ handle }}--mobile" data-src="{{ url }}" loading="lazy"></div>
+    <div class="{{ uniqueClass }} {{ handle }} {{ handle }}--desktop" data-src="{{ url2x }}" loading="lazy"></div>
+</div>

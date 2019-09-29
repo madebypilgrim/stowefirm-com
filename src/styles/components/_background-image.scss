@@ -1,0 +1,29 @@
+$elClass: "background-image";
+
+.#{$elClass}-cont {
+    @include fullOverlay();
+    overflow: hidden;
+}
+
+.#{$elClass} {
+    @include fullOverlay();
+    display: none;
+    opacity: 0;
+    transition: opacity $animate-md;
+
+    [data-no-js="true"] & {
+        opacity: 1;
+    }
+
+    &--mobile {
+        @media (max-width: $screen-sm-max) {
+            display: block;
+        }
+    }
+
+    &--desktop {
+        @media (min-width: $screen-md-min) {
+            display: block;
+        }
+    }
+}

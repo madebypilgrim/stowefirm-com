@@ -1,0 +1,42 @@
+{##
+ # Header component
+ # @global {GlobalSet} header
+ #}
+
+{# Params #}
+{% set header = header|default(null) %}
+{% set logo = header.headerLogo.one() %}
+{% set links = header.headerLinks.all() %}
+{% set summary = header.headerSummary %}
+
+{# Variables #}
+{% set handle = 'header' %}
+{% set activeClass = 'is-active' %}
+
+{# Markup #}
+<div class="{{ handle }}">
+    <input type="checkbox" id="nav-toggle" style="display:none" aria-hidden="true" />
+    <a href="/" title="Home">
+        {% if logo %}
+            <img src="{{ logo.url }}" alt="{{ logo.title }}" />
+        {% else %}
+            {{ siteName }}
+        {% endif %}
+    </a>
+    <label for="nav-toggle">
+        <span>Menu</span>
+        <span>Close</span>
+    </label>
+    <nav>
+        {% for l in links %}
+            <a
+                href="{{ l.linkPage.one().url|default(siteUrl) }}"
+                title="{{ l.linkTitle }}">
+                {{ l.linkTitle }}
+            </a>
+        {% endfor %}
+    </nav>
+    <footer>
+        {{ header.headerSummary }}
+    </footer>
+</div>

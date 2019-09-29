@@ -1,0 +1,212 @@
+@mixin heading() {
+    > h3 {
+        @include font("heading-sm");
+        margin-bottom: $spacing-xs;
+        padding-top: $spacing-sm;
+    }
+}
+
+@mixin label($required: false) {
+    @include font("body-sm");
+    display: inline-block;
+    white-space: nowrap;
+    margin-bottom: $spacing-xs / 2;
+    color: $color-fg-gray-dk;
+    cursor: text;
+
+    // Required star in css
+    @if ($required) {
+        &:after {
+            content: "*";
+            display: inline-block;
+            color: red;
+        }
+    }
+
+    // Required star in markup
+    > em {
+        display: inline-block;
+        color: red;
+    }
+}
+
+@mixin error() {
+    @include font("body-sm");
+    width: 100%; // Make sure to always break to new line
+    margin-top: $spacing-xs / 3;
+    margin-bottom: $spacing-xs / 1.5;
+    color: red;
+}
+
+@mixin input($error-class: "has-error") {
+    @include font("body-md");
+    @include pad($spacing-xs);
+    display: block;
+    position: relative;
+    width: 100%;
+    height: $input-height; // Bug fix for IE, check before removing
+    line-height: $input-height;
+    border: 1px solid $color-br-gray-lt;
+    color: $color-fg-gray-dk;
+    background-color: $color-white;
+
+    &.#{$error-class} {
+        background-color: lighten(red, 35%);
+        border-color: red;
+    }
+
+    &:active,
+    &:focus {
+        background-color: lighten($color-blue-lt, 35%);
+        border-color: $color-blue-lt;
+    }
+}
+
+@mixin choiceControl() {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    width: $spacing-sm;
+    height: $spacing-sm;
+    margin-right: $spacing-xs / 2;
+    background-color: $color-white;
+    border: 1px solid $color-br-gray-lt;
+    cursor: pointer;
+
+    &:active,
+    &:focus {
+        background-color: lighten($color-blue-lt, 35%);
+        border-color: $color-blue-lt;
+    }
+
+    &:checked {
+        border-color: $color-blue-dk;
+
+        &:after {
+            @include centerer;
+            width: $spacing-xs;
+            height: $spacing-xs;
+            font-size: $spacing-xs * 1.5;
+            font-weight: $font-weight-bd;
+            line-height: $spacing-xs * 1.5;
+        }
+    }
+}
+
+@mixin checkbox() {
+    @include choiceControl;
+
+    &:checked {
+        &:after {
+            // Custom checkboxes
+            top: 20%;
+            left: 40%;
+            content: "\2713";
+            color: $color-blue-dk;
+        }
+    }
+}
+
+@mixin radio() {
+    @include choiceControl;
+    border-radius: 50%;
+
+    &:checked {
+        &:after {
+            // Custom radio buttons
+            content: "";
+            background-color: $color-blue-dk;
+            border-radius: 50%;
+        }
+    }
+}
+
+@mixin dropdown() {
+    position: relative;
+
+    > select {
+        @include input;
+        line-height: $input-height - 2; // compensate for borders
+        cursor: pointer;
+
+        > option {
+            &:disabled {
+                color: #5E5656;
+            }
+        }
+    }
+
+    > i {
+        @include centerer(false, true);
+        z-index: 1;
+        right: $spacing-xs;
+        width: $spacing-xs;
+        height: $spacing-xs;
+        fill: $color-blue-lt;
+        pointer-events: none;
+    }
+}
+
+@mixin list() {
+    > label {
+        @include font("body-sm");
+        display: inline-block;
+        margin: $spacing-xs $spacing-sm $spacing-xs auto;
+        color: $color-fg-gray-dk;
+        cursor: pointer;
+
+        > input[type="radio"] {
+            @include radio;
+            margin-left: $spacing-xs;
+        }
+    }
+
+    > input[type="checkbox"] {
+        + label {
+            @include font("body-sm");
+            min-width: $max-width-xs;
+            height: $spacing-xs * 3;
+            line-height: $spacing-xs * 3;
+            padding: 0 $spacing-sm;
+            border: 1px solid $color-br-gray-lt;
+            border-radius: 2em;
+            color: $color-fg-gray-dk;
+            text-align: center;
+        }
+
+        &:active + label,
+        &:focus + label {
+            background-color: lighten($color-blue-lt, 35%);
+            border-color: $color-blue-lt;
+        }
+
+        &:checked + label {
+            border-color: $color-blue-dk;
+            color: $color-blue-dk;
+        }
+    }
+}
+
+@mixin text() {
+    @include input;
+
+    /* Spin Buttons modified */
+    &[type="number"]::-webkit-outer-spin-button,
+    &[type="number"]::-webkit-inner-spin-button {
+        @include absolute(0, $spacing-xs, 0, auto);
+        opacity: 0.5; /* shows Spin Buttons per default (Chrome >= 39) */
+        width: $spacing-xs;
+        height: auto;
+        border-left: 1px solid #CCC;
+        background: #fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAKUlEQVQYlWNgwAT/sYhhKPiPT+F/LJgEsHv37v+EMGkmkuImoh2NoQAANlcun/q4OoYAAAAASUVORK5CYII=) no-repeat center center;
+    }
+}
+
+@mixin textarea() {
+    @include input;
+    min-height: $input-height;
+    height: auto;
+    max-height: $input-height * 4;
+    line-height: $spacing-xs * 3;
+    padding-top: ($input-height - ($spacing-xs * 3)) / 2;
+}

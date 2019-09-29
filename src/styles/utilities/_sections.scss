@@ -1,0 +1,99 @@
+@mixin sectionContainer($spread: "narrow") {
+    @include span(4, $spread, $grid-sm);
+    margin: 0 auto;
+
+    @media (min-width: $screen-sm-min) {
+        @include span(8, $spread, $grid-md);
+    }
+
+    @media (min-width: $screen-md-min) {
+        @include span(10, $spread);
+    }
+}
+
+@mixin sectionSpacing($level: "secondary") {
+    @if ($level == "primary") {
+        @include space($spacing-lg * 2, $spacing-lg);
+
+        @media (min-width: $screen-sm-min) {
+            @include space($spacing-lg * 3, $spacing-md * 3);
+        }
+
+        @media (min-width: $screen-md-min) {
+            @include space($spacing-xl * 2, $spacing-xl);
+        }
+    } @else if ($level == "secondary") {
+        @include space($spacing-md);
+
+        @media (min-width: $screen-sm-min) {
+            @include space($spacing-sm * 3);
+        }
+
+        @media (min-width: $screen-md-min) {
+            @include space($spacing-lg);
+        }
+    }
+}
+
+@mixin sectionPadding() {
+    @include pad($gutter-sm);
+
+    @media (min-width: $screen-sm-min) {
+        @include pad($gutter-md);
+    }
+
+    @media (min-width: $screen-md-min) {
+        @include pad($gutter-lg);
+    }
+}
+
+@mixin sectionHeading($align: "left", $invert: false) {
+    > h2 {
+        @include font("heading-sm");
+        color: $color-fg-gray-md;
+
+        @if ($align == "center") {
+            text-align: center;
+        }
+
+        @if ($invert) {
+            color: $color-fg-gray-lt;
+        }
+    }
+
+    > h4 {
+        @include font("heading-lg");
+        max-width: $max-width-md;
+        margin-top: $spacing-sm;
+
+        @if ($align == "center") {
+            margin-right: auto;
+            margin-left: auto;
+            text-align: center;
+        }
+
+        @if ($invert) {
+            color: $color-white;
+        }
+    }
+
+    > p {
+        max-width: $max-width-md;
+        margin-top: $spacing-xs;
+
+        @if ($align == "center") {
+            margin-right: auto;
+            margin-left: auto;
+            text-align: center;
+        }
+
+        @if ($invert) {
+            color: $color-white;
+        }
+
+        > a {
+            @include bold;
+            @include linkUnderline;
+        }
+    }
+}

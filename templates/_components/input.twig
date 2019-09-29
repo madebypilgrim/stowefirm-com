@@ -1,0 +1,127 @@
+{##
+ # Input component
+ # @param {modules\forms\models\Form} model
+ # @param {string} name
+ # @param {string} formId
+ #}
+
+{# Params #}
+{% set model = model|default(null) %}
+{% set name = name|default('') %}
+{% set formId = formId|default('') %}
+
+{# Variables #}
+{% set id = craft.utilities.uniqueId() %}
+{% set handle = 'input' %}
+{% set errorClass = 'has-error' %}
+
+{% set isRequired = model.isAttributeRequired(name) %}
+{% set type = model.getAttributeInputType(name) %}
+{% set errors = model.getErrors(name) %}
+
+{# Markup #}
+{% import '_macros/components' as components %}
+
+<div id="{{ id }}" class="{{ handle }} {{ errors is not empty ? errorClass }}">
+    {% if type != 'hidden' %}
+        <label for="{{ name }}-input">
+            {{ model.getAttributeLabel(name) }}
+            {% if isRequired %}<em>*</em>{% endif %}
+        </label>
+    {% endif %}
+
+    {% switch type %}
+        {% case 'select' %}
+            <div class="{{ handle }}__select-cont">
+                <select
+                    {{ isRequired ? 'required' }}
+                    id="{{ name }}-input"
+                    name="{{ name }}"
+                    class="{{ errors is not empty ? errorClass }}">
+                    {% for o in model.getAttributeInputOptions(name) %}
+                        <option
+                            value="{{ o.value }}"
+                            {{ o.value is empty ? 'disabled selected' }}
+                            {{ o.value == model[name] ? 'selected' }}>
+                            {{ o.label }}
+                        </option>
+                    {% endfor %}
+                </select>
+                {% include '_components/icon' with { icon: 'triangle-down' } %}
+            </div>
+        {% case 'checkbox' %}
+            <fieldset
+                id="{{ name }}-input"
+                class="{{ errors is not empty ? errorClass }}">
+                {% for o in model.getAttributeInputOptions(name) %}
+                    <input
+                        id="{{ o.value }}-input"
+                        type="{{ type }}"
+                        name="{{ name }}[]"
+                        value="{{ o.value }}"
+                        {{ o.value == model[name] ? 'checked' }}
+                        placeholder="{{ model.getAttributeInputPlaceholder(name) }}" />
+                    <label for="{{ o.value }}-input">
+                        {{ o.label }}
+                    </label>
+                {% endfor %}
+            </fieldset>
+        {% case 'radio' %}
+            {# Make sure empty input is posted #}
+            <input type="hidden" name="{{ name }}" value="{{ model[name] }}" />
+            <fieldset
+                id="{{ name }}-input"
+                class="{{ errors is not empty ? errorClass }}">
+                {% for o in model.getAttributeInputOptions(name) %}
+                    <label for="{{ o.value }}-input">
+                        <input
+                            id="{{ o.value }}-input"
+                            type="{{ type }}"
+                            name="{{ name }}"
+                            value="{{ o.value }}"
+                            {{ o.value == model[name] ? 'checked' }}
+                            placeholder="{{ model.getAttributeInputPlaceholder(name) }}" />
+                        {{ o.label }}
+                    </label>
+                {% endfor %}
+            </fieldset>
+        {% case 'textarea' %}
+            {% spaceless %}
+                <textarea
+                    {{ isRequired ? 'required' }}
+                    id="{{ name }}-input"
+                    name="{{ name }}"
+                    class="{{ errors is not empty ? errorClass }}"
+                    placeholder="{{ model.getAttributeInputPlaceholder(name) }}" />
+                    {{ model[name] }}
+                </textarea>
+            {% endspaceless %}
+        {% default %}
+            <input
+                {{ isRequired ? 'required' }}
+                id="{{ name }}-input"
+                type="{{ type }}"
+                name="{{ name }}"
+                {# Hash values for hidden inputs to prevent user tampering #}
+                {% if type == 'hidden' %}
+                    value="{{ model[name]|hash }}"
+                {% elseif value is iterable %}
+                    value="{{ model[name]|join(', ') }}"
+                {% else %}
+                    value="{{ model[name] }}"
+                {% endif %}
+                class="{{ errors is not empty ? errorClass }}"
+                placeholder="{{ model.getAttributeInputPlaceholder(name) }}" />
+    {% endswitch %}
+
+    {% if type != 'hidden' %}
+        <p>{{ errors|join("\n")|nl2br }}</p>
+    {% endif %}
+
+    {{ components.new(handle, {
+        id: id,
+        errorClass: errorClass,
+        name: name,
+        formId: formId,
+    }) }}
+</div>

@@ -1,0 +1,8 @@
+.DS_Store
+.vimrc
+.env
+.php_cs.cache
+/node_modules/
+/public_html/cpresources
+/public_html/uploads
+/vendor
