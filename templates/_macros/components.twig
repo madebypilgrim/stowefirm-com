@@ -3,7 +3,7 @@
  # Site handle used to sync twig components w/ JS components
  #}
 {% macro scaffold() %}
-    {% set siteHandle = 'williamsconcretecontracting' %}
+    {% set siteHandle = 'stw' %}
 
     <script type="text/javascript">
         window[{{ siteHandle|json_encode|raw }}] = { components: [], state: {} };
@@ -15,7 +15,7 @@
  # Config object is parsed inside of /src/utilities/components.js instantiate function
  #}
 {% macro new(componentHandle, params = null) %}
-    {% set siteHandle = 'williamsconcretecontracting' %}
+    {% set siteHandle = 'stw' %}
 
     {% set config = {
         handle: componentHandle,

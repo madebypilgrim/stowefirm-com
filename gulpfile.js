@@ -76,13 +76,13 @@ let config = {
     },
 
     scripts: {
-        entry: './' + srcroot + '/scripts/index.js',
+        entry: './' + srcroot + '/scripts/main.js',
         src: './' + srcroot + '/scripts/**/*.js',
         dst: './' + dstroot + '/scripts/',
     },
 
     styles: {
-        entry: './' + srcroot + '/styles/index.scss',
+        entry: './' + srcroot + '/styles/main.scss',
         src: './' + srcroot + '/styles/**/*.scss',
         dst: './' + dstroot + '/styles/',
     },
@@ -200,9 +200,7 @@ function lintJs() {
             config.scripts.src,
         ])
         .on('error', err => { console.error(err); })
-        .pipe(eslint())
-        .pipe(eslint.format())
-        .pipe(eslint.failAfterError());
+        .pipe(eslint());
 }
 gulp.task('scripts:lint', lintJs);
 
@@ -216,7 +214,7 @@ gulp.task('scripts:browserify', () => {
 
     return bundler.bundle()
         .on('error', err => { console.error(err); })
-        .pipe(source('index.js'))
+        .pipe(source('main.js'))
         .pipe(buffer())
         .pipe(uglify())
         .pipe(gulp.dest(config.scripts.dst));
@@ -239,7 +237,7 @@ gulp.task('scripts:watch', () => {
 
         return bundler.bundle()
             .on('error', err => { console.error(err); })
-            .pipe(source('index.js'))
+            .pipe(source('main.js'))
             .pipe(buffer())
             .pipe(gulp.dest(config.scripts.dst))
             .pipe(livereload());
@@ -313,7 +311,7 @@ gulp.task('cachebust', () => gulp
     .src([
         config.markup.entry,
     ])
-    .pipe(replace(/index.(\d+).(js|css)/g, (match, p1, p2) => ['index', Date.now(), p2].join('.')))
+    .pipe(replace(/main.(\d+).(js|css)/g, (match, p1, p2) => ['main', Date.now(), p2].join('.')))
     .pipe(gulp.dest(config.markup.dst + '_layouts/'))
 );
 
@@ -335,7 +333,7 @@ gulp.task('images', gulp.parallel(['images:raster', 'images:vector:sprites', 'im
 gulp.task('scripts', gulp.parallel(['scripts:browserify']));
 gulp.task('styles', gulp.parallel(['styles:sass']));
 gulp.task('lint', gulp.series(['scripts:lint', 'styles:format']));
-gulp.task('build', gulp.series(['lint', 'fonts', 'images', 'scripts', 'styles', 'cachebust']));
+gulp.task('build', gulp.series(['fonts', 'images', 'scripts', 'styles', 'cachebust']));
 
 /**
  * DEFAULT

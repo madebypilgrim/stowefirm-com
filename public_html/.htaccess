@@ -258,10 +258,10 @@ AddType application/x-shockwave-flash       swf
 # Cache busting CSS and JS
 # https://adactio.com/journal/8504
 # ----------------------------------------------------------------------
-#<IfModule mod_rewrite.c>
-#  RewriteCond %{REQUEST_FILENAME} !-f
-#  RewriteRule ^(.+).(d+).(js|css)$ $1.$3 [L]
-#</IfModule>
+<IfModule mod_rewrite.c>
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.+)\.(\d+)\.(js|css)$ $1.$3 [L]
+</IfModule>
 
 # ----------------------------------------------------------------------
 # Default Craft .htaccess

@@ -6,9 +6,18 @@
 {# Params #}
 
 {# Variables #}
+{% set id = craft.utilities.uniqueId() %}
 {% set handle = 'footer' %}
+{% set activeClass = 'is-active' %}
 
 {# Markup #}
-<div class="{{ handle }}">
+{% import '_macros/components' as components %}
+
+<div id="{{ id }}" class="{{ handle }}">
     Footer
+
+    {{ components.new(handle, {
+        id: id,
+        activeClass: activeClass,
+    }) }}
 </div>

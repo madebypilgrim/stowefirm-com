@@ -1,0 +1,22 @@
+$handle: "footer";
+$active-class: "is-active";
+
+.#{$handle} {
+    @media (min-width: $screen-lg-min) {
+        @include absolute(
+            auto, 0, 0,
+            $max-width-sm
+        );
+        @include space($spacing-sm);
+        @include pad($spacing-sm);
+        position: fixed;
+        transform: translateY(100%);
+        transition: transform $animate-md;
+    }
+
+    &.#{$active-class} {
+        @media (min-width: $screen-lg-min) {
+            transform: translate(0);
+        }
+    }
+}

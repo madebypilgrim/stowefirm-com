@@ -1,0 +1,15 @@
+$handle: "main";
+
+.#{$handle} {
+    @media (min-width: $screen-lg-min) {
+        width: calc(100vw - #{$max-width-sm});
+        min-height: 100vh;
+        margin-right: 0;
+        margin-left: auto;
+    }
+
+    > label {
+        @include absolute($spacing-sm, $spacing-sm);
+        position: fixed;
+    }
+}
