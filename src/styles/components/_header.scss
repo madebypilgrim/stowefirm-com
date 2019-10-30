@@ -51,6 +51,7 @@ $handle: "header";
             height: 3px;
             background-color: goldenrod;
             transition: transform $animate-lg;
+            transition-delay: $animate-speed-sm;
         }
     }
 
