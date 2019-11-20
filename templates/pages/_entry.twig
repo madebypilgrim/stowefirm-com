@@ -1,0 +1,38 @@
+{##
+ # Pages entry
+ # @param {Entry} entry
+ # |_@param {PlainText} pageHeading
+ # |_@param {PlainText} pageSubheading
+ # |_@param {Matrix} pageSections
+ # |_@param {SuperTable} pageNext
+ # |_@param {SuperTable} metaData
+ #}
+
+{# Params #}
+{% set sections = entry.pageSections.all() %}
+
+{# Variables #}
+{% set footerCta = craft.components.getLinkFromCta(entry.pageNext.cta.one()) %}
+
+{# Markup #}
+{% extends '_layouts/main' %}
+
+{% block content %}
+    <article>
+        <header>
+            <h1>{{ entry.pageHeading }}</h1>
+            <h3>{{ entry.pageSubheading }}</h3>
+        </header>
+
+        {% for s in sections %}
+            {% include 'pages/_sections/' ~ s.type.handle|kebab with { section: s } only %}
+        {% endfor %}
+
+        {% if footerCta %}
+            <footer>
+                <p>{{ entry.pageNext.body }}</p>
+                {{ footerCta.render() }}
+            </footer>
+        {% endif %}
+    </article>
+{% endblock %}

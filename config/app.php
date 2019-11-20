@@ -17,13 +17,15 @@
  * your config/ folder, alongside this one.
  */
 
+use modules\components\ComponentsModule;
 use modules\forms\FormsModule;
 use modules\utilities\UtilitiesModule;
 
 return [
     'modules' => [
+        'components-module' => ComponentsModule::class,
         'forms-module' => FormsModule::class,
         'utilities-module' => UtilitiesModule::class,
     ],
-    'bootstrap' => ['forms-module', 'utilities-module'],
+    'bootstrap' => ['components-module', 'forms-module', 'utilities-module'],
 ];

@@ -1,0 +1,18 @@
+{##
+ # Split Callout section
+ # @param {MatrixBlock} section
+ # |_@param {PlainText} heading
+ # |_@param {Redactor} body
+ # |_@param {SuperTable} cta
+ #}
+
+{% set link = craft.components.getLinkFromCta(section.cta.one()) %}
+
+{# Markup #}
+<section>
+    <h2>{{ section.heading }}</h2>
+    <div>{{ section.body }}</div>
+    {% if link %}
+        {{ link.render() }}
+    {% endif %}
+</section>

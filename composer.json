@@ -7,6 +7,7 @@
   },
   "autoload": {
     "psr-4": {
+      "modules\\components\\": "modules/components/src/",
       "modules\\forms\\": "modules/forms/src/",
       "modules\\utilities\\": "modules/utilities/src/"
     }

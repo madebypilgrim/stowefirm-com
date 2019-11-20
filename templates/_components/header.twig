@@ -28,12 +28,19 @@
     </a>
     <p>{{ summary }}</p>
     <nav>
+        {% set url = siteUrl(craft.app.request.pathInfo) %}
+
         {% for l in links %}
-            <a
-                href="{{ l.linkPage.one().url|default(siteUrl) }}"
-                title="{{ l.linkTitle }}">
-                {{ l.linkTitle }}
-            </a>
+            {% set link = craft.components.getLinkFromLink(l) %}
+            {% set options = {} %}
+
+            {% if link.url == url %}
+                {% set options = options|merge({ class: activeClass }) %}
+            {% endif %}
+
+            {% if link %}
+                {{ link.render(link.title, options) }}
+            {% endif %}
         {% endfor %}
     </nav>
 

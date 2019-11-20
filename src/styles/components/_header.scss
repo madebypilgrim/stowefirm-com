@@ -1,4 +1,5 @@
 $handle: "header";
+$active-class: "is-active";
 
 .#{$handle} {
     @include absolute(0, auto, 0, 0);
@@ -80,6 +81,10 @@ $handle: "header";
                 &:nth-child(#{$i}) {
                     transition-delay: 50ms * $i;
                 }
+            }
+
+            &.#{$active-class} {
+                color: goldenrod;
             }
         }
     }
