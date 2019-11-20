@@ -1,0 +1,31 @@
+{##
+ # Hero component
+ # @param {string} heading
+ # @param {modules\components\models\Link[]} ctas
+ # @param {object} backgroundImage
+ #}
+
+{# Params #}
+{% set heading = heading|default('') %}
+{% set ctas = ctas|default([]) %}
+{% set backgroundImage = backgroundImage|default(null) %}
+
+{# Variables #}
+{% set handle = 'hero' %}
+
+{# Markup #}
+<div class="{{ handle }}">
+    {% if backgroundImage %}
+        {% include '_components/background-image' with { url: backgroundImage.url } %}
+    {% endif %}
+
+    <h1>{{ entry.pageHeading }}</h1>
+
+    {% if ctas is not empty %}
+        <nav>
+            {% for c in ctas|filter %}
+                {{ c.render() }}
+            {% endfor %}
+        </nav>
+    {% endif %}
+</div>

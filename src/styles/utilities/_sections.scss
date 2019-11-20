@@ -1,13 +1,17 @@
 @mixin sectionContainer($spread: "narrow") {
-    @include span(4, $spread, $grid-sm);
+    @include span(4, $spread, $grid-xs);
     margin: 0 auto;
 
     @media (min-width: $screen-sm-min) {
-        @include span(8, $spread, $grid-md);
+        @include span(6, $spread, $grid-sm);
     }
 
     @media (min-width: $screen-md-min) {
-        @include span(10, $spread);
+        @include span(8, $spread, $grid-md);
+    }
+
+    @media (min-width: $screen-lg-min) {
+        @include span(10, $spread, $grid-lg);
     }
 }
 

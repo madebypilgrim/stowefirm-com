@@ -1,0 +1,31 @@
+$handle: "hero";
+
+.#{$handle} {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    min-height: 100vh;
+
+    > h1 {
+        @include font("heading-xl");
+        @include pad($spacing-lg);
+        position: relative;
+        max-width: $max-width-xl;
+        margin-top: $spacing-lg * 1.75;
+    }
+
+    > nav {
+        @include space($spacing-lg);
+        @include pad($spacing-lg);
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        background-color: $color-white;
+
+        > a {
+            @include font("heading-md");
+            color: $color-black;
+        }
+    }
+}

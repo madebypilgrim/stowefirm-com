@@ -3,11 +3,9 @@
  # @param {Entry} entry
  # |_@param {PlainText} pageHeading
  # |_@param {SuperTable} pageCtas
+ # |_@param {Assets} pageBackgroundImage
  # |_@param {SuperTable} metaData
  #}
-
-{# Params #}
-{% set ctas = entry.pageCtas.all() %}
 
 {# Markup #}
 {% extends '_layouts/main' %}
@@ -15,19 +13,11 @@
 {% block content %}
     <article>
         <header>
-            <h1>{{ entry.pageHeading }}</h1>
-
-            {% if ctas is not empty %}
-                <nav>
-                    {% for c in ctas %}
-                        {% set link = craft.components.getLinkFromCta(c) %}
-
-                        {% if link %}
-                            {{ link.render() }}
-                        {% endif %}
-                    {% endfor %}
-                </nav>
-            {% endif %}
+            {% include '_components/hero' with {
+                heading: entry.pageHeading,
+                ctas: entry.pageCtas.all()|map(c => craft.components.getLinkFromCta(c)),
+                backgroundImage: entry.pageBackgroundImage.one(),
+            } %}
         </header>
     </article>
 {% endblock %}

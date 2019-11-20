@@ -1,4 +1,4 @@
-dateModified: 1574222568
+dateModified: 1574222964
 email:
   fromEmail: trevor@madebypilgrim.com
   fromName: 'Stowe Firm'
@@ -128,6 +128,33 @@ fields:
       maxBlocks: ''
       contentTable: '{{%matrixcontent_pagesections}}'
       propagationMethod: all
+    contentColumnType: string
+    fieldGroup: c73bb305-095a-4864-9867-24695b93debf
+  5e42d86b-5107-4875-b074-104a3e864454:
+    name: 'Page Background Image'
+    handle: pageBackgroundImage
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Assets
+    settings:
+      useSingleFolder: '1'
+      defaultUploadLocationSource: 'volume:62384952-8782-4cb2-b09b-17413aba3239'
+      defaultUploadLocationSubpath: ''
+      singleUploadLocationSource: 'volume:62384952-8782-4cb2-b09b-17413aba3239'
+      singleUploadLocationSubpath: backgrounds
+      restrictFiles: '1'
+      allowedKinds:
+        - image
+      sources: '*'
+      source: null
+      targetSiteId: null
+      viewMode: list
+      limit: '1'
+      selectionLabel: 'Add a page background image'
+      localizeRelations: false
+      validateRelatedElements: ''
     contentColumnType: string
     fieldGroup: c73bb305-095a-4864-9867-24695b93debf
   9c69416c-dfb7-488d-865b-633b77209d24:
@@ -423,8 +450,9 @@ matrixBlockTypes:
           defaultUploadLocationSubpath: ''
           singleUploadLocationSource: 'volume:62384952-8782-4cb2-b09b-17413aba3239'
           singleUploadLocationSubpath: images
-          restrictFiles: ''
-          allowedKinds: null
+          restrictFiles: '1'
+          allowedKinds:
+            - image
           sources: '*'
           source: null
           targetSiteId: null
@@ -847,6 +875,9 @@ sections:
                   3c7300e1-d4d1-4aa8-9ad2-c657dc884363:
                     required: false
                     sortOrder: 1
+                  5e42d86b-5107-4875-b074-104a3e864454:
+                    required: false
+                    sortOrder: 3
                   b5520ae2-8cf9-4ced-af22-170fa52a4431:
                     required: false
                     sortOrder: 2
@@ -1316,5 +1347,5 @@ volumes:
     hasUrls: true
     url: '@assetBaseUrl/images/page'
     settings:
-      path: '@assetBasePath/images/pages'
+      path: '@assetBasePath/images/page'
     sortOrder: 1

@@ -24,13 +24,14 @@ $max-width-sm: 440px;
 $max-width-md: 550px;
 $max-width-lg: 770px;
 $max-width-xl: 990px;
+$gutter-xs: $spacing-sm;
 $gutter-sm: $spacing-sm;
 $gutter-md: $spacing-sm;
 $gutter-lg: $spacing-sm;
 $grid-xs: (
-    base: 6,
+    base: 4,
     cont-spread: "wider",
-    gutter: $gutter-sm,
+    gutter: $gutter-xs,
 );
 $grid-sm: (
     base: 6,
