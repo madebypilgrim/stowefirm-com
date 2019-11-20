@@ -1,4 +1,4 @@
-dateModified: 1574221572
+dateModified: 1574222568
 email:
   fromEmail: trevor@madebypilgrim.com
   fromName: 'Stowe Firm'
@@ -168,6 +168,24 @@ fields:
           width: ''
       fieldLayout: row
       selectionLabel: ''
+    contentColumnType: string
+    fieldGroup: c73bb305-095a-4864-9867-24695b93debf
+  b5520ae2-8cf9-4ced-af22-170fa52a4431:
+    name: 'Page CTAs'
+    handle: pageCtas
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: verbb\supertable\fields\SuperTableField
+    settings:
+      minRows: ''
+      maxRows: '4'
+      contentTable: '{{%stc_pagectas}}'
+      propagationMethod: all
+      staticField: ''
+      fieldLayout: table
+      selectionLabel: 'Add a page CTA'
     contentColumnType: string
     fieldGroup: c73bb305-095a-4864-9867-24695b93debf
   c017f6ca-1074-4f9d-9cb2-0f8cba6247b7:
@@ -799,6 +817,46 @@ sections:
                   2c9a135f-7f0a-44d8-b974-3950fd1465e9:
                     required: false
                     sortOrder: 1
+  987f7c1a-fbd1-4816-bae5-c981ccf2024b:
+    name: Homepage
+    handle: homepage
+    type: single
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      5f7f214d-7525-4b53-ab54-6abb144ff1d1:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: __home__
+        template: homepage
+    entryTypes:
+      a94f8ce7-e122-4726-b6fe-e417da10fd26:
+        name: Homepage
+        handle: homepage
+        hasTitleField: false
+        titleLabel: ''
+        titleFormat: '{section.name|raw}'
+        sortOrder: 1
+        fieldLayouts:
+          f90d29e5-8d36-428f-99e0-72aff3a1e50f:
+            tabs:
+              -
+                name: Header
+                sortOrder: 1
+                fields:
+                  3c7300e1-d4d1-4aa8-9ad2-c657dc884363:
+                    required: false
+                    sortOrder: 1
+                  b5520ae2-8cf9-4ced-af22-170fa52a4431:
+                    required: false
+                    sortOrder: 2
+              -
+                name: SEO
+                sortOrder: 2
+                fields:
+                  2c9a135f-7f0a-44d8-b974-3950fd1465e9:
+                    required: false
+                    sortOrder: 1
   e310d298-9f4f-46f8-9f8b-20c53f889b0b:
     name: People
     handle: people
@@ -1184,6 +1242,58 @@ superTableBlockTypes:
                 required: false
                 sortOrder: 2
               9e9dba93-d92b-408d-a6fb-7489ffad0488:
+                required: false
+                sortOrder: 1
+  d71c31d8-601e-46c2-8490-7dcb54a6f5cc:
+    field: b5520ae2-8cf9-4ced-af22-170fa52a4431
+    fields:
+      107b9fef-ef3b-41a5-b565-21414ca5ad9e:
+        name: 'CTA Page'
+        handle: ctaPage
+        instructions: ''
+        searchable: false
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Entries
+        settings:
+          sources: '*'
+          source: null
+          targetSiteId: null
+          viewMode: null
+          limit: '1'
+          selectionLabel: 'Add a CTA page'
+          localizeRelations: false
+          validateRelatedElements: ''
+        contentColumnType: string
+        fieldGroup: null
+      893ede3f-863c-4676-b778-b0c95ee79ea8:
+        name: 'CTA Title'
+        handle: ctaTitle
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      bdd12d24-2646-4f0d-887f-c69fc819087e:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              107b9fef-ef3b-41a5-b565-21414ca5ad9e:
+                required: false
+                sortOrder: 2
+              893ede3f-863c-4676-b778-b0c95ee79ea8:
                 required: false
                 sortOrder: 1
 system:
