@@ -16,7 +16,7 @@ $handle: "hero";
 
         @media (min-width: $screen-md-min) {
             max-width: $max-width-xl;
-            margin-top: 25vh;
+            margin-top: calc(25vh - #{$spacing-xs}); // try to align the subheading to the header intro on large screens
         }
     }
 

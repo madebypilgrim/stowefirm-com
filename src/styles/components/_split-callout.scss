@@ -1,0 +1,37 @@
+$handle: "split-callout";
+
+.#{$handle} {
+    @include sectionContainer;
+    @include sectionSpacing;
+
+    &--has-body {
+        @media (min-width: $screen-sm-min) {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    > h2 {
+        @include sectionHeading;
+        max-width: 300px;
+    }
+
+    > a {
+        @include iconLink;
+        margin-top: $spacing-sm;
+    }
+
+    > div {
+        margin-top: $spacing-sm;
+
+        @media (min-width: $screen-sm-min) {
+            width: 50%;
+            margin-top: $spacing-md;
+        }
+
+        > a {
+            @include iconLink;
+            margin-top: $spacing-sm;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{##
+ # Stats component
+ # @param {object[]} stats
+ # |_@param {string} number
+ # |_@param {string} description
+ #}
+
+{# Params #}
+{% set stats = stats|default([]) %}
+
+{# Variables #}
+{% set handle = 'stats' %}
+
+{# Markup #}
+<div class="{{ handle }}">
+    {% if stats is not empty %}
+        <ul>
+            {% for s in stats %}
+                <li>
+                    <em>{{ s.number }}</em>
+                    <h3>{{ s.description }}</h3>
+                </li>
+            {% endfor %}
+        </ol>
+    {% endif %}
+</div>

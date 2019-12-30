@@ -2,6 +2,18 @@ $handle: "header";
 $active-class: "is-active";
 
 .#{$handle} {
+    &:before {
+        @include absolute(0, 0, auto, 0);
+        position: fixed;
+        height: $spacing-lg;
+        background-image: linear-gradient($color-black, transparent);
+        pointer-events: none;
+
+        @media (max-width: $screen-md-max) {
+            content: "";
+        }
+    }
+
     &__logo-cont {
         @include absolute($spacing-sm, auto, auto, $spacing-sm);
         position: fixed;

@@ -1,0 +1,36 @@
+$handle: "stats";
+
+.#{$handle} {
+    @include sectionContainer;
+    @include space($spacing-md);
+
+    > ul {
+        @media (min-width: $screen-sm-min) {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        > li {
+            display: flex;
+            align-items: center;
+
+            @media (max-width: $screen-xs-max) {
+                @include listMargin($spacing-sm);
+            }
+
+            @media (min-width: $screen-sm-min) {
+                @include listMargin($spacing-xs, true);
+            }
+
+            > em {
+                @include font("number-lg");
+            }
+
+            > h3 {
+                @include font("body-sm");
+                max-width: 160px;
+                margin-left: $spacing-sm;
+            }
+        }
+    }
+}

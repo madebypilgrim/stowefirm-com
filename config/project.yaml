@@ -1,4 +1,4 @@
-dateModified: 1574300478
+dateModified: 1577738444
 email:
   fromEmail: trevor@madebypilgrim.com
   fromName: 'Stowe Firm'
@@ -437,8 +437,8 @@ matrixBlockTypes:
     sortOrder: 6
     fields:
       64078c29-dd52-48d0-822f-d046ce44f330:
-        name: States
-        handle: states
+        name: Stats
+        handle: stats
         instructions: ''
         searchable: true
         translationMethod: site
@@ -447,7 +447,7 @@ matrixBlockTypes:
         settings:
           minRows: ''
           maxRows: ''
-          contentTable: '{{%stc_2_states}}'
+          contentTable: '{{%stc_2_stats}}'
           propagationMethod: all
           staticField: ''
           columns:

@@ -1,0 +1,29 @@
+$handle: "page-footing";
+
+.#{$handle} {
+    @include sectionSpacing;
+    background-color: $color-white;
+
+    &__cont {
+        @include sectionContainer;
+
+        @media (min-width: $screen-sm-min) {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        > p {
+            @include font("heading-md");
+            max-width: $max-width-sm;
+            color: $color-fg-gray-dk;
+        }
+
+        > a {
+            @include button;
+
+            @media (max-width: $screen-xs-max) {
+                margin-top: $spacing-sm;
+            }
+        }
+    }
+}

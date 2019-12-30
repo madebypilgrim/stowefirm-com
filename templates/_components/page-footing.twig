@@ -1,0 +1,20 @@
+{##
+ # Page Footing component
+ # @param {string} body
+ # @param {modules\components\models\Link} cta
+ #}
+
+{# Params #}
+{% set body = body|default('') %}
+{% set cta = cta|default(null) %}
+
+{# Variables #}
+{% set handle = 'page-footing' %}
+
+{# Markup #}
+<div class="{{ handle }}">
+    <div class="{{ handle }}__cont">
+        <p>{{ body }}</p>
+        {{ cta.render() }}
+    </div>
+</div>

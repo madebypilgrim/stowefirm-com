@@ -176,12 +176,27 @@
     @if ($size == "body-sm") {
         @include fontSizeRem(1.4);
         @include lineHeightRem(2.4);
-        letter-spacing: 0.5px;
     }
 
     @if ($size == "body-xs") {
         @include fontSizeRem(1.2);
         @include lineHeightRem(2.4);
+    }
+
+    @if ($size == "number-lg") {
+        @include fontSizeRem(6.6);
+        line-height: 1em;
+        font-family: $font-family-sans-bd-cn;
+        font-weight: bold;
+        font-stretch: condensed;
+
+        @media (min-width: $screen-sm-min) {
+            @include fontSizeRem(7.7);
+        }
+
+        @media (min-width: $screen-md-min) {
+            @include fontSizeRem(8.8);
+        }
     }
 
     @if ($size == "link-md") {

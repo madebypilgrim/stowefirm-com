@@ -35,22 +35,13 @@ $handle: "ordered-list";
                     }
 
                     > em {
-                        @include fontSizeRem(6.6);
+                        @include font("number-lg");
                         display: block;
                         opacity: 0.05;
-                        line-height: 1em;
                         color: $color-bg-gray-lt;
-                        font-family: $font-family-sans-bd-cn;
-                        font-weight: bold;
-                        font-stretch: condensed;
 
                         @media (min-width: $screen-sm-min) {
-                            @include fontSizeRem(7.7);
                             margin-top: $spacing-sm;
-                        }
-
-                        @media (min-width: $screen-md-min) {
-                            @include fontSizeRem(8.8);
                         }
                     }
                 }
