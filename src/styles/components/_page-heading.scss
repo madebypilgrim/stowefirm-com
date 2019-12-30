@@ -2,7 +2,11 @@ $handle: "page-heading";
 
 .#{$handle} {
     @include sectionContainer;
-    @include sectionSpacing;
+    @include space($spacing-lg + $spacing-md, $spacing-md);
+
+    @media (min-width: $screen-lg-min) {
+        @include space($spacing-md, $spacing-lg);
+    }
 
     > h1 {
         @include font("heading-xs");
@@ -11,7 +15,11 @@ $handle: "page-heading";
 
     > h3 {
         @include font("heading-lg");
-        max-width: $max-width-lg;
-        margin-top: $spacing-lg;
+        max-width: $max-width-xl;
+        margin-top: $spacing-sm;
+
+        @media (min-width: $screen-lg-min) {
+            margin-top: calc(25vh - #{$spacing-lg}); // try to align the subheading to the header intro on large screens
+        }
     }
 }

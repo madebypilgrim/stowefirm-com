@@ -97,24 +97,44 @@
     @if ($size == "heading-xl") {
         @include fontSizeRem(3.2);
         @include lineHeightRem(4.2);
-        @include bold(true);
+        font-family: $font-family-serif-md;
+
+        @media (min-width: $screen-sm-min) {
+            @include fontSizeRem(4.2);
+            @include lineHeightRem(5.6);
+        }
 
         @media (min-width: $screen-md-min) {
-            @include fontSizeRem(5.2);
-            @include lineHeightRem(5.7);
+            @include fontSizeRem(5.0);
+            @include lineHeightRem(6.6);
         }
     }
 
     @if ($size == "heading-lg") {
-        @include fontSizeRem(3.2);
-        @include lineHeightRem(4.4);
-        @include bold;
+        @include fontSizeRem(2.6);
+        @include lineHeightRem(3.4);
+        font-family: $font-family-serif-md;
+
+        @media (min-width: $screen-sm-min) {
+            @include fontSizeRem(3.4);
+            @include lineHeightRem(4.8);
+        }
+
+        @media (min-width: $screen-md-min) {
+            @include fontSizeRem(4.2);
+            @include lineHeightRem(5.6);
+        }
     }
 
     @if ($size == "heading-md") {
-        @include fontSizeRem(2.8);
-        @include lineHeightRem(3.6);
-        @include bold;
+        @include fontSizeRem(2.0);
+        @include lineHeightRem(3.0);
+        font-family: $font-family-serif-md;
+
+        @media (min-width: $screen-sm-min) {
+            @include fontSizeRem(2.4);
+            @include lineHeightRem(3.4);
+        }
     }
 
     @if ($size == "heading-sm") {
@@ -124,8 +144,13 @@
     }
 
     @if ($size == "heading-xs") {
-        @include fontSizeRem(1.8);
-        @include lineHeightRem(2.2);
+        @include fontSizeRem(1.2);
+        @include lineHeightRem(2.8);
+
+        @media (min-width: $screen-sm-min) {
+            @include fontSizeRem(1.4);
+            @include lineHeightRem(2.8);
+        }
     }
 
     @if ($size == "body-xl") {
@@ -139,8 +164,13 @@
     }
 
     @if ($size == "body-md") {
-        @include fontSizeRem(1.6);
-        @include lineHeightRem(2.6);
+        @include fontSizeRem(1.4);
+        @include lineHeightRem(2.2);
+
+        @media (min-width: $screen-sm-min) {
+            @include fontSizeRem(1.6);
+            @include lineHeightRem(2.4);
+        }
     }
 
     @if ($size == "body-sm") {
@@ -154,14 +184,24 @@
         @include lineHeightRem(2.2);
     }
 
-    @if ($size == "link-lg") {
-        @include fontSizeRem(4.2);
-        @include lineHeightRem(6.2);
+    @if ($size == "link-xl") {
+        @include fontSizeRem(3.2);
+        @include lineHeightRem(5.5);
         font-family: $font-family-sans-bd-cn;
+        text-transform: uppercase;
+    }
+
+    @if ($size == "link-lg") {
+        @include fontSizeRem(2.2);
+        @include lineHeightRem(4.4);
+        font-family: $font-family-sans-bd-cn;
+        text-transform: uppercase;
     }
 
     @if ($size == "link-md") {
-        @include fontSizeRem(2.0);
-        @include lineHeightRem(3.2);
+        @include fontSizeRem(1.4);
+        @include lineHeightRem(3.0);
+        font-family: $font-family-sans-bd-cn;
+        text-transform: uppercase;
     }
 }

@@ -12,34 +12,56 @@ $handle: "ordered-list";
             > div {
                 width: 100%;
 
-                @media (min-width: $screen-md-min) {
+                @media (min-width: $screen-sm-min) {
                     width: 50%;
                 }
 
                 &:first-child {
                     padding-right: $spacing-md;
 
+                    @media (max-width: $screen-xs-max) {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: flex-end;
+                    }
+
                     > h2 {
                         @include font("heading-md");
                         position: relative;
-                        max-width: $max-width-sm;
+                        max-width: $max-width-xs;
                         padding-top: $spacing-md;
+
+                        @media (min-width: $screen-sm-min) {
+                            max-width: 300px;
+                        }
 
                         &:before {
                             @include absolute(0, auto, auto, 0);
                             content: "";
                             height: 4px;
                             background-color: goldenrod;
-                            width: $spacing-lg;
+                            width: $spacing-md;
                         }
                     }
 
                     > em {
-                        @include fontSizeRem(12.0);
-                        @include lineHeightRem(12.0);
+                        @include fontSizeRem(6.6);
                         display: block;
-                        margin-top: $spacing-sm;
+                        opacity: 0.05;
+                        line-height: 1em;
                         color: $color-bg-gray-lt;
+                        font-family: $font-family-sans-bd-cn;
+                        font-weight: bold;
+                        font-stretch: condensed;
+
+                        @media (min-width: $screen-sm-min) {
+                            @include fontSizeRem(7.7);
+                            margin-top: $spacing-sm;
+                        }
+
+                        @media (min-width: $screen-md-min) {
+                            @include fontSizeRem(8.8);
+                        }
                     }
                 }
 

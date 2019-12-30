@@ -2,29 +2,47 @@ $handle: "header";
 $active-class: "is-active";
 
 .#{$handle} {
+    &__logo-cont {
+        @include absolute($spacing-sm, auto, auto, $spacing-sm);
+        position: fixed;
+        z-index: 11;
+
+        > a {
+            > img {
+                display: block;
+                width: 100%;
+                max-width: $max-width-xs;
+            }
+        }
+    }
+
     &__drawer-cont {
         @include absolute(0, auto, 0, 0);
-        @include space($spacing-sm);
         @include pad($spacing-sm);
         display: flex;
         flex-direction: column;
+        justify-content: center;
         position: fixed;
-        z-index: 10;
-        transform: translateX(-100%);
-        width: $max-width-sm;
+        opacity: 0;
+        z-index: -1;
+        width: 100%;
         background-color: $color-bg-gray-md;
-        transition: transform $animate-sm;
+        transition: opacity $animate-sm;
 
         @media (min-width: $screen-md-min) {
             @include pad($spacing-md);
         }
 
         @media (min-width: $screen-lg-min) {
-            transform: translateX(0);
+            opacity: 1;
+            z-index: 10;
+            width: $max-width-sm;
+            padding-top: 25vh;
         }
 
         [name="nav-toggle"]:checked ~ & {
-            transform: translateX(0);
+            opacity: 1;
+            z-index: 10;
         }
 
         &:after {
@@ -39,35 +57,29 @@ $active-class: "is-active";
             }
         }
 
-        > a {
-            > img {
-                display: block;
-                width: 100%;
-            }
-        }
-
         > p {
             position: relative;
             opacity: 0;
             transform: translateX(-100%);
             max-width: $max-width-xs;
-            margin-top: $spacing-sm;
             padding-bottom: $spacing-sm;
             transition: opacity $animate-sm, transform $animate-sm;
 
-            @media (min-width: $screen-sm-min) {
-                margin-top: $spacing-md;
-                padding-bottom: $spacing-md;
+            @media (max-width: $screen-md-max) {
+                @include absolute(auto, auto, $spacing-md, $spacing-md);
             }
 
-            @media (min-width: $screen-md-min) {
-                margin-top: $spacing-lg;
+            @media (max-width: $screen-sm-max) {
+                @include absolute(auto, auto, $spacing-sm, $spacing-sm);
+            }
+
+            @media (min-width: $screen-sm-min) {
+                padding-bottom: $spacing-md;
             }
 
             @media (min-width: $screen-lg-min) {
                 opacity: 1;
                 transform: translateX(0);
-                margin-top: $spacing-xl;
             }
 
             [name="nav-toggle"]:checked ~ & {
@@ -97,12 +109,16 @@ $active-class: "is-active";
         }
 
         > nav {
+            @include space($spacing-sm);
             display: flex;
             flex-direction: column;
             position: relative;
             z-index: 1;
-            margin-top: auto;
-            margin-bottom: 0;
+
+            @media (min-width: $screen-lg-min) {
+                margin-top: auto;
+                margin-bottom: 0;
+            }
 
             .#{$handle}--nav-background-lt & {
                 @media (min-width: $screen-md-min) {
@@ -111,11 +127,13 @@ $active-class: "is-active";
             }
 
             > a {
-                @include font("link-md");
-                @include listMargin($spacing-xs);
+                @include font("link-lg");
                 opacity: 0;
-                transform: translateX(-100%);
-                transition: opacity $animate-sm, transform $animate-sm;
+                transform: translateX(-#{$spacing-md});
+                transition:
+                    color $animate-sm,
+                    opacity $animate-sm,
+                    transform $animate-md;
 
                 @for $i from 1 to 5 {
                     &:nth-child(#{$i}) {
@@ -123,7 +141,12 @@ $active-class: "is-active";
                     }
                 }
 
+                @media (min-width: $screen-sm-min) {
+                    @include font("link-xl");
+                }
+
                 @media (min-width: $screen-lg-min) {
+                    @include font("link-md");
                     opacity: 1;
                     transform: translateX(0);
                 }
@@ -133,6 +156,7 @@ $active-class: "is-active";
                     transform: translateX(0);
                 }
 
+                &:hover,
                 &.#{$active-class} {
                     color: goldenrod;
                 }
@@ -141,31 +165,40 @@ $active-class: "is-active";
     }
 
     &__toggle-cont {
+        @include absolute($spacing-md, $spacing-sm);
+        position: fixed;
+        z-index: 11;
+
+        @media (min-width: $screen-lg-min) {
+            display: none;
+        }
+
         > label {
-            @include absolute($spacing-sm, $spacing-sm);
-            position: fixed;
-            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: $spacing-sm;
+            height: $spacing-xs;
 
             > span {
-                // Menu
-                &:first-child {
-                    display: block;
-                }
-                // Close
-                &:last-child {
-                    display: none;
-                }
+                border-bottom: 1px solid goldenrod;
+                transform: scaleX(0.75);
+                transition: transform $animate-sm;
+            }
+
+            &:hover > span {
+                transform: scaleX(1);
             }
 
             [name="nav-toggle"]:checked ~ & {
+                justify-content: center;
+
                 > span {
-                    // Menu
                     &:first-child {
-                        display: none;
+                        transform: rotate(45deg) scaleX(1) translateY(1px);
                     }
-                    // Close
                     &:last-child {
-                        display: block;
+                        transform: rotate(-45deg) scaleX(1) translateY(-1px);
                     }
                 }
             }

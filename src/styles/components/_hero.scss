@@ -11,16 +11,12 @@ $handle: "hero";
         @include font("heading-xl");
         @include pad($spacing-sm);
         position: relative;
-        max-width: $max-width-xl;
-        margin-top: $spacing-lg;
-
-        @media (min-width: $screen-sm-min) {
-            @include pad($spacing-md);
-            margin-top: 30vh;
-        }
+        max-width: $max-width-md;
+        margin-top: $spacing-xl;
 
         @media (min-width: $screen-md-min) {
-            @include pad($spacing-lg);
+            max-width: $max-width-xl;
+            margin-top: 25vh;
         }
     }
 
@@ -68,6 +64,10 @@ $handle: "hero";
 
             @media (min-width: $screen-md-min) {
                 @include pad($spacing-lg);
+            }
+
+            @media (min-width: $screen-lg-min) {
+                @include pad($spacing-sm);
             }
 
             > i {

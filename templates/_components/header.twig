@@ -23,7 +23,7 @@
 
 <div id="{{ id }}" class="{{ handle }} {{ handle }}--nav-background-{{ navBackground }}">
     <input type="checkbox" id="nav-toggle" name="nav-toggle" style="display:none" aria-hidden="true" />
-    <div class="{{ handle }}__drawer-cont">
+    <div class="{{ handle }}__logo-cont">
         <a href="/" title="Home">
             {% if logo %}
                 <img src="{{ logo.url }}" alt="{{ logo.title }}" />
@@ -31,6 +31,8 @@
                 {{ siteName }}
             {% endif %}
         </a>
+    </div>
+    <div class="{{ handle }}__drawer-cont">
         <p>{{ summary }}</p>
         <nav>
             {% set url = siteUrl(craft.app.request.pathInfo) %}
@@ -51,8 +53,7 @@
     </div>
     <div class="{{ handle }}__toggle-cont">
         <label for="nav-toggle">
-            <span>Menu</span>
-            <span>Close</span>
+            <span></span><span></span>
         </label>
     </div>
 
