@@ -28,7 +28,12 @@
     {% if ctas is not empty %}
         <nav>
             {% for c in ctas|filter %}
-                {{ c.render() }}
+                {% set content %}
+                    {{ c.title }}
+                    {% include '_components/icon' with { icon: 'arrow-right' } %}
+                {% endset %}
+
+                {{ c.render(content) }}
             {% endfor %}
         </nav>
     {% endif %}

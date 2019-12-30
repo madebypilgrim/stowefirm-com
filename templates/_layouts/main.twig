@@ -43,9 +43,12 @@
             {% include '_components/main' with { content: content } %}
         </main>
 
-        <footer>
-            {% include '_components/footer' %}
-        </footer>
+        {# Hide footer on homepage #}
+        {% if craft.app.request.pathInfo is not empty %}
+            <footer>
+                {% include '_components/footer' %}
+            </footer>
+        {% endif %}
 
         {# Main scripts #}
         <script type="text/javascript" src="/scripts/main.1574224298073.js"></script>

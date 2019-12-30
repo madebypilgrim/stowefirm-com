@@ -9,24 +9,73 @@ $handle: "hero";
 
     > h1 {
         @include font("heading-xl");
-        @include pad($spacing-lg);
+        @include pad($spacing-sm);
         position: relative;
         max-width: $max-width-xl;
-        margin-top: $spacing-lg * 1.75;
+        margin-top: $spacing-lg;
+
+        @media (min-width: $screen-sm-min) {
+            @include pad($spacing-md);
+            margin-top: $spacing-lg * 1.75;
+        }
+
+        @media (min-width: $screen-md-min) {
+            @include pad($spacing-lg);
+        }
     }
 
     > nav {
-        @include pad($spacing-lg);
-        display: flex;
-        justify-content: space-between;
         align-items: center;
         position: relative;
-        height: $max-width-xs;
         background-color: $color-white;
 
+        @media (max-width: $screen-sm-max) {
+            margin-top: $spacing-md;
+        }
+
+        @media (min-width: $screen-md-min) {
+            display: flex;
+            justify-content: space-between;
+            height: $max-width-xs;
+        }
+
         > a {
+            @include space($spacing-sm);
+            @include pad($spacing-sm);
             @include font("heading-md");
+            display: flex;
+            align-items: center;
+            position: relative;
+            white-space: nowrap;
             color: $color-black;
+            border-top: 2px solid $color-br-gray-lt;
+
+            @media (max-width: $screen-sm-max) {
+                justify-content: space-between;
+            }
+
+            @media (min-width: $screen-md-min) {
+                border: 0;
+            }
+
+            &:first-child {
+                border: 0;
+            }
+
+            @media (min-width: $screen-sm-min) {
+                @include pad($spacing-md);
+            }
+
+            @media (min-width: $screen-md-min) {
+                @include pad($spacing-lg);
+            }
+
+            > i {
+                width: $spacing-sm;
+                height: $spacing-sm;
+                margin-left: $spacing-sm;
+                fill: goldenrod;
+            }
         }
     }
 }

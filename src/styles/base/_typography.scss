@@ -95,9 +95,14 @@
     font-weight: $font-weight-md;
 
     @if ($size == "heading-xl") {
-        @include fontSizeRem(5.2);
-        @include lineHeightRem(5.7);
-        @include bold;
+        @include fontSizeRem(3.2);
+        @include lineHeightRem(4.2);
+        @include bold(true);
+
+        @media (min-width: $screen-md-min) {
+            @include fontSizeRem(5.2);
+            @include lineHeightRem(5.7);
+        }
     }
 
     @if ($size == "heading-lg") {
@@ -156,7 +161,7 @@
     }
 
     @if ($size == "link-md") {
-        @include fontSizeRem(1.6);
-        @include lineHeightRem(1.4);
+        @include fontSizeRem(2.0);
+        @include lineHeightRem(3.2);
     }
 }

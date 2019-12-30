@@ -1,7 +1,11 @@
 {##
  # Header component
  # @global {GlobalSet} header
+ # @global {string} navBackground <*dark, light>
  #}
+
+{# Globals #}
+{% set navBackground = navBackground|default('dark') %}
 
 {# Params #}
 {% set header = header|default(null) %}
@@ -17,7 +21,7 @@
 {# Markup #}
 {% import '_macros/components' as components %}
 
-<div id="{{ id }}" class="{{ handle }}">
+<div id="{{ id }}" class="{{ handle }} {{ handle }}--nav-background-{{ navBackground }}">
     <input type="checkbox" id="nav-toggle" name="nav-toggle" style="display:none" aria-hidden="true" />
     <div class="{{ handle }}__drawer-cont">
         <a href="/" title="Home">

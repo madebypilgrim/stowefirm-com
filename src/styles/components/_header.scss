@@ -31,7 +31,12 @@ $active-class: "is-active";
             @include absolute(auto, 0, 0, 0);
             content: "";
             height: $max-width-xs;
-            background-color: $color-white;
+
+            .#{$handle}--nav-background-lt & {
+                @media (min-width: $screen-md-min) {
+                    background-color: $color-white;
+                }
+            }
         }
 
         > a {
@@ -60,6 +65,8 @@ $active-class: "is-active";
             }
 
             @media (min-width: $screen-lg-min) {
+                opacity: 1;
+                transform: translateX(0);
                 margin-top: $spacing-xl;
             }
 
@@ -82,6 +89,10 @@ $active-class: "is-active";
                 background-color: goldenrod;
                 transition: transform $animate-lg;
                 transition-delay: $animate-speed-sm;
+
+                @media (min-width: $screen-lg-min) {
+                    transform: scaleX(1);
+                }
             }
         }
 
@@ -92,9 +103,15 @@ $active-class: "is-active";
             z-index: 1;
             margin-top: auto;
             margin-bottom: 0;
-            color: $color-fg-gray-dk;
+
+            .#{$handle}--nav-background-lt & {
+                @media (min-width: $screen-md-min) {
+                    color: $color-fg-gray-dk;
+                }
+            }
 
             > a {
+                @include font("link-md");
                 @include listMargin($spacing-xs);
                 opacity: 0;
                 transform: translateX(-100%);
@@ -104,6 +121,11 @@ $active-class: "is-active";
                     &:nth-child(#{$i}) {
                         transition-delay: 50ms * $i;
                     }
+                }
+
+                @media (min-width: $screen-lg-min) {
+                    opacity: 1;
+                    transform: translateX(0);
                 }
 
                 [name="nav-toggle"]:checked ~ & {

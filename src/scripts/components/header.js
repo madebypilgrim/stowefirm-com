@@ -4,7 +4,5 @@ export default class {
     }) {
         const el = document.getElementById(id);
         const toggle = el.querySelector('[name="nav-toggle"]');
-
-        toggle.checked = true;
     }
 }
