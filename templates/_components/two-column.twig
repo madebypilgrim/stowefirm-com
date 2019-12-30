@@ -1,0 +1,27 @@
+{##
+ # Two Column component
+ # @param {string} heading
+ # @param {HTML} left
+ # @param {HTML} right
+ #}
+
+{# Params #}
+{% set heading = heading|default('') %}
+{% set left = left|default('') %}
+{% set right = right|default('') %}
+
+{# Variables #}
+{% set handle = 'two-column' %}
+
+{# Markup #}
+<div class="{{ handle }}">
+    <h2>{{ heading }}</h2>
+    <div>
+        {% if left is not empty %}
+            <div>{{ left }}</div>
+        {% endif %}
+        {% if right is not empty %}
+            <div>{{ right }}</div>
+        {% endif %}
+    </div>
+</div>

@@ -1,0 +1,16 @@
+{##
+ # Two Column section
+ # @param {MatrixBlock} section
+ # |_@param {PlainText} heading
+ # |_@param {Redactor} left
+ # |_@param {Redactor} right
+ #}
+
+{# Markup #}
+<section>
+    {% include '_components/two-column' with {
+        heading: section.heading,
+        left: section.left,
+        right: section.right,
+    } %}
+</section>

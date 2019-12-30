@@ -1,0 +1,28 @@
+$handle: "two-column";
+
+.#{$handle} {
+    @include sectionContainer;
+    @include sectionSpacing;
+
+    > h2 {
+        @include sectionHeading;
+        width: 100%;
+        max-width: $max-width-md;
+    }
+
+    > div {
+        @media (min-width: $screen-sm-min) {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        > div {
+            width: 100%;
+            margin-top: $spacing-sm;
+
+            @media (min-width: $screen-sm-min) {
+                width: calc(50% - #{$spacing-sm});
+            }
+        }
+    }
+}
