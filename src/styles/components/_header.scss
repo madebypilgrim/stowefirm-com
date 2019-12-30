@@ -139,4 +139,36 @@ $active-class: "is-active";
             }
         }
     }
+
+    &__toggle-cont {
+        > label {
+            @include absolute($spacing-sm, $spacing-sm);
+            position: fixed;
+            z-index: 1;
+
+            > span {
+                // Menu
+                &:first-child {
+                    display: block;
+                }
+                // Close
+                &:last-child {
+                    display: none;
+                }
+            }
+
+            [name="nav-toggle"]:checked ~ & {
+                > span {
+                    // Menu
+                    &:first-child {
+                        display: none;
+                    }
+                    // Close
+                    &:last-child {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
 }

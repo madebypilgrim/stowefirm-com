@@ -7,9 +7,4 @@ $handle: "main";
         margin-right: 0;
         margin-left: auto;
     }
-
-    > label {
-        @include absolute($spacing-sm, $spacing-sm);
-        position: fixed;
-    }
 }
