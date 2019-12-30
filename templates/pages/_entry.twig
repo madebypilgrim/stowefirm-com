@@ -12,7 +12,7 @@
 {% set sections = entry.pageSections.all() %}
 
 {# Variables #}
-{% set footerCta = craft.components.getLinkFromCta(entry.pageNext.cta.one()) %}
+{% set footingCta = craft.components.getLinkFromCta(entry.pageNext.cta.one()) %}
 
 {# Markup #}
 {% extends '_layouts/main' %}
@@ -30,10 +30,12 @@
             {% include 'pages/_sections/' ~ s.type.handle|kebab with { section: s } only %}
         {% endfor %}
 
-        {% if footerCta %}
+        {% if footingCta %}
             <footer>
-                <p>{{ entry.pageNext.body }}</p>
-                {{ footerCta.render() }}
+                {% include '_components/page-footing' with {
+                    body: entry.pageNext.body,
+                    cta: footingCta,
+                } %}
             </footer>
         {% endif %}
     </article>

@@ -2,21 +2,27 @@ $handle: "footer";
 $active-class: "is-active";
 
 .#{$handle} {
+    @include space($spacing-sm);
+    background-color: $color-white;
+    color: $color-fg-gray-md;
+    border-top: 1px solid $color-br-gray-lt;
+
     @media (min-width: $screen-lg-min) {
-        @include absolute(
-            auto, 0, 0,
-            $max-width-sm
-        );
-        @include space($spacing-sm);
-        @include pad($spacing-sm);
-        position: fixed;
-        transform: translateY(100%);
-        transition: transform $animate-md;
+        width: calc(100vw - #{$max-width-sm});
+        margin-right: 0;
+        margin-left: auto;
     }
 
-    &.#{$active-class} {
-        @media (min-width: $screen-lg-min) {
-            transform: translate(0);
+    &__cont {
+        @include font("body-xs");
+        @include sectionContainer;
+        display: flex;
+        justify-content: space-between;
+
+        > h6 {
+            @media (max-width: $screen-xs-max) {
+                display: none;
+            }
         }
     }
 }

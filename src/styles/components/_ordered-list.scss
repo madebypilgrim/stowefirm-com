@@ -26,21 +26,11 @@ $handle: "ordered-list";
                     }
 
                     > h2 {
-                        @include font("heading-md");
-                        position: relative;
+                        @include sectionHeading;
                         max-width: $max-width-xs;
-                        padding-top: $spacing-md;
 
                         @media (min-width: $screen-sm-min) {
                             max-width: 300px;
-                        }
-
-                        &:before {
-                            @include absolute(0, auto, auto, 0);
-                            content: "";
-                            height: 4px;
-                            background-color: goldenrod;
-                            width: $spacing-md;
                         }
                     }
 

@@ -1,9 +1,7 @@
 {##
  # Footer component
- # @global {GlobalSet} gFooter
+ # @global {GlobalSet} footer
  #}
-
-{# Params #}
 
 {# Variables #}
 {% set id = craft.utilities.uniqueId() %}
@@ -14,10 +12,16 @@
 {% import '_macros/components' as components %}
 
 <div id="{{ id }}" class="{{ handle }}">
-    Footer
+    <div class="{{ handle }}__cont">
+        <h5>&copy;{{ now|date('Y') }} {{ footer.footerCopyright }}<h5>
+        <address>{{ footer.footerAddress }}</address>
+        <h6>{{ footer.footerCert }}</h5>
+    </div>
 
+    {#
     {{ components.new(handle, {
         id: id,
         activeClass: activeClass,
     }) }}
+    #}
 </div>

@@ -10,7 +10,7 @@ $handle: "page-heading";
 
     > h1 {
         @include font("heading-xs");
-        color: goldenrod;
+        color: $color-gold;
     }
 
     > h3 {

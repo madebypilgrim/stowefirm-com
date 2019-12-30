@@ -6,13 +6,11 @@
  # |_@param {SuperTable} cta
  #}
 
-{% set link = craft.components.getLinkFromCta(section.cta.one()) %}
-
 {# Markup #}
 <section>
-    <h2>{{ section.heading }}</h2>
-    <div>{{ section.body }}</div>
-    {% if link %}
-        {{ link.render() }}
-    {% endif %}
+    {% include '_components/split-callout' with {
+        heading: section.heading,
+        body: section.body,
+        cta: craft.components.getLinkFromCta(section.cta.one()),
+    } %}
 </section>

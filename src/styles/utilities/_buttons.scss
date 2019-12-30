@@ -3,10 +3,11 @@
     display: inline-block;
     line-height: $spacing-xs * 3;
     color: $color-fg-gray-dk;
+    color: $color-gold;
     transition: color $animate-sm;
 
     &:hover:not([disabled]) {
-        color: $color-gold;
+        color: darken($color-gold, 5%);
     }
 }
 
@@ -37,24 +38,19 @@
     }
 }
 
-@mixin button($level: "primary", $invert: false) {
+@mixin button() {
     @include link;
-    @include pad($button-padding);
+    @include pad($spacing-sm);
     display: inline-block;
     white-space: nowrap;
     min-width: $max-width-xs;
-    height: $button-size;
-    line-height: $button-size;
-    background-color: $color-black;
-    border: 1px solid $color-black;
-    // border-radius: 4px;
+    height: $button-size !important;
+    line-height: $button-size !important;
+    background-color: $color-gold;
     color: $color-white;
-    letter-spacing: 0.5px;
     text-align: center;
     cursor: pointer;
-    transition:
-        background-color $animate-sm,
-        border-color $animate-sm;
+    transition: background-color $animate-sm;
 
     &[disabled] {
         opacity: 0.5;
@@ -63,48 +59,17 @@
     }
 
     &:hover:not([disabled]) {
-        background-color: darken($color-black, 5%);
-        border-color: darken($color-black, 5%);
+        background-color: darken($color-gold, 5%);
         color: $color-white;
-    }
-
-    // bg transparent > bg black
-    @if ($level == "secondary") {
-        background-color: transparent;
-        border: 1px solid $color-white;
-
-        @if ($invert) {
-            color: $color-black;
-            border-color: $color-black;
-        }
-
-        &:hover:not([disabled]) {
-            background-color: darken($color-black, 5%);
-            border-color: $color-black;
-        }
-    }
-
-    @if ($level == "tertiary") {
-        background-color: $color-gold;
-        border: 1px solid $color-gold;
-
-        &:hover:not([disabled]) {
-            background-color: darken($color-gold, 5%);
-            border-color: darken($color-gold, 5%);
-        }
     }
 }
 
-@mixin iconButton($level: "primary", $invert: false) {
+@mixin iconButton() {
     @include iconLink;
-    @include button($level, $invert);
+    @include button;
 
     > i {
         fill: $color-white;
-
-        @if ($invert) {
-            fill: $color-black;
-        }
     }
 
     &:hover:not([disabled]) {
@@ -113,29 +78,5 @@
                 fill: $color-white;
             }
         }
-    }
-}
-
-@mixin actionButton() {
-    position: relative;
-    width: $action-button-size;
-    height: $action-button-size;
-    background-color: $color-bg-gray-dk;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color $animate-sm;
-
-    &:disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
-    }
-
-    &:hover {
-        background-color: darken($color-black, 25%);
-    }
-
-    > i {
-        @include centerer;
-        fill: $color-white;
     }
 }

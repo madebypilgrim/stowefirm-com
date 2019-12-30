@@ -98,7 +98,7 @@ $active-class: "is-active";
                 transform: scaleX(0);
                 width: $spacing-xl;
                 height: 3px;
-                background-color: goldenrod;
+                background-color: $color-gold;
                 transition: transform $animate-lg;
                 transition-delay: $animate-speed-sm;
 
@@ -127,7 +127,10 @@ $active-class: "is-active";
             }
 
             > a {
-                @include font("link-lg");
+                @include fontSizeRem(2.2);
+                @include lineHeightRem(4.4);
+                font-family: $font-family-sans-bd-cn;
+                text-transform: uppercase;
                 opacity: 0;
                 transform: translateX(-#{$spacing-md});
                 transition:
@@ -142,11 +145,13 @@ $active-class: "is-active";
                 }
 
                 @media (min-width: $screen-sm-min) {
-                    @include font("link-xl");
+                    @include fontSizeRem(3.2);
+                    @include lineHeightRem(5.5);
                 }
 
                 @media (min-width: $screen-lg-min) {
-                    @include font("link-md");
+                    @include fontSizeRem(1.4);
+                    @include lineHeightRem(3.0);
                     opacity: 1;
                     transform: translateX(0);
                 }
@@ -158,7 +163,7 @@ $active-class: "is-active";
 
                 &:hover,
                 &.#{$active-class} {
-                    color: goldenrod;
+                    color: $color-gold;
                 }
             }
         }
@@ -181,7 +186,7 @@ $active-class: "is-active";
             height: $spacing-xs;
 
             > span {
-                border-bottom: 1px solid goldenrod;
+                border-bottom: 2px solid $color-gold;
                 transform: scaleX(0.75);
                 transition: transform $animate-sm;
             }

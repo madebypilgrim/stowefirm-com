@@ -51,53 +51,16 @@
     }
 }
 
-@mixin sectionHeading($align: "left", $invert: false) {
-    > h2 {
-        @include font("heading-sm");
-        color: $color-fg-gray-md;
+@mixin sectionHeading() {
+    @include font("heading-md");
+    position: relative;
+    padding-top: $spacing-md;
 
-        @if ($align == "center") {
-            text-align: center;
-        }
-
-        @if ($invert) {
-            color: $color-fg-gray-lt;
-        }
-    }
-
-    > h4 {
-        @include font("heading-lg");
-        max-width: $max-width-md;
-        margin-top: $spacing-sm;
-
-        @if ($align == "center") {
-            margin-right: auto;
-            margin-left: auto;
-            text-align: center;
-        }
-
-        @if ($invert) {
-            color: $color-white;
-        }
-    }
-
-    > p {
-        max-width: $max-width-md;
-        margin-top: $spacing-xs;
-
-        @if ($align == "center") {
-            margin-right: auto;
-            margin-left: auto;
-            text-align: center;
-        }
-
-        @if ($invert) {
-            color: $color-white;
-        }
-
-        > a {
-            @include bold;
-            @include linkUnderline;
-        }
+    &:before {
+        @include absolute(0, auto, auto, 0);
+        content: "";
+        height: 4px;
+        background-color: $color-gold;
+        width: $spacing-md;
     }
 }

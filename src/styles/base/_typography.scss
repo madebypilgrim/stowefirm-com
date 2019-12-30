@@ -180,28 +180,17 @@
     }
 
     @if ($size == "body-xs") {
-        @include fontSizeRem(1.3);
-        @include lineHeightRem(2.2);
-    }
-
-    @if ($size == "link-xl") {
-        @include fontSizeRem(3.2);
-        @include lineHeightRem(5.5);
-        font-family: $font-family-sans-bd-cn;
-        text-transform: uppercase;
-    }
-
-    @if ($size == "link-lg") {
-        @include fontSizeRem(2.2);
-        @include lineHeightRem(4.4);
-        font-family: $font-family-sans-bd-cn;
-        text-transform: uppercase;
+        @include fontSizeRem(1.2);
+        @include lineHeightRem(2.4);
     }
 
     @if ($size == "link-md") {
         @include fontSizeRem(1.4);
-        @include lineHeightRem(3.0);
-        font-family: $font-family-sans-bd-cn;
-        text-transform: uppercase;
+        @include lineHeightRem(2.4);
+
+        @media (min-width: $screen-sm-min) {
+            @include fontSizeRem(1.6);
+            @include lineHeightRem(2.4);
+        }
     }
 }
