@@ -1,0 +1,17 @@
+{##
+ # Image component
+ # @param {object} image
+ #}
+
+{# Params #}
+{% set image = image|default(null) %}
+
+{# Variables #}
+{% set handle = 'image' %}
+
+{# Markup #}
+<div class="{{ handle }}">
+    {% if image %}
+        <img src="{{ image.url }}" alt="{{ image.title }}" />
+    {% endif %}
+</div>

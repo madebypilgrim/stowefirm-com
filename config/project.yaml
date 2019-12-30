@@ -1,4 +1,4 @@
-dateModified: 1574222964
+dateModified: 1574300478
 email:
   fromEmail: trevor@madebypilgrim.com
   fromName: 'Stowe Firm'
@@ -316,7 +316,7 @@ matrixBlockTypes:
     field: 5c0f30f6-a3c5-41a9-a362-bb1d11e5a96a
     name: 'Block Callout'
     handle: blockCallout
-    sortOrder: 4
+    sortOrder: 1
     fields:
       9313b1da-4828-4607-8f8c-b3c61b838408:
         name: Body
@@ -391,11 +391,50 @@ matrixBlockTypes:
               f22399c6-ae18-427d-8cc6-d1e7836d2ecf:
                 required: false
                 sortOrder: 1
+  336cd6a4-5a15-4d47-8017-b1d12c75099d:
+    field: 5c0f30f6-a3c5-41a9-a362-bb1d11e5a96a
+    name: 'Ordered List'
+    handle: orderedList
+    sortOrder: 4
+    fields:
+      53eef016-ced4-4844-b529-e72e884bd581:
+        name: 'List Items'
+        handle: listItems
+        instructions: ''
+        searchable: true
+        translationMethod: site
+        translationKeyFormat: null
+        type: verbb\supertable\fields\SuperTableField
+        settings:
+          minRows: ''
+          maxRows: ''
+          contentTable: '{{%stc_8_listitems}}'
+          propagationMethod: all
+          staticField: ''
+          columns:
+            47:
+              width: ''
+            46:
+              width: ''
+          fieldLayout: row
+          selectionLabel: 'Add a list item'
+        contentColumnType: string
+        fieldGroup: null
+    fieldLayouts:
+      c036449e-5486-4ead-891b-a6eee9991e07:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              53eef016-ced4-4844-b529-e72e884bd581:
+                required: false
+                sortOrder: 1
   5025039d-c815-4f88-977c-7babf63a9ba0:
     field: 5c0f30f6-a3c5-41a9-a362-bb1d11e5a96a
     name: Stats
     handle: stats
-    sortOrder: 2
+    sortOrder: 6
     fields:
       64078c29-dd52-48d0-822f-d046ce44f330:
         name: States
@@ -434,7 +473,7 @@ matrixBlockTypes:
     field: 5c0f30f6-a3c5-41a9-a362-bb1d11e5a96a
     name: Image
     handle: image
-    sortOrder: 1
+    sortOrder: 3
     fields:
       234e6937-5057-4314-b024-173836e8686d:
         name: Image
@@ -532,7 +571,7 @@ matrixBlockTypes:
     field: 5c0f30f6-a3c5-41a9-a362-bb1d11e5a96a
     name: 'Split Callout'
     handle: splitCallout
-    sortOrder: 6
+    sortOrder: 5
     fields:
       0452b32b-090c-4f29-895d-5372a4834c0f:
         name: Body
@@ -545,7 +584,10 @@ matrixBlockTypes:
         settings:
           redactorConfig: Simple.json
           purifierConfig: ''
-          cleanupHtml: '1'
+          cleanupHtml: true
+          removeInlineStyles: '1'
+          removeEmptyTags: '1'
+          removeNbsp: '1'
           purifyHtml: '1'
           columnType: text
           availableVolumes: ''
@@ -612,7 +654,7 @@ matrixBlockTypes:
     field: 5c0f30f6-a3c5-41a9-a362-bb1d11e5a96a
     name: 'Featured Entries'
     handle: featuredEntries
-    sortOrder: 5
+    sortOrder: 2
     fields:
       24a65a48-2436-4802-acbe-147fd3422ddb:
         name: Heading
@@ -667,7 +709,7 @@ matrixBlockTypes:
     field: 5c0f30f6-a3c5-41a9-a362-bb1d11e5a96a
     name: 'Two Column'
     handle: twoColumn
-    sortOrder: 3
+    sortOrder: 7
     fields:
       30e6cd6c-1104-4f85-8db1-45724be0edd3:
         name: Heading
@@ -697,7 +739,10 @@ matrixBlockTypes:
         settings:
           redactorConfig: Simple.json
           purifierConfig: ''
-          cleanupHtml: '1'
+          cleanupHtml: true
+          removeInlineStyles: '1'
+          removeEmptyTags: '1'
+          removeNbsp: '1'
           purifyHtml: '1'
           columnType: text
           availableVolumes: ''
@@ -715,7 +760,10 @@ matrixBlockTypes:
         settings:
           redactorConfig: Simple.json
           purifierConfig: ''
-          cleanupHtml: '1'
+          cleanupHtml: true
+          removeInlineStyles: '1'
+          removeEmptyTags: '1'
+          removeNbsp: '1'
           purifyHtml: '1'
           columnType: text
           availableVolumes: ''
@@ -746,7 +794,7 @@ plugins:
   redactor:
     edition: standard
     enabled: true
-    schemaVersion: 2.2.2
+    schemaVersion: 2.3.0
 sections:
   15a0e180-ab09-41b0-96f1-b9c5080a2f24:
     name: Pages
@@ -1325,6 +1373,60 @@ superTableBlockTypes:
                 required: false
                 sortOrder: 2
               893ede3f-863c-4676-b778-b0c95ee79ea8:
+                required: false
+                sortOrder: 1
+  fde8a189-a68e-4d0f-8438-1f53a9a22d44:
+    field: 53eef016-ced4-4844-b529-e72e884bd581
+    fields:
+      2386b537-b023-4390-bc4a-5245ae17fd73:
+        name: Body
+        handle: body
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\redactor\Field
+        settings:
+          redactorConfig: Simple.json
+          purifierConfig: ''
+          cleanupHtml: true
+          removeInlineStyles: '1'
+          removeEmptyTags: '1'
+          removeNbsp: '1'
+          purifyHtml: '1'
+          columnType: text
+          availableVolumes: ''
+          availableTransforms: '*'
+        contentColumnType: text
+        fieldGroup: null
+      b1a65cf5-29d6-49fa-b639-b54795e87191:
+        name: Heading
+        handle: heading
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      5ea78d48-6bcf-402a-b2ff-7f7fb4245ee0:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              2386b537-b023-4390-bc4a-5245ae17fd73:
+                required: false
+                sortOrder: 2
+              b1a65cf5-29d6-49fa-b639-b54795e87191:
                 required: false
                 sortOrder: 1
 system:

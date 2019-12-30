@@ -19,30 +19,32 @@
 
 <div id="{{ id }}" class="{{ handle }}">
     <input type="checkbox" id="nav-toggle" name="nav-toggle" style="display:none" aria-hidden="true" />
-    <a href="/" title="Home">
-        {% if logo %}
-            <img src="{{ logo.url }}" alt="{{ logo.title }}" />
-        {% else %}
-            {{ siteName }}
-        {% endif %}
-    </a>
-    <p>{{ summary }}</p>
-    <nav>
-        {% set url = siteUrl(craft.app.request.pathInfo) %}
-
-        {% for l in links %}
-            {% set link = craft.components.getLinkFromLink(l) %}
-            {% set options = {} %}
-
-            {% if link.url == url %}
-                {% set options = options|merge({ class: activeClass }) %}
+    <div class="{{ handle }}__drawer-cont">
+        <a href="/" title="Home">
+            {% if logo %}
+                <img src="{{ logo.url }}" alt="{{ logo.title }}" />
+            {% else %}
+                {{ siteName }}
             {% endif %}
+        </a>
+        <p>{{ summary }}</p>
+        <nav>
+            {% set url = siteUrl(craft.app.request.pathInfo) %}
 
-            {% if link %}
-                {{ link.render(link.title, options) }}
-            {% endif %}
-        {% endfor %}
-    </nav>
+            {% for l in links %}
+                {% set link = craft.components.getLinkFromLink(l) %}
+                {% set options = {} %}
+
+                {% if link.url == url %}
+                    {% set options = options|merge({ class: activeClass }) %}
+                {% endif %}
+
+                {% if link %}
+                    {{ link.render(link.title, options) }}
+                {% endif %}
+            {% endfor %}
+        </nav>
+    </div>
 
     {{ components.new(handle, {
         id: id,

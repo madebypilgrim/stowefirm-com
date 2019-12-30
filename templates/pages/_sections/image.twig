@@ -1,0 +1,10 @@
+{##
+ # Image section
+ # @param {MatrixBlock} section
+ # |_@param {Assets} image
+ #}
+
+{# Markup #}
+<section>
+    {% include '_components/image' with { image: section.image.one() } %}
+</section>

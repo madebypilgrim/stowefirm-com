@@ -1,0 +1,30 @@
+{##
+ # Ordered List component
+ # @param {object[]} listItems
+ # |_@param {string} heading
+ # |_@param {HTML} body
+ #}
+
+{# Params #}
+{% set heading = heading|default('') %}
+{% set body = body|default('') %}
+
+{# Variables #}
+{% set handle = 'ordered-list' %}
+
+{# Markup #}
+<div class="{{ handle }}">
+    {% if listItems is not empty %}
+        <ol>
+            {% for li in listItems %}
+                <li>
+                    <div>
+                        <h2>{{ li.heading }}</h2>
+                        <em>{{ loop.index < 10 ? '0' }}{{ loop.index }}</em>
+                    </div>
+                    <div>{{ li.body }}</div>
+                <li>
+            {% endfor %}
+        </ol>
+    {% endif %}
+</div>

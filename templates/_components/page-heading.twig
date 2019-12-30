@@ -1,0 +1,18 @@
+{##
+ # Page heading component
+ # @param {string} heading
+ # @param {string} subheading
+ #}
+
+{# Params #}
+{% set heading = heading|default('') %}
+{% set subheading = subheading|default('') %}
+
+{# Variables #}
+{% set handle = 'page-heading' %}
+
+{# Markup #}
+<div class="{{ handle }}">
+    <h1>{{ entry.pageHeading }}</h1>
+    <h3>{{ entry.pageSubheading }}</h3>
+</div>

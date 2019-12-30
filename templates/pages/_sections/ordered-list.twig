@@ -1,0 +1,15 @@
+{##
+ # Ordered List section
+ # @param {MatrixBlock} section
+ # |_@param {SuperTable} listItems
+ #}
+
+{# Markup #}
+<section>
+    {% include '_components/ordered-list' with {
+        listItems: section.listItems.all()|map(li => {
+            heading: li.heading,
+            body: li.body,
+        }),
+    } %}
+</section>

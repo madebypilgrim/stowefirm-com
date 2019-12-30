@@ -1,0 +1,17 @@
+$handle: "page-heading";
+
+.#{$handle} {
+    @include sectionContainer;
+    @include sectionSpacing;
+
+    > h1 {
+        @include font("heading-xs");
+        color: goldenrod;
+    }
+
+    > h3 {
+        @include font("heading-lg");
+        max-width: $max-width-lg;
+        margin-top: $spacing-lg;
+    }
+}

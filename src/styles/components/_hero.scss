@@ -16,11 +16,12 @@ $handle: "hero";
     }
 
     > nav {
-        @include space($spacing-lg);
         @include pad($spacing-lg);
         display: flex;
         justify-content: space-between;
+        align-items: center;
         position: relative;
+        height: $max-width-xs;
         background-color: $color-white;
 
         > a {

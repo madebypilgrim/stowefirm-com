@@ -20,8 +20,10 @@
 {% block content %}
     <article>
         <header>
-            <h1>{{ entry.pageHeading }}</h1>
-            <h3>{{ entry.pageSubheading }}</h3>
+            {% include '_components/page-heading' with {
+                heading: entry.pageHeading,
+                subheading: entry.pageSubheading,
+            } %}
         </header>
 
         {% for s in sections %}

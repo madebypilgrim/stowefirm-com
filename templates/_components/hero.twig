@@ -16,7 +16,11 @@
 {# Markup #}
 <div class="{{ handle }}">
     {% if backgroundImage %}
-        {% include '_components/background-image' with { url: backgroundImage.url } %}
+        {% include '_components/background-image' with {
+            url: backgroundImage.url,
+            position: 'top right',
+            size: 'contain',
+        } %}
     {% endif %}
 
     <h1>{{ entry.pageHeading }}</h1>

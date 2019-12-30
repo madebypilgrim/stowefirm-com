@@ -1,0 +1,10 @@
+$handle: "image";
+
+.#{$handle} {
+    margin: $spacing-md auto;
+
+    > img {
+        display: block;
+        width: 100%;
+    }
+}

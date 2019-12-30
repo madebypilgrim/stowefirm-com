@@ -2,97 +2,119 @@ $handle: "header";
 $active-class: "is-active";
 
 .#{$handle} {
-    @include absolute(0, auto, 0, 0);
-    @include space($spacing-sm);
-    @include pad($spacing-sm);
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    width: $max-width-sm;
-
-    @media (min-width: $screen-md-min) {
-        @include pad($spacing-md);
-    }
-
-    > a {
-        > img {
-            display: block;
-            width: 100%;
-        }
-    }
-
-    > p {
-        position: relative;
-        opacity: 0;
+    &__drawer-cont {
+        @include absolute(0, auto, 0, 0);
+        @include space($spacing-sm);
+        @include pad($spacing-sm);
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        z-index: 10;
         transform: translateX(-100%);
-        max-width: $max-width-xs;
-        margin-top: $spacing-sm;
-        padding-bottom: $spacing-sm;
-        transition: opacity $animate-sm, transform $animate-sm;
-
-        @media (min-width: $screen-sm-min) {
-            margin-top: $spacing-md;
-            padding-bottom: $spacing-md;
-        }
+        width: $max-width-sm;
+        background-color: $color-bg-gray-md;
+        transition: transform $animate-sm;
 
         @media (min-width: $screen-md-min) {
-            margin-top: $spacing-lg;
+            @include pad($spacing-md);
         }
 
         @media (min-width: $screen-lg-min) {
-            margin-top: $spacing-xl;
+            transform: translateX(0);
+        }
+
+        [name="nav-toggle"]:checked ~ & {
+            transform: translateX(0);
         }
 
         &:after {
-            @include absolute(auto, auto, 0, 0);
+            @include absolute(auto, 0, 0, 0);
             content: "";
-            transform-origin: left;
-            transform: scaleX(0);
-            width: $spacing-xl;
-            height: 3px;
-            background-color: goldenrod;
-            transition: transform $animate-lg;
-            transition-delay: $animate-speed-sm;
+            height: $max-width-xs;
+            background-color: $color-white;
         }
-    }
-
-    > [name="nav-toggle"]:checked ~ p {
-        opacity: 1;
-        transform: translateX(0);
-
-        &:after {
-            transform: scaleX(1);
-        }
-    }
-
-    > nav {
-        display: flex;
-        flex-direction: column;
-        margin-top: auto;
-        margin-bottom: 0;
 
         > a {
-            @include listMargin($spacing-xs);
+            > img {
+                display: block;
+                width: 100%;
+            }
+        }
+
+        > p {
+            position: relative;
             opacity: 0;
             transform: translateX(-100%);
+            max-width: $max-width-xs;
+            margin-top: $spacing-sm;
+            padding-bottom: $spacing-sm;
             transition: opacity $animate-sm, transform $animate-sm;
 
-            @for $i from 1 to 5 {
-                &:nth-child(#{$i}) {
-                    transition-delay: 50ms * $i;
+            @media (min-width: $screen-sm-min) {
+                margin-top: $spacing-md;
+                padding-bottom: $spacing-md;
+            }
+
+            @media (min-width: $screen-md-min) {
+                margin-top: $spacing-lg;
+            }
+
+            @media (min-width: $screen-lg-min) {
+                margin-top: $spacing-xl;
+            }
+
+            [name="nav-toggle"]:checked ~ & {
+                opacity: 1;
+                transform: translateX(0);
+
+                &:after {
+                    transform: scaleX(1);
                 }
             }
 
-            &.#{$active-class} {
-                color: goldenrod;
+            &:after {
+                @include absolute(auto, auto, 0, 0);
+                content: "";
+                transform-origin: left;
+                transform: scaleX(0);
+                width: $spacing-xl;
+                height: 3px;
+                background-color: goldenrod;
+                transition: transform $animate-lg;
+                transition-delay: $animate-speed-sm;
             }
         }
-    }
 
-    > [name="nav-toggle"]:checked ~ nav {
-        > a {
-            opacity: 1;
-            transform: translateX(0);
+        > nav {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 1;
+            margin-top: auto;
+            margin-bottom: 0;
+            color: $color-fg-gray-dk;
+
+            > a {
+                @include listMargin($spacing-xs);
+                opacity: 0;
+                transform: translateX(-100%);
+                transition: opacity $animate-sm, transform $animate-sm;
+
+                @for $i from 1 to 5 {
+                    &:nth-child(#{$i}) {
+                        transition-delay: 50ms * $i;
+                    }
+                }
+
+                [name="nav-toggle"]:checked ~ & {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+
+                &.#{$active-class} {
+                    color: goldenrod;
+                }
+            }
         }
     }
 }
