@@ -75,6 +75,11 @@ $handle: "hero";
                 height: $spacing-sm;
                 margin-left: $spacing-sm;
                 fill: $color-gold;
+                transition: transform $animate-sm;
+            }
+
+            &:hover > i {
+                transform: translateX($spacing-xs);
             }
         }
     }
