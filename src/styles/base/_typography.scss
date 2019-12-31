@@ -154,8 +154,23 @@
     }
 
     @if ($size == "body-xl") {
-        @include fontSizeRem(3.0);
-        @include lineHeightRem(3.6);
+        @include fontSizeRem(3.2);
+        @include lineHeightRem(4.0);
+        @include bold;
+        font-family: $font-family-sans-bd-cn;
+        font-stretch: condensed;
+        letter-spacing: -0.5px;
+        text-transform: uppercase;
+
+        @media (min-width: $screen-sm-min) {
+            @include fontSizeRem(4.2);
+            @include lineHeightRem(5.8);
+        }
+
+        @media (min-width: $screen-md-min) {
+            @include fontSizeRem(4.8);
+            @include lineHeightRem(6.4);
+        }
     }
 
     @if ($size == "body-lg") {
@@ -185,9 +200,9 @@
 
     @if ($size == "number-lg") {
         @include fontSizeRem(6.6);
+        @include bold;
         line-height: 1em;
         font-family: $font-family-sans-bd-cn;
-        font-weight: bold;
         font-stretch: condensed;
 
         @media (min-width: $screen-sm-min) {

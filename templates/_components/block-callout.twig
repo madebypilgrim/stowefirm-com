@@ -1,0 +1,30 @@
+{##
+ # Block Callout component
+ # @param {string} heading
+ # @param {string} body
+ # @param {modules\components\models\Link} cta
+ #}
+
+{# Params #}
+{% set heading = heading|default('') %}
+{% set body = body|default('') %}
+{% set cta = cta|default(null) %}
+
+{# Variables #}
+{% set handle = 'block-callout' %}
+
+{# Markup #}
+<div class="{{ handle }} {{ body is not empty ? handle ~ '--has-body' }}">
+    <h2>{{ section.heading }}</h2>
+    {% if body is not empty %}
+        <p>{{ body }}</p>
+    {% endif %}
+    {% if cta %}
+        {% set content %}
+            {{ cta.title }}
+            {% include '_components/icon' with { icon: 'arrow-right' } %}
+        {% endset %}
+
+        {{ cta.render(content) }}
+    {% endif %}
+</div>

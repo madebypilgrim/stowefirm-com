@@ -1,0 +1,16 @@
+{##
+ # Block Callout section
+ # @param {MatrixBlock} section
+ # |_@param {PlainText} heading
+ # |_@param {PlainText} body
+ # |_@param {SuperTable} cta
+ #}
+
+{# Markup #}
+<section>
+    {% include '_components/block-callout' with {
+        heading: section.heading,
+        body: section.body,
+        cta: craft.components.getLinkFromCta(section.cta.one()),
+    } %}
+</section>

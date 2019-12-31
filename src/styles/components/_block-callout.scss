@@ -1,0 +1,21 @@
+$handle: "block-callout";
+
+.#{$handle} {
+    @include sectionContainer;
+    @include sectionSpacing;
+
+    > h2 {
+        @include sectionHeading;
+    }
+
+    > p {
+        @include font("body-xl");
+        max-width: $max-width-xl;
+        margin-top: $spacing-sm;
+    }
+
+    > a {
+        @include iconLink;
+        margin-top: $spacing-sm;
+    }
+}
