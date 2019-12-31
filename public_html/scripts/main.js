@@ -13821,7 +13821,7 @@ var _header = _interopRequireDefault(require("./components/header"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 // Components
-var SITE_HANDLE = "stw"; // Define map of component handles to component classes
+var SITE_HANDLE = "sf"; // Define map of component handles to component classes
 
 /* eslint-disable quote-props */
 

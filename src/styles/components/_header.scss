@@ -63,7 +63,7 @@ $active-class: "is-active";
             height: $max-width-xs;
 
             .#{$handle}--nav-background-lt & {
-                @media (min-width: $screen-md-min) {
+                @media (min-width: $screen-lg-min) {
                     background-color: $color-white;
                 }
             }
@@ -133,7 +133,7 @@ $active-class: "is-active";
             }
 
             .#{$handle}--nav-background-lt & {
-                @media (min-width: $screen-md-min) {
+                @media (min-width: $screen-lg-min) {
                     color: $color-fg-gray-dk;
                 }
             }
