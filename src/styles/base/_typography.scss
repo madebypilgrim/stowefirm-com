@@ -138,8 +138,8 @@
     }
 
     @if ($size == "heading-sm") {
-        @include fontSizeRem(2.2);
-        @include lineHeightRem(3.4);
+        @include fontSizeRem(1.8);
+        @include lineHeightRem(2.4);
         @include bold;
     }
 

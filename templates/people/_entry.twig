@@ -1,0 +1,25 @@
+{##
+ # People entry
+ # @param {Entry} entry
+ # |_@param {PlainText} personName
+ # |_@param {Assets} personImage
+ # |_@param {PlainText} personTeaser
+ # |_@param {Table} personCerts
+ # |_@param {Redactor} personBio
+ #}
+
+{# Markup #}
+{% extends '_layouts/main' %}
+
+{% block content %}
+    <article>
+        <section>
+            {% include '_components/person-detail' with {
+                name: entry.personName,
+                image: entry.personImage.one(),
+                certs: entry.personCerts|map(c => c.cert),
+                bio: entry.personBio,
+            } %}
+        </section>
+    </article>
+{% endblock %}

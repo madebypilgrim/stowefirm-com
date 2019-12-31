@@ -1,9 +1,11 @@
-dateModified: 1577738444
+dateModified: 1577802074
 email:
   fromEmail: trevor@madebypilgrim.com
   fromName: 'Stowe Firm'
   transportType: craft\mail\transportadapters\Sendmail
 fieldGroups:
+  7de2d421-8c75-4ed8-9888-b219b274a91a:
+    name: 'Person Fields'
   c73bb305-095a-4864-9867-24695b93debf:
     name: 'Page Fields'
   fdef0470-69ff-44e4-9c16-10dfb7e4514a:
@@ -157,6 +159,44 @@ fields:
       validateRelatedElements: ''
     contentColumnType: string
     fieldGroup: c73bb305-095a-4864-9867-24695b93debf
+  69107e30-6e0a-4ced-9df7-84ee26bff585:
+    name: 'Person Bio'
+    handle: personBio
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\redactor\Field
+    settings:
+      redactorConfig: Simple.json
+      purifierConfig: ''
+      cleanupHtml: true
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
+      purifyHtml: '1'
+      columnType: text
+      availableVolumes: ''
+      availableTransforms: '*'
+    contentColumnType: text
+    fieldGroup: 7de2d421-8c75-4ed8-9888-b219b274a91a
+  7d85d863-aeef-4b07-a705-d696c10a9c38:
+    name: 'Person Teaser'
+    handle: personTeaser
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: '1'
+      initialRows: '2'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: 7de2d421-8c75-4ed8-9888-b219b274a91a
   9c69416c-dfb7-488d-865b-633b77209d24:
     name: 'Footer Cert'
     handle: footerCert
@@ -174,6 +214,27 @@ fields:
       columnType: text
     contentColumnType: text
     fieldGroup: fdef0470-69ff-44e4-9c16-10dfb7e4514a
+  9ff51df6-24c5-49dc-84ca-8efd80540267:
+    name: 'Person Certs'
+    handle: personCerts
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Table
+    settings:
+      addRowLabel: 'Add a person cert'
+      maxRows: ''
+      minRows: ''
+      columns:
+        col1:
+          heading: Cert
+          handle: cert
+          width: ''
+          type: singleline
+      columnType: text
+    contentColumnType: text
+    fieldGroup: 7de2d421-8c75-4ed8-9888-b219b274a91a
   a73f18e7-5a81-4081-9b00-c81ff7cf2cc6:
     name: 'Page Next'
     handle: pageNext
@@ -215,6 +276,33 @@ fields:
       selectionLabel: 'Add a page CTA'
     contentColumnType: string
     fieldGroup: c73bb305-095a-4864-9867-24695b93debf
+  b6785979-83ae-4a66-bca5-569c6dffeba0:
+    name: 'Person Image'
+    handle: personImage
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Assets
+    settings:
+      useSingleFolder: '1'
+      defaultUploadLocationSource: 'volume:62384952-8782-4cb2-b09b-17413aba3239'
+      defaultUploadLocationSubpath: ''
+      singleUploadLocationSource: 'volume:8bd48d5b-b494-4290-9f3a-234f880a5d88'
+      singleUploadLocationSubpath: images
+      restrictFiles: '1'
+      allowedKinds:
+        - image
+      sources: '*'
+      source: null
+      targetSiteId: null
+      viewMode: list
+      limit: '1'
+      selectionLabel: 'Add a person image'
+      localizeRelations: false
+      validateRelatedElements: ''
+    contentColumnType: string
+    fieldGroup: 7de2d421-8c75-4ed8-9888-b219b274a91a
   c017f6ca-1074-4f9d-9cb2-0f8cba6247b7:
     name: 'Header Summary'
     handle: headerSummary
@@ -272,6 +360,23 @@ fields:
       columnType: text
     contentColumnType: text
     fieldGroup: fdef0470-69ff-44e4-9c16-10dfb7e4514a
+  f631284b-38a3-4dac-a7dd-1a284f446553:
+    name: 'Person Name'
+    handle: personName
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: 7de2d421-8c75-4ed8-9888-b219b274a91a
 globalSets:
   bbbbc58f-40b3-482d-ae90-14e49e9ab4c4:
     name: Header
@@ -953,12 +1058,38 @@ sections:
       maxLevels: 1
     entryTypes:
       5f49f594-9500-42d5-bb45-f5c84942eb67:
-        name: People
-        handle: people
-        hasTitleField: true
+        name: Person
+        handle: person
+        hasTitleField: false
         titleLabel: Title
-        titleFormat: null
+        titleFormat: '{personName}'
         sortOrder: 1
+        fieldLayouts:
+          245e2a49-1044-437c-9e9d-b9fe6b3387be:
+            tabs:
+              -
+                name: Teaser
+                sortOrder: 1
+                fields:
+                  7d85d863-aeef-4b07-a705-d696c10a9c38:
+                    required: false
+                    sortOrder: 3
+                  b6785979-83ae-4a66-bca5-569c6dffeba0:
+                    required: false
+                    sortOrder: 2
+                  f631284b-38a3-4dac-a7dd-1a284f446553:
+                    required: true
+                    sortOrder: 1
+              -
+                name: Content
+                sortOrder: 2
+                fields:
+                  69107e30-6e0a-4ced-9df7-84ee26bff585:
+                    required: false
+                    sortOrder: 2
+                  9ff51df6-24c5-49dc-84ca-8efd80540267:
+                    required: false
+                    sortOrder: 1
 siteGroups:
   6229ed0a-60db-4c61-8111-102a2297bb13:
     name: 'Stowe Firm'
@@ -1451,3 +1582,12 @@ volumes:
     settings:
       path: '@assetBasePath/images/page'
     sortOrder: 1
+  8bd48d5b-b494-4290-9f3a-234f880a5d88:
+    name: People
+    handle: people
+    type: craft\volumes\Local
+    hasUrls: true
+    url: '@assetBaseUrl/people'
+    settings:
+      path: '@assetBasePath/people'
+    sortOrder: 2

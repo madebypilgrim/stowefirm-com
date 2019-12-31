@@ -1,0 +1,81 @@
+$handle: "person-detail";
+
+.#{$handle} {
+    background-color: $color-white;
+    color: $color-fg-gray-dk;
+
+    @media (min-width: $screen-sm-min) {
+        @include space($spacing-md, $spacing-lg);
+        @include pad(15%);
+    }
+
+    @media (min-width: $screen-md-min) {
+        @include space($spacing-xl, $spacing-lg * 2);
+        @include pad(0);
+    }
+
+    &__cont {
+        @include sectionContainer;
+
+        @media (max-width: $screen-sm-max) {
+            @include full;
+        }
+
+        @media (min-width: $screen-md-min) {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__image-cont {
+        @media (min-width: $screen-md-min) {
+            width: calc(50% - #{$spacing-sm});
+        }
+
+        > img {
+            display: block;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        > ul {
+            margin-top: $spacing-sm;
+            margin-bottom: $spacing-md;
+
+            @media (max-width: $screen-xs-max) {
+                display: none;
+            }
+
+            > li {
+                @include font("body-xs");
+                @include listMargin($spacing-xs);
+            }
+        }
+    }
+
+    &__details-cont {
+        @media (max-width: $screen-xs-max) {
+            padding: $spacing-sm;
+            padding-bottom: $spacing-md;
+        }
+
+        @media (min-width: $screen-md-min) {
+            width: calc(50% - #{$spacing-sm});
+        }
+
+        > h1 {
+            @include sectionHeading;
+            @include font("heading-sm");
+        }
+
+        > div {
+            max-width: $max-width-md;
+            margin-top: $spacing-sm;
+
+            > p {
+                @include listMargin($spacing-sm);
+                color: $color-fg-gray-md;
+            }
+        }
+    }
+}

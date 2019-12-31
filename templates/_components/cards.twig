@@ -1,0 +1,56 @@
+{##
+ # Cards component
+ # @param {string} heading
+ # @param {object[]} cards
+ # |_@param {object} image
+ # |_@param {string} heading
+ # |_@param {string} byline
+ # |_@param {string} teaser
+ # |_@param {modules\components\models\Link} cta
+ #}
+
+{# Params #}
+{% set heading = heading|default('') %}
+{% set cards = cards|default([]) %}
+
+{# Variables #}
+{% set handle = 'cards' %}
+
+{# Markup #}
+<div class="{{ handle }}">
+    <h2>{{ heading }}</h2>
+    {% if cards is not empty %}
+        <div class="{{ handle }}__cards-cont">
+            {% for c in cards %}
+                <article>
+                    <div class="{{ handle }}__card-image-cont">
+                        {% set imageContent %}
+                            {% if c.image %}
+                                <img src="{{ c.image.url }}" alt="{{ c.image.title }}" />
+                            {% endif %}
+                        {% endset %}
+                        {% if c.cta %}
+                            {{ c.cta.render(imageContent) }}
+                        {% else %}
+                            {{ imageContent }}
+                        {% endif %}
+                    </div>
+                    <div class="{{ handle }}__card-details-cont">
+                        <h3>{{ c.heading }}</h3>
+                        {% if c.byline|default('') %}
+                            <cite>{{ c.byline }}</cite>
+                        {% endif%}
+                        <p>{{ c.teaser }}</p>
+                        {% if c.cta %}
+                            {% set content %}
+                                {{ c.cta.title }}
+                                {% include '_components/icon' with { icon: 'arrow-right' } %}
+                            {% endset %}
+                            {{ c.cta.render(content) }}
+                        {% endif %}
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>

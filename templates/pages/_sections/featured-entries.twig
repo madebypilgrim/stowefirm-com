@@ -1,0 +1,32 @@
+{##
+ # Featured Entries section
+ # @param {MatrixBlock} section
+ # |_@param {PlainText} heading
+ # |_@param {Entires} entries <pages, people, resources, singles>
+ #}
+
+{# Params #}
+{% set entries = section.entries.with(['personImage']).all() %}
+
+{# Variables #}
+{% set cards = [] %}
+
+{% for e in entries %}
+    {% switch e.type.handle %}
+        {% case 'person' %}
+            {% set cards = cards|merge([{
+                image: e.personImage[0] ?? null,
+                heading: e.personName,
+                teaser: e.personTeaser,
+                cta: craft.components.getLinkFromEntry(e, 'View Bio'),
+            }]) %}
+    {% endswitch %}
+{% endfor %}
+
+{# Markup #}
+<section>
+    {% include '_components/cards' with {
+        heading: section.heading,
+        cards: cards,
+    } %}
+</section>

@@ -1,0 +1,40 @@
+{##
+ # Person Detail component
+ # @param {string} name
+ # @param {object} image
+ # @param {string[]} certs
+ # @param {HTML} bio
+ #}
+
+{# Params #}
+{% set name = name|default('') %}
+{% set image = image|default(null) %}
+{% set certs = certs|default([]) %}
+{% set bio = bio|default('') %}
+
+{# Variables #}
+{% set handle = 'person-detail' %}
+
+{# Markup #}
+<div class="{{ handle }}">
+    <div class="{{ handle }}__cont">
+        <div class="{{ handle }}__image-cont">
+            {% if image %}
+                <img src="{{ image.url }}" alt="{{ image.title }}" />
+            {% endif %}
+            {% if certs is not empty %}
+                <ul>
+                    {% for c in certs %}
+                        <li>
+                            <h3>{{ c }}</h3>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+        <div class="{{ handle }}__details-cont">
+            <h1>{{ name }}</h1>
+            <div>{{ bio }}</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,90 @@
+$handle: "cards";
+
+.#{$handle} {
+    @include sectionContainer;
+    @include sectionSpacing;
+
+    > h2 {
+        @include sectionHeading;
+    }
+
+    &__cards-cont {
+        margin-top: $spacing-md;
+
+        @media (min-width: $screen-sm-min) {
+            @include flex;
+            justify-content: space-between;
+        }
+
+        > article {
+            @media (max-width: $screen-xs-max) {
+                @include listMargin($spacing-sm);
+            }
+
+            @media (min-width: $screen-sm-min) {
+                width: calc(50% - #{$spacing-xs});
+            }
+
+            @media (min-width: $screen-md-min) {
+                @include listMargin($spacing-sm);
+                display: flex;
+                width: 100%;
+            }
+        }
+    }
+
+    &__card-image-cont {
+        > a {
+            display: block;
+            overflow: hidden;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease-out;
+        }
+
+        > a:hover > img {
+            transform: scale(1.1);
+            transition: transform 2s ease-out;
+        }
+    }
+
+    &__card-details-cont {
+        padding: $spacing-sm;
+        background-color: $color-white;
+
+        @media (min-width: $screen-md-min) {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: $spacing-md;
+        }
+
+        > h3 {
+            @include font("heading-sm");
+            color: $color-fg-gray-dk;
+        }
+
+        > cite {
+            @include font("body-xs");
+            margin-top: $spacing-xs;
+            color: $color-fg-gray-lt;
+        }
+
+        > p {
+            @include font("body-sm");
+            max-width: $max-width-sm;
+            margin-top: $spacing-sm;
+            color: $color-fg-gray-md;
+        }
+
+        > a {
+            @include iconLink;
+            margin-top: $spacing-sm;
+        }
+    }
+}
