@@ -1,4 +1,4 @@
-dateModified: 1577802074
+dateModified: 1577820502
 email:
   fromEmail: trevor@madebypilgrim.com
   fromName: 'Stowe Firm'
@@ -8,6 +8,8 @@ fieldGroups:
     name: 'Person Fields'
   c73bb305-095a-4864-9867-24695b93debf:
     name: 'Page Fields'
+  d6c20ebe-0e7a-49a2-bcfe-2288dc28b60d:
+    name: 'Resource Fields'
   fdef0470-69ff-44e4-9c16-10dfb7e4514a:
     name: 'Global Fields'
 fields:
@@ -56,6 +58,50 @@ fields:
       validateRelatedElements: ''
     contentColumnType: string
     fieldGroup: fdef0470-69ff-44e4-9c16-10dfb7e4514a
+  0e510777-c336-4d90-a5cc-0522914db66a:
+    name: 'Resource Heading'
+    handle: resourceHeading
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: d6c20ebe-0e7a-49a2-bcfe-2288dc28b60d
+  1c844958-e55e-4ac5-9c31-7b5f4f6c30b2:
+    name: 'Resource Image'
+    handle: resourceImage
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Assets
+    settings:
+      useSingleFolder: '1'
+      defaultUploadLocationSource: 'volume:62384952-8782-4cb2-b09b-17413aba3239'
+      defaultUploadLocationSubpath: ''
+      singleUploadLocationSource: 'volume:80967903-f063-48b6-8ab9-5674ba40df73'
+      singleUploadLocationSubpath: /images
+      restrictFiles: '1'
+      allowedKinds:
+        - image
+      sources: '*'
+      source: null
+      targetSiteId: null
+      viewMode: list
+      limit: '1'
+      selectionLabel: 'Add a resource image'
+      localizeRelations: false
+      validateRelatedElements: ''
+    contentColumnType: string
+    fieldGroup: d6c20ebe-0e7a-49a2-bcfe-2288dc28b60d
   24d13d04-f2fe-4e4f-831f-6d90d9f3b22b:
     name: 'Footer Address'
     handle: footerAddress
@@ -180,6 +226,21 @@ fields:
       availableTransforms: '*'
     contentColumnType: text
     fieldGroup: 7de2d421-8c75-4ed8-9888-b219b274a91a
+  698e6773-119d-4d16-b2fa-94fe5fe7ca29:
+    name: 'Resource Sections'
+    handle: resourceSections
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Matrix
+    settings:
+      minBlocks: ''
+      maxBlocks: ''
+      contentTable: '{{%matrixcontent_resourcesections}}'
+      propagationMethod: all
+    contentColumnType: string
+    fieldGroup: d6c20ebe-0e7a-49a2-bcfe-2288dc28b60d
   7d85d863-aeef-4b07-a705-d696c10a9c38:
     name: 'Person Teaser'
     handle: personTeaser
@@ -197,6 +258,23 @@ fields:
       columnType: text
     contentColumnType: text
     fieldGroup: 7de2d421-8c75-4ed8-9888-b219b274a91a
+  9ab93fec-6e7b-4806-a7f8-515609b5db76:
+    name: 'Resource Teaser'
+    handle: resourceTeaser
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: '1'
+      initialRows: '2'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: d6c20ebe-0e7a-49a2-bcfe-2288dc28b60d
   9c69416c-dfb7-488d-865b-633b77209d24:
     name: 'Footer Cert'
     handle: footerCert
@@ -360,6 +438,26 @@ fields:
       columnType: text
     contentColumnType: text
     fieldGroup: fdef0470-69ff-44e4-9c16-10dfb7e4514a
+  f3d2c1fa-abbe-4bad-9c80-5b735191fc45:
+    name: 'Resource Author'
+    handle: resourceAuthor
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Entries
+    settings:
+      sources:
+        - 'section:e310d298-9f4f-46f8-9f8b-20c53f889b0b'
+      source: null
+      targetSiteId: null
+      viewMode: null
+      limit: '1'
+      selectionLabel: 'Add a resource author'
+      localizeRelations: false
+      validateRelatedElements: ''
+    contentColumnType: string
+    fieldGroup: d6c20ebe-0e7a-49a2-bcfe-2288dc28b60d
   f631284b-38a3-4dac-a7dd-1a284f446553:
     name: 'Person Name'
     handle: personName
@@ -417,6 +515,44 @@ globalSets:
                 required: false
                 sortOrder: 1
 matrixBlockTypes:
+  0be23b4c-836c-4537-97ce-74495b58d2b4:
+    field: 698e6773-119d-4d16-b2fa-94fe5fe7ca29
+    name: Text
+    handle: text
+    sortOrder: 1
+    fields:
+      b1464573-83b1-463d-b87a-3ca2922b87c1:
+        name: Text
+        handle: text
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\redactor\Field
+        settings:
+          redactorConfig: Standard.json
+          purifierConfig: ''
+          cleanupHtml: true
+          removeInlineStyles: '1'
+          removeEmptyTags: '1'
+          removeNbsp: '1'
+          purifyHtml: '1'
+          columnType: text
+          availableVolumes:
+            - 80967903-f063-48b6-8ab9-5674ba40df73
+          availableTransforms: '*'
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      0789136c-14be-4ab7-8cb8-213eed573a6d:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              b1464573-83b1-463d-b87a-3ca2922b87c1:
+                required: false
+                sortOrder: 1
   2121ddb4-16d3-4896-afbb-806ed10b46ba:
     field: 5c0f30f6-a3c5-41a9-a362-bb1d11e5a96a
     name: 'Block Callout'
@@ -972,28 +1108,41 @@ sections:
         template: resources/entry
     entryTypes:
       cb9f54e5-34c7-4fce-a26b-39f5f513824e:
-        name: Resources
-        handle: resources
+        name: Resource
+        handle: resource
         hasTitleField: false
         titleLabel: ''
-        titleFormat: '{section.name|raw}'
+        titleFormat: '{resourceHeading}'
         sortOrder: 1
         fieldLayouts:
           1fe7e6bd-09f2-4de4-bac7-0264d6a1705f:
             tabs:
               -
-                name: 'Page Fields'
+                name: Teaser
                 sortOrder: 1
                 fields:
-                  03029fb1-7354-429d-b434-27bdaf7e1776:
+                  0e510777-c336-4d90-a5cc-0522914db66a:
+                    required: true
+                    sortOrder: 1
+                  1c844958-e55e-4ac5-9c31-7b5f4f6c30b2:
                     required: false
                     sortOrder: 2
-                  3c7300e1-d4d1-4aa8-9ad2-c657dc884363:
+                  9ab93fec-6e7b-4806-a7f8-515609b5db76:
+                    required: false
+                    sortOrder: 3
+                  f3d2c1fa-abbe-4bad-9c80-5b735191fc45:
+                    required: false
+                    sortOrder: 4
+              -
+                name: Content
+                sortOrder: 2
+                fields:
+                  698e6773-119d-4d16-b2fa-94fe5fe7ca29:
                     required: false
                     sortOrder: 1
               -
                 name: SEO
-                sortOrder: 2
+                sortOrder: 3
                 fields:
                   2c9a135f-7f0a-44d8-b974-3950fd1465e9:
                     required: false
@@ -1088,6 +1237,13 @@ sections:
                     required: false
                     sortOrder: 2
                   9ff51df6-24c5-49dc-84ca-8efd80540267:
+                    required: false
+                    sortOrder: 1
+              -
+                name: SEO
+                sortOrder: 3
+                fields:
+                  2c9a135f-7f0a-44d8-b974-3950fd1465e9:
                     required: false
                     sortOrder: 1
 siteGroups:
@@ -1582,6 +1738,15 @@ volumes:
     settings:
       path: '@assetBasePath/images/page'
     sortOrder: 1
+  80967903-f063-48b6-8ab9-5674ba40df73:
+    name: Resources
+    handle: resources
+    type: craft\volumes\Local
+    hasUrls: true
+    url: '@assetBaseUrl/resources'
+    settings:
+      path: '@assetBasePath/resources'
+    sortOrder: 3
   8bd48d5b-b494-4290-9f3a-234f880a5d88:
     name: People
     handle: people

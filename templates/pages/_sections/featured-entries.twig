@@ -6,7 +6,7 @@
  #}
 
 {# Params #}
-{% set entries = section.entries.with(['personImage']).all() %}
+{% set entries = section.entries.with(['personImage', 'resourceImage', 'resourceAuthor']).all() %}
 
 {# Variables #}
 {% set cards = [] %}
@@ -19,6 +19,14 @@
                 heading: e.personName,
                 teaser: e.personTeaser,
                 cta: craft.components.getLinkFromEntry(e, 'View Bio'),
+            }]) %}
+        {% case 'resource' %}
+            {% set cards = cards|merge([{
+                image: e.resourceImage[0] ?? null,
+                heading: e.resourceHeading,
+                byline: 'By ' ~ (e.resourceAuthor[0] ?? null).personName|default(''),
+                teaser: e.resourceTeaser,
+                cta: craft.components.getLinkFromEntry(e, 'Learn More'),
             }]) %}
     {% endswitch %}
 {% endfor %}

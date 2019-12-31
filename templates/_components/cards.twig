@@ -18,7 +18,9 @@
 
 {# Markup #}
 <div class="{{ handle }}">
-    <h2>{{ heading }}</h2>
+    {% if heading is not empty %}
+        <h2>{{ heading }}</h2>
+    {% endif %}
     {% if cards is not empty %}
         <div class="{{ handle }}__cards-cont">
             {% for c in cards %}

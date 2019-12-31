@@ -36,12 +36,15 @@ $handle: "cards";
     &__card-image-cont {
         > a {
             display: block;
+            width: 100%;
+            height: 100%;
             overflow: hidden;
         }
 
         img {
             display: block;
             width: 100%;
+            height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease-out;
         }
@@ -71,6 +74,7 @@ $handle: "cards";
 
         > cite {
             @include font("body-xs");
+            @include italic(true);
             margin-top: $spacing-xs;
             color: $color-fg-gray-lt;
         }
