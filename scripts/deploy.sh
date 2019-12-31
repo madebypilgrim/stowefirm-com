@@ -53,4 +53,4 @@ fi
 # Sync all files
 rsync -azh --no-o --no-g --no-p --filter=":- .gitignore" --delete "$HOME_PATH/" "$REMOTE_USER@$REMOTE_HOST:$REMOTE_HOME_PATH"
 # Run composer
-ssh "$REMOTE_USER@$REMOTE_HOST" "composer install --no-interaction --prefer-dist --optimize-autoloader"
+ssh "$REMOTE_USER@$REMOTE_HOST" "cd $REMOTE_HOME_PATH && composer install --no-interaction --prefer-dist --optimize-autoloader"

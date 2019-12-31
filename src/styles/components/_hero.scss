@@ -45,6 +45,7 @@ $handle: "hero";
             white-space: nowrap;
             color: $color-black;
             border-top: 2px solid $color-br-gray-lt;
+            transition: color $animate-sm;
 
             @media (max-width: $screen-sm-max) {
                 justify-content: space-between;
@@ -78,8 +79,12 @@ $handle: "hero";
                 transition: transform $animate-sm;
             }
 
-            &:hover > i {
-                transform: translateX($spacing-xs);
+            &:hover {
+                color: $color-gold;
+
+                > i {
+                    transform: translateX($spacing-xs);
+                }
             }
         }
     }
