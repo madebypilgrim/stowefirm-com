@@ -31,8 +31,12 @@ $handle: "hero";
 
         @media (min-width: $screen-md-min) {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             height: $max-width-xs;
+        }
+
+        @media (min-width: $screen-lg-min) {
+            justify-content: space-between;
         }
 
         > a {
@@ -68,13 +72,13 @@ $handle: "hero";
             }
 
             @media (min-width: $screen-lg-min) {
-                @include pad($spacing-sm);
+                @include pad($spacing-sm, $spacing-lg);
             }
 
             > i {
                 width: $spacing-sm;
                 height: $spacing-sm;
-                margin-left: $spacing-sm;
+                margin-left: $spacing-xs;
                 fill: $color-gold;
                 transition: transform $animate-sm;
             }
