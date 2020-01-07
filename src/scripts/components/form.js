@@ -1,6 +1,6 @@
 import { load } from 'recaptcha-v3';
 
-const RECAPTCHA_SITE_KEY = '';
+const { RECAPTCHA_SITE_KEY } = process.env;
 
 export default class {
     constructor({

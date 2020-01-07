@@ -89,8 +89,9 @@ $handle: "address";
             width: 50%;
         }
 
-        > div {
+        > img {
             @include fullOverlay;
+            object-fit: cover;
         }
     }
 }

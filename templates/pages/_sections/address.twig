@@ -4,6 +4,7 @@
  # |_@param {PlainText} heading
  # |_@param {Redactor} address
  # |_@param {Redactor} contact
+ # |_@param {Assets} image
  #}
 
 {# Markup #}
@@ -12,5 +13,6 @@
         heading: section.heading,
         address: section.address,
         contact: section.contact,
+        image: section.image.one(),
     } %}
 </section>

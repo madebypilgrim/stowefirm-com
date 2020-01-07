@@ -3,7 +3,6 @@ import { spy } from 'ui-utilities';
 import './polyfills';
 
 // Components
-import Address from './components/address';
 import Footer from './components/footer';
 import Form from './components/form';
 import Header from './components/header';
@@ -13,7 +12,6 @@ const { SITE_HANDLE } = process.env;
 // Define map of component handles to component classes
 /* eslint-disable quote-props */
 const classMap = {
-    'address': Address,
     'footer': Footer,
     'form': Form,
     'header': Header,

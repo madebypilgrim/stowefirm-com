@@ -3,34 +3,28 @@
  # @param {string} heading
  # @param {HTML} address
  # @param {HTML} contact
+ # @param {object} image
  #}
 
 {# Params #}
 {% set heading = heading|default('') %}
 {% set address = address|default('') %}
 {% set contact = contact|default('') %}
+{% set image = image|default(null) %}
 
 {# Variables #}
-{% set id = craft.utilities.uniqueId() %}
 {% set handle = 'address' %}
-{% set mapHandle = handle ~ '__map' %}
 
 {# Markup #}
-{% import '_macros/components' as components %}
-
-<div id="{{ id }}" class="{{ handle }}">
+<div class="{{ handle }}">
     <div class="{{ handle }}__info-cont">
         <h2>{{ heading }}</h2>
         <address>{{ address }}</address>
         <div>{{ contact }}</div>
     </div>
     <div class="{{ handle }}__map-cont">
-        <div class="{{ mapHandle }}"></div>
+        {% if image %}
+            <img src="{{ image.url }}" alt="{{ image.title }}" />
+        {% endif %}
     </div>
-
-    {{ components.new(handle, {
-        id: id,
-        mapHandle: '.' ~ mapHandle,
-        address: address,
-    }) }}
 </div>

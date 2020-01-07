@@ -1,4 +1,4 @@
-dateModified: 1578425230
+dateModified: 1578427587
 email:
   fromEmail: trevor@madebypilgrim.com
   fromName: 'Stowe Firm'
@@ -907,6 +907,8 @@ matrixBlockTypes:
               width: ''
             1c2976f8-3abb-4527-ae03-3b7080d05d5a:
               width: ''
+            569cc6f7-33d7-4977-8679-4a9debfb95c1:
+              width: ''
           fieldLayout: table
           selectionLabel: 'Add a CTA'
         contentColumnType: string
@@ -1110,6 +1112,34 @@ matrixBlockTypes:
     handle: address
     sortOrder: 1
     fields:
+      72852746-8cd4-4513-a750-9edc0a8a86fc:
+        name: Image
+        handle: image
+        instructions: ''
+        searchable: true
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Assets
+        settings:
+          useSingleFolder: ''
+          defaultUploadLocationSource: 'volume:62384952-8782-4cb2-b09b-17413aba3239'
+          defaultUploadLocationSubpath: ''
+          singleUploadLocationSource: 'volume:62384952-8782-4cb2-b09b-17413aba3239'
+          singleUploadLocationSubpath: ''
+          restrictFiles: '1'
+          allowedKinds:
+            - image
+          sources:
+            - 'volume:62384952-8782-4cb2-b09b-17413aba3239'
+          source: null
+          targetSiteId: null
+          viewMode: list
+          limit: '1'
+          selectionLabel: 'Add an image'
+          localizeRelations: false
+          validateRelatedElements: ''
+        contentColumnType: string
+        fieldGroup: null
       77e88e3f-cd87-48a3-87b7-72b46083e88f:
         name: Address
         handle: address
@@ -1176,6 +1206,9 @@ matrixBlockTypes:
             name: Content
             sortOrder: 1
             fields:
+              72852746-8cd4-4513-a750-9edc0a8a86fc:
+                required: false
+                sortOrder: 4
               77e88e3f-cd87-48a3-87b7-72b46083e88f:
                 required: false
                 sortOrder: 2
