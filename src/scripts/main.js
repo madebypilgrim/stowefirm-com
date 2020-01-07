@@ -4,6 +4,7 @@ import './polyfills';
 
 // Components
 import Footer from './components/footer';
+import Form from './components/form';
 import Header from './components/header';
 
 const { SITE_HANDLE } = process.env;
@@ -12,6 +13,7 @@ const { SITE_HANDLE } = process.env;
 /* eslint-disable quote-props */
 const classMap = {
     'footer': Footer,
+    'form': Form,
     'header': Header,
 };
 /* eslint-enable quote-props */

@@ -50,8 +50,11 @@ class FormsController extends Controller
             exit('Nice try robots');
         }
 
+        // Check reCAPTCHA score via token
+        $validRecaptcha = $this->validRecaptcha($params['token']);
+
         // Validate
-        if(!$model->validate()) {
+        if (!$model->validate()) {
             $success = false;
             $message = 'Submission Error! Please see form errors below.';
 
@@ -74,18 +77,22 @@ class FormsController extends Controller
             return;
         }
 
+        if (!$validRecaptcha) {
+            return $this->redirectToPostedUrl();
+        }
+
         // Save entry
-        if(!$model->saveCraftEntry()) {
+        if (!$model->saveCraftEntry()) {
             error_log(sprintf('Failed to save craft entry for form: %s', $handle));
         }
 
         // Send notification
-        if(!$model->sendNotificationEmail()) {
+        if (!$model->sendNotificationEmail()) {
             error_log(sprintf('Failed to send notification email for form: %s', $handle));
         }
 
         // Send confirmation
-        if(!$model->sendConfirmationEmail()) {
+        if (!$model->sendConfirmationEmail()) {
             error_log(sprintf('Failed to send confirmation email for form: %s', $handle));
         }
 
@@ -102,6 +109,21 @@ class FormsController extends Controller
         Craft::$app->getUrlManager()->setRouteParams([
             'success' => $success,
         ]);
+    }
+
+    private function validRecaptcha(string $token): bool
+    {
+        $endpoint = 'https://www.google.com/recaptcha/api/siteverify';
+        $data = [
+            'secret' => getenv('RECAPTCHA_SECRET_KEY'),
+            'response' => $token,
+        ];
+
+        $res = Craft::createGuzzleClient()->request('POST', $endpoint, [
+            'query' => $data,
+        ]);
+
+        return json_decode($res->getBody(), true)['success'];
     }
 
     /**

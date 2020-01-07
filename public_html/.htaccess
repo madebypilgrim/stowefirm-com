@@ -189,18 +189,50 @@ AddType application/x-shockwave-flash       swf
   AddType application/x-httpd-ea-php71 .php .php7 .phtml
 </IfModule>
 
-# ------------------------------------------------------------------------------
-# | Secure Sockets Layer (SSL)                                                 |
-# ------------------------------------------------------------------------------
-
-# Rewrite secure requests properly in order to prevent SSL certificate warnings.
-# E.g.: prevent `https://www.example.com` when your certificate only allows
-# `https://secure.example.com`.
+# ----------------------------------------------------------------------
+# Enforce desired protocol and domain
+#
+# We want to provide for multiple scenarios so that both https and www
+# are handled simultaneously. This avoids rewrite loops.
+#
+# Desired protocol and domain: https://www.stowefirm.com
+# ----------------------------------------------------------------------
 <IfModule mod_rewrite.c>
-  RewriteCond %{SERVER_PORT} !^443
-  RewriteCond %{SERVER_ADDR} !=127.0.0.1
-  RewriteCond %{SERVER_ADDR} !=::1
-  RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+    # http://stowefirm.localhost  -> http://www.stowefirm.localhost
+    RewriteCond %{SERVER_ADDR} =127.0.0.1 [OR]
+    RewriteCond %{SERVER_ADDR} =::1
+    RewriteCond %{HTTP_HOST} !^www\. [NC]
+    RewriteRule .* http://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+    # http://staging.stowefirm.com -> https://staging.stowefirm.com
+    RewriteCond %{SERVER_PORT} !^443
+    RewriteCond %{SERVER_ADDR} !=127.0.0.1
+    RewriteCond %{SERVER_ADDR} !=::1
+    RewriteCond %{HTTP_HOST} ^staging\. [NC,OR]
+    RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+    # http://www.stowefirm.com -> https://www.stowefirm.com
+    RewriteCond %{SERVER_PORT} !^443
+    RewriteCond %{SERVER_ADDR} !=127.0.0.1
+    RewriteCond %{SERVER_ADDR} !=::1
+    RewriteCond %{HTTP_HOST} ^www\. [NC]
+    RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+    # http://stowefirm.com -> https://www.stowefirm.com
+    RewriteCond %{SERVER_PORT} !^443
+    RewriteCond %{SERVER_ADDR} !=127.0.0.1
+    RewriteCond %{SERVER_ADDR} !=::1
+    RewriteCond %{HTTP_HOST} !^staging\. [NC]
+    RewriteCond %{HTTP_HOST} !^www\. [NC]
+    RewriteRule .* https://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+    # https://stowefirm.com -> https://www.stowefirm.com
+    RewriteCond %{SERVER_PORT} ^443
+    RewriteCond %{SERVER_ADDR} !=127.0.0.1
+    RewriteCond %{SERVER_ADDR} !=::1
+    RewriteCond %{HTTP_HOST} !^staging\. [NC]
+    RewriteCond %{HTTP_HOST} !^www\. [NC]
+    RewriteRule .* https://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 </IfModule>
 
 # ------------------------------------------------------------------------------
@@ -226,33 +258,6 @@ AddType application/x-shockwave-flash       swf
 <IfModule mod_headers.c>
    Header set Strict-Transport-Security "max-age=16070400; includeSubDomains"
 </IfModule>
-
-
-# ----------------------------------------------------------------------
-# Remove "www." from beginning of URLs
-# http://stackoverflow.com/questions/234723/generic-htaccess-redirect-www-to-non-www
-# ----------------------------------------------------------------------
-# <IfModule mod_rewrite.c>
-#   RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-#   RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
-# </IfModule>
-
-
-# ----------------------------------------------------------------------
-# Force "www." to beginning of URLs
-# http://stackoverflow.com/questions/4916222/htaccess-how-to-force-www-in-a-generic-way
-#
-# If using this, make sure the "Remove www. from beginning of URLS" block is commented out
-# ----------------------------------------------------------------------
-<IfModule mod_rewrite.c>
-  RewriteCond %{SERVER_ADDR} !=127.0.0.1
-  RewriteCond %{HTTP_HOST} !^$
-  RewriteCond %{HTTP_HOST} !^www\. [NC]
-  RewriteCond %{HTTP_HOST} !^staging\. [NC]
-  RewriteCond %{HTTPS}s ^on(s)|
-  RewriteRule ^ http%1://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
-</IfModule>
-
 
 # ----------------------------------------------------------------------
 # Cache busting CSS and JS

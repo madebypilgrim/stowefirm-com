@@ -9,16 +9,15 @@ use craft\base\Component;
 
 class Forms extends Component
 {
-
     public function getForm(string $handle): Form
     {
         $model = new Form();
 
         switch ($handle) {
-        case 'contact':
-            $model = new Contact();
+            case 'contact':
+                $model = new Contact();
 
-            break;
+                break;
         }
 
         return $model;

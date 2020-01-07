@@ -1,0 +1,92 @@
+{##
+ # Contact form component
+ # @param {Form} model
+ #}
+
+{# Params #}
+{% set model = model|default(craft.forms.getForm('contact')) %}
+
+{# Variables #}
+{% set id = craft.utilities.uniqueId() %}
+{% set handle = 'form' %}
+
+{# Markup #}
+{% import '_macros/components' as components %}
+
+<div id="{{ id }}" class="{{ handle }}">
+    <form method="post">
+        <input type="hidden" name="action" value="forms-module/forms/submit" />
+        <input type="hidden" name="handle" value="{{ 'contact'|hash }}" />
+        {{ redirectInput(craft.app.request.pathInfo ~'?success=true') }}
+        {{ csrfInput() }}
+
+        {% include '_components/input' with {
+            type: model.getAttributeInputType('firstName'),
+            required: model.isAttributeRequired('firstName'),
+            label: model.getAttributeLabel('firstName'),
+            name: 'firstName',
+            value: model['firstName'],
+            errors: model.getErrors('firstName'),
+            size: model.getAttributeInputSize('firstName'),
+        } %}
+
+        {% include '_components/input' with {
+            type: model.getAttributeInputType('lastName'),
+            required: model.isAttributeRequired('lastName'),
+            label: model.getAttributeLabel('lastName'),
+            name: 'lastName',
+            value: model['lastName'],
+            errors: model.getErrors('lastName'),
+            size: model.getAttributeInputSize('lastName'),
+        } %}
+
+        {% include '_components/input' with {
+            type: model.getAttributeInputType('email'),
+            required: model.isAttributeRequired('email'),
+            label: model.getAttributeLabel('email'),
+            name: 'email',
+            value: model['email'],
+            errors: model.getErrors('email'),
+            size: model.getAttributeInputSize('email'),
+        } %}
+
+        {% include '_components/input' with {
+            type: model.getAttributeInputType('phone'),
+            required: model.isAttributeRequired('phone'),
+            label: model.getAttributeLabel('phone'),
+            name: 'phone',
+            value: model['phone'],
+            errors: model.getErrors('phone'),
+            size: model.getAttributeInputSize('phone'),
+        } %}
+
+        {% include '_components/input' with {
+            type: model.getAttributeInputType('company'),
+            required: model.isAttributeRequired('company'),
+            label: model.getAttributeLabel('company'),
+            name: 'company',
+            value: model['company'],
+            errors: model.getErrors('company'),
+            size: model.getAttributeInputSize('company'),
+        } %}
+
+        {% include '_components/input' with {
+            type: model.getAttributeInputType('message'),
+            required: model.isAttributeRequired('message'),
+            label: model.getAttributeLabel('message'),
+            name: 'message',
+            value: model['message'],
+            errors: model.getErrors('message'),
+            size: model.getAttributeInputSize('message'),
+        } %}
+
+        <button type="submit" title="Submit Form">
+            Submit Form
+            {% include '_components/icon' with { icon: 'arrow-right' } %}
+        </button>
+    </form>
+
+    {{ components.new('form', {
+        id: id,
+    }) }}
+</div>
