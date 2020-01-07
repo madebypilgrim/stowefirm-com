@@ -31,7 +31,7 @@ class Contact extends Form implements Saveable
     public function rules()
     {
         return [
-            [['name', 'email', 'phone'], 'required'],
+            [['name', 'email', 'message'], 'required'],
             ['name', 'string'],
             ['email', 'email'],
             ['phone', 'string'],
