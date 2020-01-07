@@ -55,6 +55,7 @@
         "core-js": "^3.1.4",
         "es6-promise": "^4.2.6",
         "intersection-observer": "^0.5.0",
+        "recaptcha-v3": "^1.7.2",
         "regenerator-runtime": "^0.13.2",
         "svgxuse": "^1.2.4",
         "ui-utilities": "^0.1.0"

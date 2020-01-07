@@ -52,6 +52,21 @@ class Form extends Model
         return $iconsMap[$name];
     }
 
+    public function getAttributeInputPlaceholder(string $name): string
+    {
+        if (!method_exists($this, 'attributePlaceholders')) {
+            return [];
+        }
+
+        $placeholdersMap = $this->attributePlaceholders();
+
+        if (!isset($placeholdersMap[$name])) {
+            return [];
+        }
+
+        return $placeholdersMap[$name];
+    }
+
     public function getAttributeInputOptions(string $name): array
     {
         if (!method_exists($this, 'attributeOptions')) {

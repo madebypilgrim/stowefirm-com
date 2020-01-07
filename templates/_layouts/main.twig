@@ -20,7 +20,7 @@
         #}
 
         {# Main stylesheet #}
-        <link rel="stylesheet" type="text/css" href="/styles/main.1577821173838.css" />
+        <link rel="stylesheet" type="text/css" href="/styles/main.1578426797307.css" />
     </head>
 
     <body data-no-js="true">
@@ -51,7 +51,8 @@
         {% endif %}
 
         {# Main scripts #}
-        <script type="text/javascript" src="/scripts/main.1577821173838.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key={{ constant('GOOGLE_MAPS_API') }}"></script>
+        <script type="text/javascript" src="/scripts/main.1578426797307.js"></script>
 
         {# LiveReload (development only) #}
         {% if constant('CRAFT_ENVIRONMENT') == 'development' %}

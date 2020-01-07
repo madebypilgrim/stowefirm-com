@@ -17,12 +17,9 @@ class Contact extends Form implements Saveable
     private $contact = '';
     private $fromEmail = '';
 
-    public $firstName;
-    public $lastName;
+    public $name;
     public $email;
     public $phone;
-    public $company;
-    public $budget;
     public $message;
 
     public function __construct()
@@ -34,13 +31,10 @@ class Contact extends Form implements Saveable
     public function rules()
     {
         return [
-            [['firstName', 'lastName', 'email', 'phone'], 'required'],
-            ['firstName', 'string'],
-            ['lastName', 'string'],
+            [['name', 'email', 'phone'], 'required'],
+            ['name', 'string'],
             ['email', 'email'],
             ['phone', 'string'],
-            ['company', 'string'],
-            ['budget', 'string'],
             ['message', 'string'],
         ];
     }
@@ -48,12 +42,19 @@ class Contact extends Form implements Saveable
     public function attributeLabels(): array
     {
         return [
-            'firstName' => 'First Name',
-            'lastName' => 'Last Name',
+            'name' => 'First Name',
             'email' => 'Email Address',
             'phone' => 'Phone Number',
-            'company' => 'Company Name',
-            'budget' => 'Your Budget',
+            'message' => 'Breifly describe your project.',
+        ];
+    }
+
+    public function attributePlaceholders(): array
+    {
+        return [
+            'name' => 'First Name',
+            'email' => 'Email Address',
+            'phone' => 'Phone Number',
             'message' => 'Breifly describe your project.',
         ];
     }
@@ -61,37 +62,19 @@ class Contact extends Form implements Saveable
     public function attributeTypes(): array
     {
         return [
-            'firstName' => 'text',
-            'lastName' => 'text',
+            'name' => 'text',
             'email' => 'email',
             'phone' => 'tel',
-            'company' => 'text',
-            'budget' => 'select',
             'message' => 'textarea',
         ];
     }
 
-    public function attributeOptions(): array
-    {
-        return [
-            'budget' => [
-                ['value' => '1000000', 'label' => '$1M'],
-                ['value' => '2000000', 'label' => '$2M'],
-                ['value' => '5000000', 'label' => '$5M'],
-            ],
-        ];
-    }
-
-
     public function attributeSizes(): array
     {
         return [
-            'firstName' => 'half',
-            'lastName' => 'half',
+            'name' => 'half',
             'email' => 'half',
             'phone' => 'half',
-            'company' => 'full',
-            'budget' => 'full',
             'message' => 'full',
         ];
     }
@@ -106,12 +89,9 @@ class Contact extends Form implements Saveable
         ]);
 
         $entry->setFieldValues([
-            'formFirstName' => $this->firstName,
-            'formLastName' => $this->lastName,
+            'formName' => $this->name,
             'formEmail' => $this->email,
             'formPhoneNumber' => $this->phone,
-            'formCompany' => $this->company,
-            'formBudget' => $this->budget,
             'formMessage' => $this->message,
         ]);
 

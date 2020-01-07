@@ -1,0 +1,16 @@
+{##
+ # Address section
+ # @param {MatrixBlock} section
+ # |_@param {PlainText} heading
+ # |_@param {Redactor} address
+ # |_@param {Redactor} contact
+ #}
+
+{# Markup #}
+<section>
+    {% include '_components/address' with {
+        heading: section.heading,
+        address: section.address,
+        contact: section.contact,
+    } %}
+</section>

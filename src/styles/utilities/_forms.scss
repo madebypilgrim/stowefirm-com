@@ -48,7 +48,7 @@
     line-height: $input-height;
     border: 1px solid $color-br-gray-lt;
     color: $color-fg-gray-dk;
-    background-color: $color-white;
+    background-color: $color-bg-gray-lt;
 
     &.#{$error-class} {
         background-color: lighten(red, 35%);
@@ -57,8 +57,8 @@
 
     &:active,
     &:focus {
-        background-color: lighten($color-blue-lt, 35%);
-        border-color: $color-blue-lt;
+        background-color: lighten($color-gold, 35%);
+        border-color: $color-gold;
     }
 }
 
@@ -75,8 +75,8 @@
 
     &:active,
     &:focus {
-        background-color: lighten($color-blue-lt, 35%);
-        border-color: $color-blue-lt;
+        background-color: lighten($color-gold, 35%);
+        border-color: $color-gold;
     }
 
     &:checked {
@@ -142,7 +142,7 @@
         right: $spacing-xs;
         width: $spacing-xs;
         height: $spacing-xs;
-        fill: $color-blue-lt;
+        fill: $color-gold;
         pointer-events: none;
     }
 }
@@ -176,8 +176,8 @@
 
         &:active + label,
         &:focus + label {
-            background-color: lighten($color-blue-lt, 35%);
-            border-color: $color-blue-lt;
+            background-color: lighten($color-gold, 35%);
+            border-color: $color-gold;
         }
 
         &:checked + label {
@@ -204,9 +204,7 @@
 
 @mixin textarea() {
     @include input;
-    min-height: $input-height;
-    height: auto;
-    max-height: $input-height * 4;
+    min-height: $input-height * 3;
     line-height: $spacing-xs * 3;
     padding-top: ($input-height - ($spacing-xs * 3)) / 2;
 }

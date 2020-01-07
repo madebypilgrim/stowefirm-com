@@ -1,0 +1,96 @@
+$handle: "address";
+
+.#{$handle} {
+    @media (min-width: $screen-md-min) {
+        @include flex;
+    }
+
+    &__info-cont {
+        @include space($spacing-sm);
+        @include pad($spacing-sm);
+        border-bottom: 1px solid $color-br-gray-lt;
+        background-color: $color-white;
+        color: $color-fg-gray-dk;
+
+        @media (min-width: $screen-sm-min) {
+            @include flex;
+            @include space($spacing-md);
+        }
+
+        @media (min-width: $screen-md-min) {
+            @include space($spacing-xl);
+            width: 50%;
+        }
+
+        @media (min-width: $screen-lg-min) {
+            @include pad(span(1, "wider"));
+        }
+
+        > h2 {
+            @include sectionHeading;
+
+            @media (min-width: $screen-sm-min) {
+                width: 100%;
+            }
+        }
+
+        > address {
+            @include font("body-sm");
+            margin-top: $spacing-sm;
+            color: $color-fg-gray-md;
+
+            @media (min-width: $screen-sm-min) {
+                width: 50%;
+            }
+
+            @media (min-width: $screen-md-min) {
+                width: 100%;
+            }
+        }
+
+        > div {
+            @include font("body-sm");
+            margin-top: $spacing-sm;
+            color: $color-fg-gray-md;
+
+            @media (min-width: $screen-sm-min) {
+                width: 50%;
+            }
+
+            @media (min-width: $screen-md-min) {
+                width: 100%;
+            }
+
+            a {
+                @include link;
+                line-height: $spacing-sm;
+                color: $color-fg-gray-md;
+            }
+
+            em {
+                @include italic;
+            }
+        }
+    }
+
+    &__map-cont {
+        position: relative;
+        background-color: $color-bg-gray-lt;
+
+        @media (max-width: $screen-xs-max) {
+            padding-bottom: 75%;
+        }
+
+        @media (max-width: $screen-sm-max) {
+            padding-bottom: 65%;
+        }
+
+        @media (min-width: $screen-md-min) {
+            width: 50%;
+        }
+
+        > div {
+            @include fullOverlay;
+        }
+    }
+}

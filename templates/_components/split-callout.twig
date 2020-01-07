@@ -3,22 +3,39 @@
  # @param {string} heading
  # @param {HTML} body
  # @param {modules\components\models\Link} cta
+ # @param {string} background <light, dark*>
  #}
 
 {# Params #}
 {% set heading = heading|default('') %}
 {% set body = body|default('') %}
 {% set cta = cta|default(null) %}
+{% set background = background|default('dark') %}
 
 {# Variables #}
 {% set handle = 'split-callout' %}
 
 {# Markup #}
-<div class="{{ handle }} {{ body is not empty ? handle ~ '--has-body' }}">
-    <h2>{{ section.heading }}</h2>
-    {% if body is not empty %}
-        <div>
-            {{ body }}
+<div class="
+    {{ handle }}
+    {{ handle }}--bg-{{ background }}
+    {{ body is not empty ? handle ~ '--has-body' }}
+">
+    <div class="{{ handle }}__cont">
+        <h2>{{ section.heading }}</h2>
+        {% if body is not empty %}
+            <div>
+                {{ body }}
+                {% if cta %}
+                    {% set content %}
+                        {{ cta.title }}
+                        {% include '_components/icon' with { icon: 'arrow-right' } %}
+                    {% endset %}
+
+                    {{ cta.render(content) }}
+                {% endif %}
+            </div>
+        {% else %}
             {% if cta %}
                 {% set content %}
                     {{ cta.title }}
@@ -27,15 +44,6 @@
 
                 {{ cta.render(content) }}
             {% endif %}
-        </div>
-    {% else %}
-        {% if cta %}
-            {% set content %}
-                {{ cta.title }}
-                {% include '_components/icon' with { icon: 'arrow-right' } %}
-            {% endset %}
-
-            {{ cta.render(content) }}
         {% endif %}
-    {% endif %}
+    </div>
 </div>

@@ -1,7 +1,6 @@
 $handle: "split-callout";
 
 .#{$handle} {
-    @include sectionContainer;
     @include sectionSpacing;
 
     &--has-body {
@@ -11,27 +10,43 @@ $handle: "split-callout";
         }
     }
 
-    > h2 {
-        @include sectionHeading;
-        max-width: 300px;
+    &--bg-light {
+        background-color: $color-white;
     }
 
-    > a {
-        @include iconLink;
-        margin-top: $spacing-sm;
-    }
+    &__cont {
+        @include sectionContainer;
 
-    > div {
-        margin-top: $spacing-sm;
+        > h2 {
+            @include sectionHeading;
+            max-width: 300px;
 
-        @media (min-width: $screen-sm-min) {
-            width: 50%;
-            margin-top: $spacing-md;
+            .#{$handle}--bg-light > & {
+                color: $color-fg-gray-dk;
+            }
         }
 
         > a {
             @include iconLink;
             margin-top: $spacing-sm;
+        }
+
+        > div {
+            margin-top: $spacing-sm;
+
+            .#{$handle}--bg-light > & {
+                color: $color-fg-gray-dk;
+            }
+
+            @media (min-width: $screen-sm-min) {
+                width: 50%;
+                margin-top: $spacing-md;
+            }
+
+            > a {
+                @include iconLink;
+                margin-top: $spacing-sm;
+            }
         }
     }
 }

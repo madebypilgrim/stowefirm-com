@@ -4,6 +4,7 @@
  # |_@param {PlainText} heading
  # |_@param {Redactor} body
  # |_@param {SuperTable} cta
+ # |_@param {Dropdown} background
  #}
 
 {# Markup #}
@@ -12,5 +13,6 @@
         heading: section.heading,
         body: section.body,
         cta: craft.components.getLinkFromCta(section.cta.one()),
+        background: section.background.value,
     } %}
 </section>

@@ -1,0 +1,14 @@
+{##
+ # Form section
+ # @param {MatrixBlock} section
+ # |_@param {PlainText} heading
+ # |_@param {Dropdown} form
+ #}
+
+{# Markup #}
+<section>
+    {% include '_components/form' with {
+        heading: section.heading,
+        model: craft.forms.getForm(section.form.value),
+    } %}
+</section>

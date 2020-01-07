@@ -71,12 +71,4 @@
     > i {
         fill: $color-white;
     }
-
-    &:hover:not([disabled]) {
-        > i {
-            @if ($invert) {
-                fill: $color-white;
-            }
-        }
-    }
 }

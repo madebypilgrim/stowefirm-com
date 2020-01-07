@@ -1,4 +1,4 @@
-dateModified: 1578419797
+dateModified: 1578425230
 email:
   fromEmail: trevor@madebypilgrim.com
   fromName: 'Stowe Firm'
@@ -557,7 +557,7 @@ matrixBlockTypes:
     field: 5c0f30f6-a3c5-41a9-a362-bb1d11e5a96a
     name: 'Block Callout'
     handle: blockCallout
-    sortOrder: 1
+    sortOrder: 2
     fields:
       9313b1da-4828-4607-8f8c-b3c61b838408:
         name: Body
@@ -591,9 +591,9 @@ matrixBlockTypes:
           propagationMethod: all
           staticField: ''
           columns:
-            26:
+            3f9cd33f-e264-4b70-a594-69565e2b1b13:
               width: ''
-            27:
+            40e160eb-8890-4a5d-a044-725e27c33e24:
               width: ''
           fieldLayout: table
           selectionLabel: 'Add a CTA'
@@ -636,7 +636,7 @@ matrixBlockTypes:
     field: 5c0f30f6-a3c5-41a9-a362-bb1d11e5a96a
     name: 'Ordered List'
     handle: orderedList
-    sortOrder: 4
+    sortOrder: 6
     fields:
       53eef016-ced4-4844-b529-e72e884bd581:
         name: 'List Items'
@@ -653,9 +653,9 @@ matrixBlockTypes:
           propagationMethod: all
           staticField: ''
           columns:
-            47:
+            2386b537-b023-4390-bc4a-5245ae17fd73:
               width: ''
-            46:
+            b1a65cf5-29d6-49fa-b639-b54795e87191:
               width: ''
           fieldLayout: row
           selectionLabel: 'Add a list item'
@@ -671,11 +671,64 @@ matrixBlockTypes:
               53eef016-ced4-4844-b529-e72e884bd581:
                 required: false
                 sortOrder: 1
+  37e2511e-e275-4285-832e-63ac150a7051:
+    field: 5c0f30f6-a3c5-41a9-a362-bb1d11e5a96a
+    name: Form
+    handle: form
+    sortOrder: 4
+    fields:
+      707dfa26-f025-4aa6-ba7a-63287b1fa7cc:
+        name: Form
+        handle: form
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          optgroups: true
+          options:
+            -
+              label: Contact
+              value: contact
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
+      bbfd441b-1d52-44ef-b863-0b58a1929786:
+        name: Heading
+        handle: heading
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      f05734a8-4490-4c33-bfaf-5aca6e8c4c5e:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              707dfa26-f025-4aa6-ba7a-63287b1fa7cc:
+                required: false
+                sortOrder: 2
+              bbfd441b-1d52-44ef-b863-0b58a1929786:
+                required: false
+                sortOrder: 1
   5025039d-c815-4f88-977c-7babf63a9ba0:
     field: 5c0f30f6-a3c5-41a9-a362-bb1d11e5a96a
     name: Stats
     handle: stats
-    sortOrder: 6
+    sortOrder: 8
     fields:
       64078c29-dd52-48d0-822f-d046ce44f330:
         name: Stats
@@ -692,9 +745,9 @@ matrixBlockTypes:
           propagationMethod: all
           staticField: ''
           columns:
-            20:
+            5f313d82-90c0-4bc0-bc7a-7696b58402c4:
               width: ''
-            19:
+            9e9dba93-d92b-408d-a6fb-7489ffad0488:
               width: ''
           fieldLayout: table
           selectionLabel: 'Add a stat'
@@ -714,7 +767,7 @@ matrixBlockTypes:
     field: 5c0f30f6-a3c5-41a9-a362-bb1d11e5a96a
     name: Image
     handle: image
-    sortOrder: 3
+    sortOrder: 5
     fields:
       234e6937-5057-4314-b024-173836e8686d:
         name: Image
@@ -812,7 +865,7 @@ matrixBlockTypes:
     field: 5c0f30f6-a3c5-41a9-a362-bb1d11e5a96a
     name: 'Split Callout'
     handle: splitCallout
-    sortOrder: 5
+    sortOrder: 7
     fields:
       0452b32b-090c-4f29-895d-5372a4834c0f:
         name: Body
@@ -850,9 +903,9 @@ matrixBlockTypes:
           propagationMethod: all
           staticField: ''
           columns:
-            33:
+            037847e1-61cc-4fd8-88a9-10bb8ed17d62:
               width: ''
-            34:
+            1c2976f8-3abb-4527-ae03-3b7080d05d5a:
               width: ''
           fieldLayout: table
           selectionLabel: 'Add a CTA'
@@ -875,6 +928,27 @@ matrixBlockTypes:
           columnType: text
         contentColumnType: text
         fieldGroup: null
+      c92f0b65-dbe3-4474-8f74-bf0d819ada08:
+        name: Background
+        handle: background
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          optgroups: true
+          options:
+            -
+              label: Light
+              value: light
+              default: ''
+            -
+              label: Dark
+              value: dark
+              default: '1'
+        contentColumnType: string
+        fieldGroup: null
     fieldLayouts:
       b3600521-28a2-4c5a-a3c6-52f6fd58b7fd:
         tabs:
@@ -891,11 +965,14 @@ matrixBlockTypes:
               b6abf77e-73f5-4dea-a7af-89ee054360ba:
                 required: false
                 sortOrder: 1
+              c92f0b65-dbe3-4474-8f74-bf0d819ada08:
+                required: false
+                sortOrder: 4
   bc997b44-42c8-4b68-ab17-3d59b0be684d:
     field: 5c0f30f6-a3c5-41a9-a362-bb1d11e5a96a
     name: 'Featured Entries'
     handle: featuredEntries
-    sortOrder: 2
+    sortOrder: 3
     fields:
       24a65a48-2436-4802-acbe-147fd3422ddb:
         name: Heading
@@ -950,7 +1027,7 @@ matrixBlockTypes:
     field: 5c0f30f6-a3c5-41a9-a362-bb1d11e5a96a
     name: 'Two Column'
     handle: twoColumn
-    sortOrder: 7
+    sortOrder: 9
     fields:
       30e6cd6c-1104-4f85-8db1-45724be0edd3:
         name: Heading
@@ -1025,6 +1102,87 @@ matrixBlockTypes:
                 required: false
                 sortOrder: 2
               9acb8729-3280-48f1-89b5-dd299de6e3ca:
+                required: false
+                sortOrder: 3
+  f2654a6f-f750-4d3f-af92-a18d3eb78161:
+    field: 5c0f30f6-a3c5-41a9-a362-bb1d11e5a96a
+    name: Address
+    handle: address
+    sortOrder: 1
+    fields:
+      77e88e3f-cd87-48a3-87b7-72b46083e88f:
+        name: Address
+        handle: address
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\redactor\Field
+        settings:
+          redactorConfig: Simple.json
+          purifierConfig: ''
+          cleanupHtml: true
+          removeInlineStyles: '1'
+          removeEmptyTags: '1'
+          removeNbsp: '1'
+          purifyHtml: '1'
+          columnType: text
+          availableVolumes: ''
+          availableTransforms: '*'
+        contentColumnType: text
+        fieldGroup: null
+      ecd1e29c-668c-4e36-af76-1183b5272a7e:
+        name: Heading
+        handle: heading
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      ef94451a-fb51-4d76-be6e-8496fa9767b3:
+        name: Contact
+        handle: contact
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\redactor\Field
+        settings:
+          redactorConfig: Simple.json
+          purifierConfig: ''
+          cleanupHtml: true
+          removeInlineStyles: '1'
+          removeEmptyTags: '1'
+          removeNbsp: '1'
+          purifyHtml: '1'
+          columnType: text
+          availableVolumes: ''
+          availableTransforms: '*'
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      64219775-3360-46a8-b60d-47811e7eb7a3:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              77e88e3f-cd87-48a3-87b7-72b46083e88f:
+                required: false
+                sortOrder: 2
+              ecd1e29c-668c-4e36-af76-1183b5272a7e:
+                required: false
+                sortOrder: 1
+              ef94451a-fb51-4d76-be6e-8496fa9767b3:
                 required: false
                 sortOrder: 3
 plugins:
@@ -1299,6 +1457,18 @@ superTableBlockTypes:
           validateRelatedElements: ''
         contentColumnType: string
         fieldGroup: null
+      569cc6f7-33d7-4977-8679-4a9debfb95c1:
+        name: 'CTA Email'
+        handle: ctaEmail
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Email
+        settings:
+          placeholder: ''
+        contentColumnType: string
+        fieldGroup: null
     fieldLayouts:
       df15e334-715c-4065-b02d-3839567e42c4:
         tabs:
@@ -1312,6 +1482,9 @@ superTableBlockTypes:
               1c2976f8-3abb-4527-ae03-3b7080d05d5a:
                 required: false
                 sortOrder: 2
+              569cc6f7-33d7-4977-8679-4a9debfb95c1:
+                required: false
+                sortOrder: 3
   210921c6-43a5-43c4-9a4a-c5669f39a175:
     field: c01a94ca-8669-4017-b041-1029d1246736
     fields:

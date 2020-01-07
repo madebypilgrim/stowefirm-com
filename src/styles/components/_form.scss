@@ -1,0 +1,63 @@
+$handle: "form";
+
+.#{$handle} {
+    @include sectionSpacing;
+    background-color: $color-white;
+    color: $color-fg-gray-dk;
+
+    &__cont {
+        @include sectionContainer;
+
+        > h2 {
+            @include sectionHeading;
+        }
+
+        > form {
+            @include flex;
+            justify-content: space-between;
+
+            > fieldset {
+                width: 100%;
+
+                @media (min-width: $screen-md-min) {
+                    width: calc(50% - #{$spacing-xs});
+                }
+
+                > div {
+                    margin-top: $spacing-xs;
+
+                    @media (min-width: $screen-md-min) {
+                        margin-top: $spacing-sm;
+                    }
+                }
+
+                label {
+                    display: none;
+                }
+
+                [type="email"],
+                [type="tel"],
+                [type="text"] {
+                    @include text;
+                }
+
+                textarea {
+                    @include textarea;
+
+                    @media (min-width: $screen-md-min) {
+                        min-height: ($input-height * 3) + ($spacing-sm * 2);
+                    }
+                }
+            }
+
+            > [type="submit"] {
+                @include iconButton;
+                margin-top: $spacing-xs;
+
+                @media (min-width: $screen-md-min) {
+                    margin-top: $spacing-sm;
+                }
+            }
+        }
+    }
+}
