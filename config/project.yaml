@@ -1,4 +1,4 @@
-dateModified: 1577820502
+dateModified: 1578419797
 email:
   fromEmail: trevor@madebypilgrim.com
   fromName: 'Stowe Firm'
@@ -134,13 +134,13 @@ fields:
       propagationMethod: all
       staticField: '1'
       columns:
-        5:
+        6ff6ce64-6002-447e-8410-63216b23e6f1:
           width: ''
-        6:
+        767e1c9d-62c2-4417-aa0b-13d41a50b6c6:
           width: ''
-        7:
+        86831f20-ba65-46e2-b3a5-d55c4d81b460:
           width: ''
-        4:
+        894ac8a2-8ca0-419a-83d2-7b2924971d69:
           width: ''
       fieldLayout: row
       selectionLabel: ''
@@ -328,9 +328,9 @@ fields:
       propagationMethod: all
       staticField: '1'
       columns:
-        37:
+        09a0cff2-85e1-4666-99a3-12cb9233e852:
           width: ''
-        38:
+        4b5ab44e-8fb1-4b5b-a017-b226dee7f594:
           width: ''
       fieldLayout: row
       selectionLabel: ''
@@ -413,9 +413,9 @@ fields:
       propagationMethod: all
       staticField: ''
       columns:
-        15:
+        b97b6968-8c94-426d-af1b-f6bde6e64cd8:
           width: ''
-        14:
+        cdebf0d6-4249-4ca0-95ac-4308e8842034:
           width: ''
       fieldLayout: table
       selectionLabel: 'Add a header link'
@@ -1031,7 +1031,7 @@ plugins:
   super-table:
     edition: standard
     enabled: true
-    schemaVersion: 2.2.0
+    schemaVersion: 2.2.1
   redactor:
     edition: standard
     enabled: true
