@@ -1,4 +1,4 @@
-dateModified: 1578427587
+dateModified: 1578516042
 email:
   fromEmail: trevor@madebypilgrim.com
   fromName: 'Stowe Firm'
@@ -163,6 +163,23 @@ fields:
       columnType: text
     fieldGroup: c73bb305-095a-4864-9867-24695b93debf
     contentColumnType: text
+  3ded655d-4682-4e7d-8b9d-ae6b511604d1:
+    name: 'Resource CTA Intro'
+    handle: resourceCtaIntro
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: '1'
+      initialRows: '2'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: d6c20ebe-0e7a-49a2-bcfe-2288dc28b60d
   5c0f30f6-a3c5-41a9-a362-bb1d11e5a96a:
     name: 'Page Sections'
     handle: pageSections
@@ -258,6 +275,24 @@ fields:
       columnType: text
     contentColumnType: text
     fieldGroup: 7de2d421-8c75-4ed8-9888-b219b274a91a
+  95a207ce-3480-453b-afc5-e44b94f2d4a6:
+    name: 'Resource CTA'
+    handle: resourceCta
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: verbb\supertable\fields\SuperTableField
+    settings:
+      minRows: ''
+      maxRows: '1'
+      contentTable: '{{%stc_resourcecta}}'
+      propagationMethod: all
+      staticField: ''
+      fieldLayout: table
+      selectionLabel: 'Add a resource CTA'
+    contentColumnType: string
+    fieldGroup: d6c20ebe-0e7a-49a2-bcfe-2288dc28b60d
   9ab93fec-6e7b-4806-a7f8-515609b5db76:
     name: 'Resource Teaser'
     handle: resourceTeaser
@@ -1296,7 +1331,7 @@ sections:
         enabledByDefault: true
         hasUrls: true
         uriFormat: 'resources/{slug}'
-        template: resources/entry
+        template: resources/_entry
     entryTypes:
       cb9f54e5-34c7-4fce-a26b-39f5f513824e:
         name: Resource
@@ -1328,9 +1363,15 @@ sections:
                 name: Content
                 sortOrder: 2
                 fields:
-                  698e6773-119d-4d16-b2fa-94fe5fe7ca29:
+                  3ded655d-4682-4e7d-8b9d-ae6b511604d1:
                     required: false
                     sortOrder: 1
+                  698e6773-119d-4d16-b2fa-94fe5fe7ca29:
+                    required: false
+                    sortOrder: 3
+                  95a207ce-3480-453b-afc5-e44b94f2d4a6:
+                    required: false
+                    sortOrder: 2
               -
                 name: SEO
                 sortOrder: 3
@@ -1816,6 +1857,62 @@ superTableBlockTypes:
               9e9dba93-d92b-408d-a6fb-7489ffad0488:
                 required: false
                 sortOrder: 1
+  aee0d193-2628-439b-b505-acc978dbf2c3:
+    field: 95a207ce-3480-453b-afc5-e44b94f2d4a6
+    fields:
+      2380b783-be49-4091-9eb6-a9270ff50aca:
+        name: 'CTA Title'
+        handle: ctaTitle
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      b5c382fe-1042-4010-bd9b-78a98e3ab9ab:
+        name: 'CTA Page'
+        handle: ctaPage
+        instructions: ''
+        searchable: true
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Entries
+        settings:
+          sources:
+            - 'section:15a0e180-ab09-41b0-96f1-b9c5080a2f24'
+            - 'section:e310d298-9f4f-46f8-9f8b-20c53f889b0b'
+            - 'section:42ec26d8-b186-49c7-b402-39179584e444'
+            - singles
+          source: null
+          targetSiteId: null
+          viewMode: null
+          limit: '1'
+          selectionLabel: 'Add a CTA page'
+          localizeRelations: false
+          validateRelatedElements: ''
+        contentColumnType: string
+        fieldGroup: null
+    fieldLayouts:
+      03780dfb-f429-4f2e-8cb3-92f82b52241c:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              2380b783-be49-4091-9eb6-a9270ff50aca:
+                required: false
+                sortOrder: 1
+              b5c382fe-1042-4010-bd9b-78a98e3ab9ab:
+                required: false
+                sortOrder: 2
   d71c31d8-601e-46c2-8490-7dcb54a6f5cc:
     field: b5520ae2-8cf9-4ced-af22-170fa52a4431
     fields:

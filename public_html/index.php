@@ -18,7 +18,6 @@ if (file_exists(CRAFT_BASE_PATH.'/.env')) {
     define('DEV_EMAIL', getenv('DEV_EMAIL'));
     define('CRAFT_CACHE', getenv('CRAFT_CACHE'));
     define('HONEYPOT_HANDLE', 'liquid_gold');
-    define('GOOGLE_MAPS_API', getenv('GOOGLE_MAPS_API'));
 }
 
 // Load and run Craft

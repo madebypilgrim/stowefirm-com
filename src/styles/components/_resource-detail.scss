@@ -1,0 +1,39 @@
+$handle: "resource-detail";
+
+.#{$handle} {
+    &__breadcrumbs-cont {
+        @include sectionContainer;
+        @include space($spacing-lg + $spacing-md, $spacing-md);
+
+        @media (min-width: $screen-lg-min) {
+            @include space($spacing-md, $spacing-lg);
+        }
+
+        > span {
+            @include font("heading-xs");
+            color: $color-gold;
+        }
+    }
+
+    > hr {
+        margin: 0;
+    }
+
+    &__heading-cont {
+        @include sectionContainer;
+        @include space($spacing-md);
+
+        > h1 {
+            @include font("heading-xl");
+            max-width: $max-width-xl;
+        }
+    }
+
+    &__image-cont {
+        &__cta-cont {
+        }
+    }
+
+    &__body-cont {
+    }
+}

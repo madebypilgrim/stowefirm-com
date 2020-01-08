@@ -1,0 +1,45 @@
+{##
+ # Resource Detail component
+ # @param {string} heading
+ # @param {string} ctaIntro
+ # @param {modules\components\models\Link} cta
+ # @param {object} image
+ # @param {HTML} body
+ # @param {object} author
+ #}
+
+{# Params #}
+{% set heading = heading|default('') %}
+{% set ctaIntro = ctaIntro|default('') %}
+{% set cta = cta|default(null) %}
+{% set image = image|default(null) %}
+{% set body = body|default('') %}
+{% set author = author|default(null) %}
+
+{# Variables #}
+{% set handle = 'resource-detail' %}
+
+{# Markup #}
+<div class="{{ handle }}">
+    <div class="{{ handle }}__breadcrumbs-cont">
+        <span>Breadcrumbs</span>
+    </div>
+    <hr />
+    <div class="{{ handle }}__heading-cont">
+        <h1>{{ heading }}</h1>
+    </div>
+    <div class="{{ handle }}__image-cont">
+        {% if image %}
+            <img src="{{ image.url }}" alt="{{ image.title }}" />
+        {% endif %}
+        {% if cta %}
+            <div class="{{ handle }}__image-cont__cta-cont">
+                <p>{{ ctaIntro }}<p>
+                {{ cta.render() }}
+            </div>
+        {% endif %}
+    </div>
+    <div class="{{ handle }}__body-cont">
+        <div>{{ body }}</div>
+    </div>
+</div>

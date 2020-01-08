@@ -1,0 +1,54 @@
+{##
+ # Resources entry
+ # @param {Entry} entry
+ # |_@param {PlainText} resourceHeading
+ # |_@param {Assets} resourceImage
+ # |_@param {PlainText} resourceTeaser
+ # |_@param {Entries} resourceAuthor
+ # |_@param {PlainText} resourceCtaIntro
+ # |_@param {SuperTable} resourceCta
+ # |_@param {Matrix} resourceSections
+ #}
+
+{# Params #}
+{% set sections = entry.resourceSections.all() %}
+
+{# Variables #}
+{% set relatedResource = craft.entries
+    .section('resources')
+    .id('not ' ~ entry.id)
+    .one() %}
+
+{# Markup #}
+{% extends '_layouts/main' %}
+
+{% set body %}
+    {% for s in sections %}
+        {% include 'resources/_sections/' ~ s.type.handle|kebab with { section: s } only %}
+    {% endfor %}
+    <hr />
+    {% include '_components/cards' with {
+        cards: [{
+            image: relatedResource.resourceImage[0] ?? null,
+            heading: relatedResource.resourceHeading,
+            byline: 'By ' ~ (relatedResource.resourceAuthor[0] ?? null).personName|default(''),
+            teaser: relatedResource.resourceTeaser,
+            cta: craft.components.getLinkFromEntry(relatedResource, 'Learn More'),
+        }],
+    } %}
+{% endset %}
+
+{% block content %}
+    <article>
+        <section>
+            {% include '_components/resource-detail' with {
+                heading: entry.resourceHeading,
+                ctaIntro: entry.resourceCtaIntro,
+                cta: craft.components.getLinkFromCta(entry.resourceCta.one()),
+                image: entry.resourceImage.one(),
+                body: body,
+                author: entry.resourceAuthor.one(),
+            } %}
+        </section>
+    </article>
+{% endblock %}
