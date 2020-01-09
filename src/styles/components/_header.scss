@@ -58,6 +58,7 @@ $active-class: "is-active";
         }
 
         &:after {
+            @include scaleIn;
             @include absolute(auto, 0, 0, 0);
             content: "";
             height: $max-width-xs;

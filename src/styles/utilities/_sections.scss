@@ -52,11 +52,13 @@
 }
 
 @mixin sectionHeading() {
+    @include fadeIn;
     @include font("heading-md");
     position: relative;
     padding-top: $spacing-md;
 
     &:before {
+        @include scaleIn("left");
         @include absolute(0, auto, auto, 0);
         content: "";
         height: 2px;

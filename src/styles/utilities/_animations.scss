@@ -8,64 +8,63 @@
 }
 
 @keyframes from-left {
-    from { transform: translate(-$spacing-md, $spacing-xs); }
+    from { transform: translate(-$spacing-sm, $spacing-xs); }
     to { transform: translate(0, 0); }
 }
 
 @keyframes from-right {
-    from { transform: translate($spacing-md, $spacing-xs); }
+    from { transform: translate($spacing-sm, $spacing-xs); }
     to { transform: translate(0, 0); }
 }
 
 @keyframes from-bottom {
-    from { transform: translateY($spacing-md); }
+    from { transform: translateY($spacing-sm); }
     to { transform: translateY(0); }
 }
 
-@keyframes scale-in {
+@keyframes scale-in-up {
     from { transform: scaleY(0); }
     to { transform: scaleY(1); }
 }
 
-/**
- * Spy mixins
- */
+@keyframes scale-in-over {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+}
 
-@mixin spy($in-view-class: "in-view") {
+@mixin fadeIn() {
     opacity: 0;
-    transition: opacity $animate-md;
+    animation: fade-in $animate-md forwards;
+}
 
-    &.#{$in-view-class} {
-        opacity: 1;
+@mixin fromBottom() {
+    opacity: 0;
+    animation:
+        from-bottom $animate-md,
+        fade-in $animate-md forwards;
+}
+
+@mixin scaleIn($from: "bottom") {
+    transform-origin: $from;
+
+    @if ($from == "top" or $from == "bottom") {
+        animation: scale-in-up $animate-lg;
+    } @else if ($from == "left" or $from == "right") {
+        animation: scale-in-over $animate-lg;
     }
 }
 
-@mixin fadeIn($handle, $in-view-class: "in-view") {
-    .#{$handle}.#{$in-view-class} & {
-        animation: fade-in $animate-sm;
-    }
-}
+@mixin swipeIn($from: "bottom") {
+    position: relative;
 
-@mixin fromLeft($handle, $in-view-class: "in-view") {
-    .#{$handle}.#{$in-view-class} & {
-        animation: from-left $animate-md;
+    &:before {
+        @include scaleIn($from);
+        @include fullOverlay;
+        content: "";
+        background-color: $color-white;
     }
-}
 
-@mixin fromRight($handle, $in-view-class: "in-view") {
-    .#{$handle}.#{$in-view-class} & {
-        animation: from-right $animate-md;
-    }
-}
-
-@mixin fromBottom($handle, $in-view-class: "in-view") {
-    .#{$handle}.#{$in-view-class} & {
-        animation: from-bottom $animate-md;
-    }
-}
-
-@mixin scaleIn($handle, $in-view-class: "in-view") {
-    .#{$handle}.#{$in-view-class} & {
-        animation: draw-down $animate-md;
+    > * {
+        position: relative;
     }
 }

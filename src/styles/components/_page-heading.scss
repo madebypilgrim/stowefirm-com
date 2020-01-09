@@ -1,6 +1,7 @@
 $handle: "page-heading";
 
 .#{$handle} {
+    @include fadeIn;
     @include sectionContainer;
     @include space($spacing-lg + $spacing-md, $spacing-md);
 

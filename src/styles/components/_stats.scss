@@ -11,6 +11,7 @@ $handle: "stats";
         }
 
         > li {
+            @include fromBottom;
             display: flex;
             align-items: center;
 
@@ -20,6 +21,12 @@ $handle: "stats";
 
             @media (min-width: $screen-sm-min) {
                 @include listMargin($spacing-xs, true);
+            }
+
+            @for $i from 1 to 5 {
+                &:nth-child(#{$i}) {
+                    animation-delay: 50ms * $i;
+                }
             }
 
             > em {

@@ -35,9 +35,11 @@ $handle: "ordered-list";
                     }
 
                     > em {
+                        @include fadeIn;
+                        @include fromBottom;
                         @include font("number-lg");
                         display: block;
-                        opacity: 0.05;
+                        opacity: 0.05 !important;
                         color: $color-bg-gray-lt;
 
                         @media (min-width: $screen-sm-min) {
@@ -47,6 +49,8 @@ $handle: "ordered-list";
                 }
 
                 &:last-child {
+                    @include fadeIn;
+
                     @media (max-width: $screen-sm-max) {
                         margin-top: $spacing-sm;
                     }

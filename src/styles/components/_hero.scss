@@ -8,6 +8,7 @@ $handle: "hero";
     min-height: 100vh;
 
     > h1 {
+        @include fromBottom;
         @include font("heading-xl");
         @include pad($spacing-sm);
         position: relative;
@@ -21,9 +22,8 @@ $handle: "hero";
     }
 
     > nav {
+        @include swipeIn;
         align-items: center;
-        position: relative;
-        background-color: $color-white;
 
         @media (max-width: $screen-sm-max) {
             margin-top: $spacing-md;

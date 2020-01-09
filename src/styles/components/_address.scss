@@ -6,10 +6,12 @@ $handle: "address";
     }
 
     &__info-cont {
+        @include fadeIn;
+        @include swipeIn;
         @include space($spacing-sm);
         @include pad($spacing-sm);
+        position: relative;
         border-bottom: 1px solid $color-br-gray-lt;
-        background-color: $color-white;
         color: $color-fg-gray-dk;
 
         @media (min-width: $screen-sm-min) {
