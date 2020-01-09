@@ -6,5 +6,5 @@
 
 {# Markup #}
 <section>
-    {{ section.text }}
+    {% include '_components/rich-text' with { text: section.text } %}
 </section>

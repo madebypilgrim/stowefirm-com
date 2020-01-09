@@ -18,28 +18,42 @@
 
 {# Variables #}
 {% set handle = 'resource-detail' %}
+{% set indexLink= craft.components.getLinkFromEntry(
+    craft.entries.section('pages').slug('resources').one()
+) %}
 
 {# Markup #}
 <div class="{{ handle }}">
     <div class="{{ handle }}__breadcrumbs-cont">
-        <span>Breadcrumbs</span>
+        {% spaceless %}
+            {% if indexLink %}
+                {{ indexLink.render() }}
+            {% endif %}
+            <i>/</i>
+            <span>{{ heading }}</span>
+        {% endspaceless %}
     </div>
     <hr />
     <div class="{{ handle }}__heading-cont">
         <h1>{{ heading }}</h1>
+        {% if author %}
+            <cite>By {{ author.title }}</cite>
+        {% endif %}
     </div>
     <div class="{{ handle }}__image-cont">
-        {% if image %}
-            <img src="{{ image.url }}" alt="{{ image.title }}" />
-        {% endif %}
+        {% include '_components/image' with { image: image } %}
         {% if cta %}
             <div class="{{ handle }}__image-cont__cta-cont">
-                <p>{{ ctaIntro }}<p>
-                {{ cta.render() }}
+                <p>{{ ctaIntro }}</p>
+                {% set content %}
+                    {{ cta.title }}
+                    {% include '_components/icon' with { icon: 'icon-right' } %}
+                {% endset %}
+                {{ cta.render(content) }}
             </div>
         {% endif %}
     </div>
     <div class="{{ handle }}__body-cont">
-        <div>{{ body }}</div>
+        <div><div>{{ body }}</div></div>
     </div>
 </div>

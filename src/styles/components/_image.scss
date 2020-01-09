@@ -1,8 +1,31 @@
 $handle: "image";
 
 .#{$handle} {
+    position: relative;
+    padding-bottom: 70%;
+
+    @media (min-width: $screen-sm-min) {
+        padding-bottom: 60%;
+    }
+
+    @media (min-width: $screen-md-min) {
+        padding-bottom: 50%;
+    }
+
+    @media (min-width: $screen-lg-min) {
+        padding-bottom: 40%;
+    }
+
+    &:after {
+        @include absolute(auto, 0, 0, 0);
+        content: "";
+        height: 4px;
+        background-color: $color-gold;
+    }
+
     > img {
-        display: block;
-        width: 100%;
+        @include fullOverlay;
+        object-fit: cover;
+        object-position: center;
     }
 }

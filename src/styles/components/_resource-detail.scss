@@ -2,38 +2,104 @@ $handle: "resource-detail";
 
 .#{$handle} {
     &__breadcrumbs-cont {
+        @include flex;
         @include sectionContainer;
-        @include space($spacing-lg + $spacing-md, $spacing-md);
+        @include space($spacing-lg + $spacing-md, 0);
+
+        @media (min-width: $screen-sm-min) {
+            padding-bottom: $spacing-md;
+        }
 
         @media (min-width: $screen-lg-min) {
-            @include space($spacing-md, $spacing-lg);
+            padding-top: $spacing-md;
+        }
+
+        > a {
+            @include link;
+            @include font("heading-xs");
+        }
+
+        > i {
+            @include font("heading-xs");
+            margin: 0 $spacing-xs;
+            color: $color-fg-gray-lt;
         }
 
         > span {
             @include font("heading-xs");
-            color: $color-gold;
+            color: $color-fg-gray-lt;
         }
     }
 
     > hr {
         margin: 0;
+        background-color: $color-bg-gray-dk;
+
+        @media (max-width: $screen-xs-max) {
+            display: none;
+        }
     }
 
     &__heading-cont {
         @include sectionContainer;
-        @include space($spacing-md);
+        @include space($spacing-sm, $spacing-md);
+
+        @media (min-width: $screen-sm-min) {
+            padding-top: $spacing-lg;
+        }
+
+        @media (min-width: $screen-md-min) {
+            padding-bottom: $spacing-lg;
+        }
 
         > h1 {
             @include font("heading-xl");
             max-width: $max-width-xl;
         }
+
+        > cite {
+            @include italic(true);
+            display: block;
+            margin-top: $spacing-xs;
+            color: $color-fg-gray-lt;
+        }
     }
 
     &__image-cont {
+        position: relative;
+
         &__cta-cont {
+            padding: $spacing-xs * 3;
+            background-color: $color-white;
+            color: $color-fg-gray-dk;
+            border-bottom: 1px solid $color-bg-gray-lt;
+
+            @media (min-width: $screen-sm-min) {
+                @include centerer(false, true);
+                right: $spacing-sm;
+            }
+
+            > p {
+                @include font("heading-sm");
+            }
+
+            > a {
+                @include iconLink;
+                margin-top: $spacing-xs * 3;
+
+                @media (min-width: $screen-sm-min) {
+                    margin-top: $spacing-lg;
+                }
+            }
         }
     }
 
     &__body-cont {
+        background-color: $color-white;
+
+        hr {
+            margin: 0;
+            margin-bottom: -$spacing-md;
+        }
     }
 }

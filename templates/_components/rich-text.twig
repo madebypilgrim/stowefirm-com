@@ -1,0 +1,17 @@
+{##
+ # Rich Text component
+ # @param {HTML} text
+ #}
+
+{# Params #}
+{% set text = text|default('') %}
+
+{# Variables #}
+{% set handle = 'rich-text' %}
+
+{# Markup #}
+<div class="{{ handle }}">
+    <div class="{{ handle }}__cont">
+        <div>{{ text }}</div>
+    </div>
+</div>
