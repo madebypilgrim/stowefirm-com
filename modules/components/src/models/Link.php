@@ -3,7 +3,7 @@
 namespace modules\components\models;
 
 use craft\base\Model;
-use yii\helpers\Html;
+use craft\helpers\Html;
 
 class Link extends Model
 {
@@ -20,10 +20,6 @@ class Link extends Model
             $text = $this->title;
         }
 
-        if ($this->url !== null) {
-            $options['href'] = $this->url;
-        }
-
         if ($this->target !== null) {
             $options['target'] = $this->target;
         }
@@ -32,6 +28,6 @@ class Link extends Model
             $options['rel'] = $this->rel;
         }
 
-        echo Html::tag('a', $text, $options);
+        echo Html::a($text, $this->url, $options);
     }
 }

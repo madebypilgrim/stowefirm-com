@@ -19,6 +19,7 @@
                 heading: e.personName,
                 teaser: e.personTeaser,
                 cta: craft.components.getLinkFromEntry(e, 'View Bio'),
+                openInModal: true,
             }]) %}
         {% case 'resource' %}
             {% set cards = cards|merge([{

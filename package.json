@@ -51,7 +51,7 @@
     "dependencies": {
         "body-scroll-lock": "^2.6.4",
         "classlist-polyfill": "^1.2.0",
-        "compop": "0.0.2",
+        "compop": "0.1.2",
         "core-js": "^3.1.4",
         "es6-promise": "^4.2.6",
         "intersection-observer": "^0.5.0",

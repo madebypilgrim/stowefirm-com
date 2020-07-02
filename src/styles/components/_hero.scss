@@ -7,6 +7,16 @@ $handle: "hero";
     position: relative;
     min-height: 100vh;
 
+    .background-image {
+        background-size: 75vw;
+        background-position-y: $spacing-lg;
+
+        @media (min-width: $screen-sm-min) {
+            background-size: 70vh;
+            background-position-y: top;
+        }
+    }
+
     > h1 {
         @include fromBottom;
         @include font("heading-xl");
@@ -16,6 +26,7 @@ $handle: "hero";
         margin-top: $spacing-xl;
 
         @media (min-width: $screen-md-min) {
+            @include pad($spacing-lg);
             max-width: $max-width-xl;
             margin-top: calc(25vh - #{$spacing-xs}); // try to align the subheading to the header intro on large screens
         }
@@ -30,9 +41,10 @@ $handle: "hero";
         }
 
         @media (min-width: $screen-md-min) {
+            @include pad($spacing-sm * 3);
             display: flex;
             justify-content: space-around;
-            height: $max-width-xs;
+            height: $spacing-lg * 2;
         }
 
         @media (min-width: $screen-lg-min) {

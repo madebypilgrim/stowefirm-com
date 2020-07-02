@@ -40,7 +40,7 @@ $handle: "ordered-list";
                         @include font("number-lg");
                         display: block;
                         opacity: 0.05 !important;
-                        color: $color-bg-gray-lt;
+                        color: $color-white;
 
                         @media (min-width: $screen-sm-min) {
                             margin-top: $spacing-sm;

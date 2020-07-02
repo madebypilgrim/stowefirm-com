@@ -1,0 +1,74 @@
+$handle: "modal";
+$active-class: "is-active";
+
+.#{$handle} {
+    @include fullOverlay;
+    position: fixed;
+    opacity: 0;
+    z-index: -1;
+    transition: z-index 0s ease $animate-speed-md;
+
+    &.#{$active-class} {
+        z-index: 100;
+        opacity: 1;
+        transition: none;
+    }
+
+    &__overlay {
+        @include fullOverlay;
+        background-color: rgba($color-black, 0.75);
+        opacity: 0;
+        transition: opacity $animate-md;
+
+        .#{$handle}[data-background="white"] & {
+            background-color: $color-white;
+        }
+
+        .#{$handle}.#{$active-class} & {
+            opacity: 1;
+        }
+    }
+
+    &__content-cont {
+        @include fullOverlay;
+
+        > button {
+            @include absolute($spacing-sm, $spacing-sm);
+            z-index: 1;
+            width: $spacing-xs * 3;
+            height: $spacing-xs * 3;
+
+            @media (min-width: $screen-md-min) {
+                top: $spacing-xs * 3;
+            }
+
+            > span {
+                display: block;
+                border-bottom: 2px solid $color-gold;
+                transition: transform $animate-sm;
+
+                &:first-child {
+                    transform: rotate(45deg) scaleX(0.8) translateY(1px);
+                }
+                &:last-child {
+                    transform: rotate(-45deg) scaleX(0.8) translateY(-1px);
+                }
+            }
+
+            &:hover > span {
+                &:first-child {
+                    transform: rotate(45deg) scaleX(1) translateY(1px);
+                }
+                &:last-child {
+                    transform: rotate(-45deg) scaleX(1) translateY(-1px);
+                }
+            }
+        }
+    }
+
+    &__content {
+        position: relative;
+        overflow: hidden auto;
+        max-height: 100vh;
+    }
+}

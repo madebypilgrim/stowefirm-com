@@ -3,18 +3,22 @@ import { spy } from 'ui-utilities';
 import './polyfills';
 
 // Components
+import Cards from './components/cards';
 import Footer from './components/footer';
 import Form from './components/form';
 import Header from './components/header';
+import Modal from './components/modal';
 
 const { SITE_HANDLE } = process.env;
 
 // Define map of component handles to component classes
 /* eslint-disable quote-props */
 const classMap = {
+    'cards': Cards,
     'footer': Footer,
     'form': Form,
     'header': Header,
+    'modal': Modal,
 };
 /* eslint-enable quote-props */
 

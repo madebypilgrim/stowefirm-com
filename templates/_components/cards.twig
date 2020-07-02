@@ -7,6 +7,7 @@
  # |_@param {string} byline
  # |_@param {string} teaser
  # |_@param {modules\components\models\Link} cta
+ # |_@param {bool} openInModal
  #}
 
 {# Params #}
@@ -14,16 +15,22 @@
 {% set cards = cards|default([]) %}
 
 {# Variables #}
+{% set id = craft.utilities.uniqueId() %}
 {% set handle = 'cards' %}
+{% set expandedClass = 'is-expanded' %}
 
 {# Markup #}
-<div class="{{ handle }}">
+{% import '_macros/components' as components %}
+
+<div id="{{ id }}" class="{{ handle }}">
     {% if heading is not empty %}
         <h2>{{ heading }}</h2>
     {% endif %}
     {% if cards is not empty %}
         <div class="{{ handle }}__cards-cont">
             {% for c in cards %}
+                {% set openInModal = c.openInModal is defined and c.openInModal %}
+
                 <article>
                     <div class="{{ handle }}__card-image-cont">
                         {% set imageContent %}
@@ -48,11 +55,18 @@
                                 {{ c.cta.title }}
                                 {% include '_components/icon' with { icon: 'arrow-right' } %}
                             {% endset %}
-                            {{ c.cta.render(content) }}
+                            {{ c.cta.render(content, {
+                                data: { modal: openInModal|json_encode },
+                            }) }}
                         {% endif %}
                     </div>
                 </article>
             {% endfor %}
         </div>
     {% endif %}
+
+    {{ components.new(handle, {
+        id: id,
+        expandedClass: expandedClass,
+    }) }}
 </div>

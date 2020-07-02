@@ -23,7 +23,11 @@ $active-class: "is-active";
             > img {
                 display: block;
                 width: 100%;
-                max-width: $max-width-xs;
+                max-width: $spacing-xl;
+
+                @media (min-width: $screen-md-min) {
+                    max-width: $max-width-xs;
+                }
             }
         }
     }
@@ -38,18 +42,25 @@ $active-class: "is-active";
         opacity: 0;
         z-index: -1;
         width: 100%;
-        background-color: $color-bg-gray-md;
         transition: opacity $animate-sm;
+        background-color: $color-black;
 
         @media (min-width: $screen-md-min) {
             @include pad($spacing-md);
         }
 
         @media (min-width: $screen-lg-min) {
+            @include span(2, "wider");
             opacity: 1;
             z-index: 10;
-            width: $max-width-sm;
             padding-top: 25vh;
+            border-right: 1px solid $color-br-gray-lt;
+        }
+
+        .#{$handle}--nav-background-lt & {
+            @media (min-width: $screen-lg-min) {
+                border: 0;
+            }
         }
 
         [name="nav-toggle"]:checked ~ & {
@@ -61,11 +72,12 @@ $active-class: "is-active";
             @include scaleIn;
             @include absolute(auto, 0, 0, 0);
             content: "";
-            height: $max-width-xs;
+            height: $spacing-lg * 2;
 
             .#{$handle}--nav-background-lt & {
                 @media (min-width: $screen-lg-min) {
                     background-color: $color-white;
+                    border-right: 1px solid $color-br-gray-lt;
                 }
             }
         }
@@ -131,6 +143,7 @@ $active-class: "is-active";
             @media (min-width: $screen-lg-min) {
                 margin-top: auto;
                 margin-bottom: 0;
+                padding-bottom: $spacing-xs * 3;
             }
 
             .#{$handle}--nav-background-lt & {
@@ -183,9 +196,13 @@ $active-class: "is-active";
     }
 
     &__toggle-cont {
-        @include absolute($spacing-md, $spacing-sm);
+        @include absolute($spacing-xs * 3.5, $spacing-sm);
         position: fixed;
         z-index: 11;
+
+        @media (min-width: $screen-md-min) {
+            top: $spacing-md;
+        }
 
         @media (min-width: $screen-lg-min) {
             display: none;

@@ -8,7 +8,7 @@ $active-class: "is-active";
     border-top: 1px solid $color-br-gray-lt;
 
     @media (min-width: $screen-lg-min) {
-        width: calc(100vw - #{$max-width-sm});
+        @include span(10, "wide");
         margin-right: 0;
         margin-left: auto;
     }

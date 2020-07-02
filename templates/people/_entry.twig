@@ -9,7 +9,7 @@
  #}
 
 {# Markup #}
-{% extends '_layouts/main' %}
+{% extends craft.app.request.isAjax ? '_layouts/blank' : '_layouts/main' %}
 
 {% block content %}
     <article>

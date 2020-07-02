@@ -2,8 +2,7 @@ $handle: "main";
 
 .#{$handle} {
     @media (min-width: $screen-lg-min) {
-        width: calc(100vw - #{$max-width-sm});
-        // min-height: 100vh;
+        @include span(10, "wide");
         margin-right: 0;
         margin-left: auto;
     }
