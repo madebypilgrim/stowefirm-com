@@ -54,6 +54,10 @@ $handle: "ordered-list";
                     @media (max-width: $screen-sm-max) {
                         margin-top: $spacing-sm;
                     }
+
+                    > p:not(:first-child) {
+                        margin-top: $spacing-sm;
+                    }
                 }
             }
         }
