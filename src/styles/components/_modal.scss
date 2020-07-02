@@ -8,6 +8,11 @@ $active-class: "is-active";
     z-index: -1;
     transition: z-index 0s ease $animate-speed-md;
 
+    @media (min-width: $screen-lg-min) {
+        @include span(10, "wide");
+        left: span(2, "wider");
+    }
+
     &.#{$active-class} {
         z-index: 100;
         opacity: 1;
