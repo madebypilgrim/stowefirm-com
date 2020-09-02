@@ -1,7 +1,7 @@
 {##
  # Stats section
  # @param {MatrixBlock} section
- # |_@param {Table} stats
+ # |_@param {SuperTable} stats
  #   |_@param {PlainText} number
  #   |_@param {PlainText} description
  #}
@@ -9,7 +9,7 @@
 {# Markup #}
 <section>
     {% include '_components/stats' with {
-        stats: section.stats|map(s => {
+        stats: section.stats.all()|map(s => {
             number: s.number,
             description: s.description,
         }),
