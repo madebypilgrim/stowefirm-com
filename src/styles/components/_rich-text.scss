@@ -41,6 +41,7 @@ $handle: "rich-text";
                 display: block;
                 width: 100%;
                 color: #5E5656; // Per Josh
+                color: $color-fg-gray-dk; // Per Josh 200902
             }
 
             & sup {

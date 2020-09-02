@@ -25,10 +25,12 @@ $handle: "cards";
                 width: calc(50% - #{$spacing-xs});
             }
 
-            @media (min-width: $screen-md-min) {
-                @include listMargin($spacing-sm);
-                display: flex;
-                width: 100%;
+            .#{$handle}--stack & {
+                @media (min-width: $screen-md-min) {
+                    @include listMargin($spacing-sm);
+                    display: flex;
+                    width: 100%;
+                }
             }
         }
     }
@@ -84,7 +86,7 @@ $handle: "cards";
             @include font("body-sm");
             max-width: $max-width-sm;
             margin-top: $spacing-sm;
-            color: $color-fg-gray-md;
+            color: $color-fg-gray-dk;
         }
 
         > ul {

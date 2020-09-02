@@ -2,7 +2,6 @@
     @include font("link-md");
     display: inline-block;
     line-height: $spacing-xs * 3;
-    color: $color-fg-gray-dk;
     color: $color-gold;
     transition: color $animate-sm;
 
@@ -49,6 +48,7 @@
     background-color: $color-gold;
     color: $color-white;
     text-align: center;
+    font-weight: 600;
     cursor: pointer;
     transition: background-color $animate-sm;
 

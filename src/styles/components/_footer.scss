@@ -4,7 +4,7 @@ $active-class: "is-active";
 .#{$handle} {
     @include space($spacing-sm);
     background-color: $color-white;
-    color: $color-fg-gray-md;
+    color: $color-fg-gray-dk;
     border-top: 1px solid $color-br-gray-lt;
 
     @media (min-width: $screen-lg-min) {

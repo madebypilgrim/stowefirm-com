@@ -10,6 +10,7 @@
 
 {# Variables #}
 {% set cards = [] %}
+{% set stack = false %}
 
 {% for e in entries %}
     {% switch e.type.handle %}
@@ -39,6 +40,7 @@
                 teaser: e.resourceTeaser,
                 cta: craft.components.getLinkFromEntry(e, 'Learn More'),
             }]) %}
+            {% set stack = true %}
     {% endswitch %}
 {% endfor %}
 
@@ -47,5 +49,6 @@
     {% include '_components/cards' with {
         heading: section.heading,
         cards: cards,
+        stack: stack,
     } %}
 </section>

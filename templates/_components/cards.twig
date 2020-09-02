@@ -8,11 +8,13 @@
  # |_@param {string} teaser
  # |_@param {modules\components\models\Link} cta
  # |_@param {bool} openInModal
+ # @param {bool} stack
  #}
 
 {# Params #}
 {% set heading = heading|default('') %}
 {% set cards = cards|default([]) %}
+{% set stack = stack is defined and stack %}
 
 {# Variables #}
 {% set id = craft.utilities.uniqueId() %}
@@ -22,7 +24,7 @@
 {# Markup #}
 {% import '_macros/components' as components %}
 
-<div id="{{ id }}" class="{{ handle }}">
+<div id="{{ id }}" class="{{ handle }} {{ stack ? handle ~ '--stack' }}">
     {% if heading is not empty %}
         <h2>{{ heading }}</h2>
     {% endif %}

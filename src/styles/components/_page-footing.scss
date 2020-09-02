@@ -15,7 +15,7 @@ $handle: "page-footing";
         > p {
             @include font("heading-md");
             max-width: $max-width-sm;
-            color: $color-fg-gray-dk;
+            color: #121212;
         }
 
         > a {

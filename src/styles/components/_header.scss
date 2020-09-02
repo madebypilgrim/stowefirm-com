@@ -15,9 +15,14 @@ $active-class: "is-active";
     }
 
     &__logo-cont {
-        @include absolute($spacing-sm, auto, auto, $spacing-sm);
+        @include absolute($spacing-xs * 3, auto, auto, $spacing-sm);
         position: fixed;
         z-index: 11;
+
+        @media  (min-width: $screen-md-min) {
+            top: $spacing-md;
+            left: $spacing-md;
+        }
 
         > a {
             > img {
@@ -26,7 +31,7 @@ $active-class: "is-active";
                 max-width: $spacing-xl;
 
                 @media (min-width: $screen-md-min) {
-                    max-width: $max-width-xs;
+                    max-width: 165px;
                 }
             }
         }
@@ -156,6 +161,7 @@ $active-class: "is-active";
                 @include fontSizeRem(2.2);
                 @include lineHeightRem(4.4);
                 font-family: $font-family-sans-bd-cn;
+                font-weight: 600;
                 text-transform: uppercase;
                 opacity: 0;
                 transform: translateX(-#{$spacing-md});
