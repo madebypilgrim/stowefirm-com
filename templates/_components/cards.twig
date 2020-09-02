@@ -29,33 +29,35 @@
     {% if cards is not empty %}
         <div class="{{ handle }}__cards-cont">
             {% for c in cards %}
+                {% set image = c.image|default(null) %}
+                {% set cta = c.cta|default(null) %}
                 {% set openInModal = c.openInModal is defined and c.openInModal %}
 
                 <article>
-                    <div class="{{ handle }}__card-image-cont">
-                        {% set imageContent %}
-                            {% if c.image %}
-                                <img src="{{ c.image.url }}" alt="{{ c.image.title }}" />
+                    {% if image %}
+                        <div class="{{ handle }}__card-image-cont">
+                            {% set imageContent %}
+                                <img src="{{ image.url }}" alt="{{ image.title }}" />
+                            {% endset %}
+                            {% if cta %}
+                                {{ cta.render(imageContent) }}
+                            {% else %}
+                                {{ imageContent }}
                             {% endif %}
-                        {% endset %}
-                        {% if c.cta %}
-                            {{ c.cta.render(imageContent) }}
-                        {% else %}
-                            {{ imageContent }}
-                        {% endif %}
-                    </div>
+                        </div>
+                    {% endif %}
                     <div class="{{ handle }}__card-details-cont">
                         <h3>{{ c.heading }}</h3>
                         {% if c.byline|default('') %}
                             <cite>{{ c.byline }}</cite>
                         {% endif%}
-                        <p>{{ c.teaser }}</p>
-                        {% if c.cta %}
+                        <p>{{ c.teaser|raw }}</p>
+                        {% if cta %}
                             {% set content %}
-                                {{ c.cta.title }}
+                                {{ cta.title }}
                                 {% include '_components/icon' with { icon: 'arrow-right' } %}
                             {% endset %}
-                            {{ c.cta.render(content, {
+                            {{ cta.render(content, {
                                 data: { modal: openInModal|json_encode },
                             }) }}
                         {% endif %}
