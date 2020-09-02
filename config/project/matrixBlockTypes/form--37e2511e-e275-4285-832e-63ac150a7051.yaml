@@ -1,0 +1,59 @@
+field: 5c0f30f6-a3c5-41a9-a362-bb1d11e5a96a
+fieldLayouts:
+  f05734a8-4490-4c33-bfaf-5aca6e8c4c5e:
+    tabs:
+      -
+        fields:
+          707dfa26-f025-4aa6-ba7a-63287b1fa7cc:
+            required: false
+            sortOrder: 2
+          bbfd441b-1d52-44ef-b863-0b58a1929786:
+            required: false
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  707dfa26-f025-4aa6-ba7a-63287b1fa7cc:
+    contentColumnType: string
+    fieldGroup: null
+    handle: form
+    instructions: ''
+    name: Form
+    searchable: true
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Contact
+            -
+              - value
+              - contact
+            -
+              - default
+              - contact
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  bbfd441b-1d52-44ef-b863-0b58a1929786:
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: Heading
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: form
+name: Form
+sortOrder: 4

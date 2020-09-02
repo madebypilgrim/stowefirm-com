@@ -1,0 +1,16 @@
+contentColumnType: text
+fieldGroup: 7de2d421-8c75-4ed8-9888-b219b274a91a
+handle: personName
+instructions: ''
+name: 'Person Name'
+searchable: true
+settings:
+  charLimit: ''
+  code: ''
+  columnType: text
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

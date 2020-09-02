@@ -1,0 +1,18 @@
+enableVersioning: true
+handle: pages
+name: Pages
+previewTargets:
+  -
+    label: 'Primary entry page'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  5f7f214d-7525-4b53-ab54-6abb144ff1d1:
+    enabledByDefault: true
+    hasUrls: true
+    template: pages/_entry
+    uriFormat: '{parent.uri}/{slug}'
+structure:
+  maxLevels: null
+  uid: 7780af9e-d129-49e9-94f0-7b43299dd703
+type: structure

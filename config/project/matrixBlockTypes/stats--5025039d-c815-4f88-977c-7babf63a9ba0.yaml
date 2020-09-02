@@ -1,0 +1,49 @@
+field: 5c0f30f6-a3c5-41a9-a362-bb1d11e5a96a
+fieldLayouts:
+  5b02271f-7193-4144-bd87-3858a1fa9a94:
+    tabs:
+      -
+        fields:
+          64078c29-dd52-48d0-822f-d046ce44f330:
+            required: false
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  64078c29-dd52-48d0-822f-d046ce44f330:
+    contentColumnType: string
+    fieldGroup: null
+    handle: stats
+    instructions: ''
+    name: Stats
+    searchable: true
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 5f313d82-90c0-4bc0-bc7a-7696b58402c4
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 9e9dba93-d92b-408d-a6fb-7489ffad0488
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_2_stats}}'
+      fieldLayout: table
+      maxRows: ''
+      minRows: ''
+      propagationMethod: all
+      selectionLabel: 'Add a stat'
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+handle: stats
+name: Stats
+sortOrder: 8

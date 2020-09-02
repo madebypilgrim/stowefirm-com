@@ -1,0 +1,26 @@
+contentColumnType: string
+fieldGroup: c73bb305-095a-4864-9867-24695b93debf
+handle: pageBackgroundImage
+instructions: ''
+name: 'Page Background Image'
+searchable: true
+settings:
+  allowedKinds:
+    - image
+  defaultUploadLocationSource: 'volume:62384952-8782-4cb2-b09b-17413aba3239'
+  defaultUploadLocationSubpath: ''
+  limit: '1'
+  localizeRelations: false
+  restrictFiles: '1'
+  selectionLabel: 'Add a page background image'
+  singleUploadLocationSource: 'volume:62384952-8782-4cb2-b09b-17413aba3239'
+  singleUploadLocationSubpath: backgrounds
+  source: null
+  sources: '*'
+  targetSiteId: null
+  useSingleFolder: '1'
+  validateRelatedElements: ''
+  viewMode: list
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

@@ -1,0 +1,49 @@
+field: 5c0f30f6-a3c5-41a9-a362-bb1d11e5a96a
+fieldLayouts:
+  c036449e-5486-4ead-891b-a6eee9991e07:
+    tabs:
+      -
+        fields:
+          53eef016-ced4-4844-b529-e72e884bd581:
+            required: false
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  53eef016-ced4-4844-b529-e72e884bd581:
+    contentColumnType: string
+    fieldGroup: null
+    handle: listItems
+    instructions: ''
+    name: 'List Items'
+    searchable: true
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 2386b537-b023-4390-bc4a-5245ae17fd73
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - b1a65cf5-29d6-49fa-b639-b54795e87191
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_8_listitems}}'
+      fieldLayout: row
+      maxRows: ''
+      minRows: ''
+      propagationMethod: all
+      selectionLabel: 'Add a list item'
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+handle: orderedList
+name: 'Ordered List'
+sortOrder: 6

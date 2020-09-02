@@ -1,0 +1,89 @@
+field: 5c0f30f6-a3c5-41a9-a362-bb1d11e5a96a
+fieldLayouts:
+  97ecf969-690e-4be8-b193-6e3e91c4e2c3:
+    tabs:
+      -
+        fields:
+          9313b1da-4828-4607-8f8c-b3c61b838408:
+            required: false
+            sortOrder: 2
+          aed03bdb-8d3f-4dad-9115-b4aa77eb8683:
+            required: false
+            sortOrder: 3
+          f22399c6-ae18-427d-8cc6-d1e7836d2ecf:
+            required: false
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  9313b1da-4828-4607-8f8c-b3c61b838408:
+    contentColumnType: text
+    fieldGroup: null
+    handle: body
+    instructions: ''
+    name: Body
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  aed03bdb-8d3f-4dad-9115-b4aa77eb8683:
+    contentColumnType: string
+    fieldGroup: null
+    handle: cta
+    instructions: ''
+    name: CTA
+    searchable: true
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 3f9cd33f-e264-4b70-a594-69565e2b1b13
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 40e160eb-8890-4a5d-a044-725e27c33e24
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_4_cta}}'
+      fieldLayout: table
+      maxRows: '1'
+      minRows: ''
+      propagationMethod: all
+      selectionLabel: 'Add a CTA'
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  f22399c6-ae18-427d-8cc6-d1e7836d2ecf:
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: Heading
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: blockCallout
+name: 'Block Callout'
+sortOrder: 2

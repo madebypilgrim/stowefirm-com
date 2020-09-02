@@ -1,0 +1,16 @@
+contentColumnType: text
+fieldGroup: 7de2d421-8c75-4ed8-9888-b219b274a91a
+handle: personTeaser
+instructions: ''
+name: 'Person Teaser'
+searchable: true
+settings:
+  charLimit: ''
+  code: ''
+  columnType: text
+  initialRows: '2'
+  multiline: '1'
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

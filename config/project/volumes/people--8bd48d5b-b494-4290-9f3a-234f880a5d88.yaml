@@ -1,0 +1,8 @@
+handle: people
+hasUrls: true
+name: People
+settings:
+  path: '@assetBasePath/people'
+sortOrder: 2
+type: craft\volumes\Local
+url: '@assetBaseUrl/people'

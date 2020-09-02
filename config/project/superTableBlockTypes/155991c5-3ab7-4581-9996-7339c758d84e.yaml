@@ -1,0 +1,66 @@
+field: ab8b8f8d-734f-4d4f-9c12-5507c10c3514
+fieldLayouts:
+  df15e334-715c-4065-b02d-3839567e42c4:
+    tabs:
+      -
+        fields:
+          037847e1-61cc-4fd8-88a9-10bb8ed17d62:
+            required: false
+            sortOrder: 1
+          1c2976f8-3abb-4527-ae03-3b7080d05d5a:
+            required: false
+            sortOrder: 2
+          569cc6f7-33d7-4977-8679-4a9debfb95c1:
+            required: false
+            sortOrder: 3
+        name: Content
+        sortOrder: 1
+fields:
+  037847e1-61cc-4fd8-88a9-10bb8ed17d62:
+    contentColumnType: text
+    fieldGroup: null
+    handle: ctaTitle
+    instructions: ''
+    name: 'CTA Title'
+    searchable: false
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  1c2976f8-3abb-4527-ae03-3b7080d05d5a:
+    contentColumnType: string
+    fieldGroup: null
+    handle: ctaPage
+    instructions: ''
+    name: 'CTA Page'
+    searchable: false
+    settings:
+      limit: '1'
+      localizeRelations: false
+      selectionLabel: 'Add a CTA page'
+      source: null
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: ''
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  569cc6f7-33d7-4977-8679-4a9debfb95c1:
+    contentColumnType: string
+    fieldGroup: null
+    handle: ctaEmail
+    instructions: ''
+    name: 'CTA Email'
+    searchable: true
+    settings:
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Email

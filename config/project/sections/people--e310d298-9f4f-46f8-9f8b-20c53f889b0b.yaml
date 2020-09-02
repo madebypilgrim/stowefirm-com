@@ -1,0 +1,18 @@
+enableVersioning: true
+handle: people
+name: People
+previewTargets:
+  -
+    label: 'Primary entry page'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  5f7f214d-7525-4b53-ab54-6abb144ff1d1:
+    enabledByDefault: true
+    hasUrls: true
+    template: people/_entry
+    uriFormat: 'our-firm/{slug}'
+structure:
+  maxLevels: 1
+  uid: d9731b6f-182a-4f79-bb60-11feb108eb18
+type: structure

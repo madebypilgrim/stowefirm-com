@@ -1,0 +1,57 @@
+fieldLayouts:
+  1fe7e6bd-09f2-4de4-bac7-0264d6a1705f:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: ''
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: 0e510777-c336-4d90-a5cc-0522914db66a
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 1c844958-e55e-4ac5-9c31-7b5f4f6c30b2
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 9ab93fec-6e7b-4806-a7f8-515609b5db76
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: f3d2c1fa-abbe-4bad-9c80-5b735191fc45
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Teaser
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: 3ded655d-4682-4e7d-8b9d-ae6b511604d1
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 95a207ce-3480-453b-afc5-e44b94f2d4a6
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 698e6773-119d-4d16-b2fa-94fe5fe7ca29
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Content
+        sortOrder: 2
+      -
+        elements:
+          -
+            fieldUid: 2c9a135f-7f0a-44d8-b974-3950fd1465e9
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: SEO
+        sortOrder: 3
+handle: resource
+hasTitleField: false
+name: Resource
+section: 42ec26d8-b186-49c7-b402-39179584e444
+sortOrder: 1
+titleFormat: '{resourceHeading}'

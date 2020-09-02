@@ -1,0 +1,55 @@
+field: 95a207ce-3480-453b-afc5-e44b94f2d4a6
+fieldLayouts:
+  03780dfb-f429-4f2e-8cb3-92f82b52241c:
+    tabs:
+      -
+        fields:
+          2380b783-be49-4091-9eb6-a9270ff50aca:
+            required: false
+            sortOrder: 1
+          b5c382fe-1042-4010-bd9b-78a98e3ab9ab:
+            required: false
+            sortOrder: 2
+        name: Content
+        sortOrder: 1
+fields:
+  2380b783-be49-4091-9eb6-a9270ff50aca:
+    contentColumnType: text
+    fieldGroup: null
+    handle: ctaTitle
+    instructions: ''
+    name: 'CTA Title'
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  b5c382fe-1042-4010-bd9b-78a98e3ab9ab:
+    contentColumnType: string
+    fieldGroup: null
+    handle: ctaPage
+    instructions: ''
+    name: 'CTA Page'
+    searchable: true
+    settings:
+      limit: '1'
+      localizeRelations: false
+      selectionLabel: 'Add a CTA page'
+      source: null
+      sources:
+        - 'section:15a0e180-ab09-41b0-96f1-b9c5080a2f24'
+        - 'section:e310d298-9f4f-46f8-9f8b-20c53f889b0b'
+        - 'section:42ec26d8-b186-49c7-b402-39179584e444'
+        - singles
+      targetSiteId: null
+      validateRelatedElements: ''
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries

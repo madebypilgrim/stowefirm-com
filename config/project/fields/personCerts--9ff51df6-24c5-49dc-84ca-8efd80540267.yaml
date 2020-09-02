@@ -1,0 +1,32 @@
+contentColumnType: text
+fieldGroup: 7de2d421-8c75-4ed8-9888-b219b274a91a
+handle: personCerts
+instructions: ''
+name: 'Person Certs'
+searchable: true
+settings:
+  addRowLabel: 'Add a person cert'
+  columnType: text
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - Cert
+            -
+              - handle
+              - cert
+            -
+              - width
+              - ''
+            -
+              - type
+              - ''
+  maxRows: ''
+  minRows: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

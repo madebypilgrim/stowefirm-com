@@ -1,0 +1,16 @@
+contentColumnType: text
+fieldGroup: fdef0470-69ff-44e4-9c16-10dfb7e4514a
+handle: footerCert
+instructions: ''
+name: 'Footer Cert'
+searchable: true
+settings:
+  charLimit: ''
+  code: ''
+  columnType: text
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

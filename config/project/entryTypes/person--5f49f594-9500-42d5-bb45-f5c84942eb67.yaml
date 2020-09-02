@@ -1,0 +1,49 @@
+fieldLayouts:
+  245e2a49-1044-437c-9e9d-b9fe6b3387be:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Title
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: f631284b-38a3-4dac-a7dd-1a284f446553
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: b6785979-83ae-4a66-bca5-569c6dffeba0
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 7d85d863-aeef-4b07-a705-d696c10a9c38
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Teaser
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: 9ff51df6-24c5-49dc-84ca-8efd80540267
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 69107e30-6e0a-4ced-9df7-84ee26bff585
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Content
+        sortOrder: 2
+      -
+        elements:
+          -
+            fieldUid: 2c9a135f-7f0a-44d8-b974-3950fd1465e9
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: SEO
+        sortOrder: 3
+handle: person
+hasTitleField: false
+name: Person
+section: e310d298-9f4f-46f8-9f8b-20c53f889b0b
+sortOrder: 1
+titleFormat: '{personName}'

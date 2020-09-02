@@ -1,0 +1,8 @@
+handle: resources
+hasUrls: true
+name: Resources
+settings:
+  path: '@assetBasePath/resources'
+sortOrder: 3
+type: craft\volumes\Local
+url: '@assetBaseUrl/resources'

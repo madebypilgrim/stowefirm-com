@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: d6c20ebe-0e7a-49a2-bcfe-2288dc28b60d
+handle: resourceSections
+instructions: ''
+name: 'Resource Sections'
+searchable: true
+settings:
+  contentTable: '{{%matrixcontent_resourcesections}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

@@ -1,0 +1,33 @@
+contentColumnType: string
+fieldGroup: c73bb305-095a-4864-9867-24695b93debf
+handle: pageNext
+instructions: ''
+name: 'Page Next'
+searchable: true
+settings:
+  columns:
+    __assoc__:
+      -
+        - 09a0cff2-85e1-4666-99a3-12cb9233e852
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 4b5ab44e-8fb1-4b5b-a017-b226dee7f594
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+  contentTable: '{{%stc_pagenext}}'
+  fieldLayout: row
+  maxRows: ''
+  minRows: ''
+  propagationMethod: all
+  selectionLabel: ''
+  staticField: '1'
+translationKeyFormat: null
+translationMethod: site
+type: verbb\supertable\fields\SuperTableField

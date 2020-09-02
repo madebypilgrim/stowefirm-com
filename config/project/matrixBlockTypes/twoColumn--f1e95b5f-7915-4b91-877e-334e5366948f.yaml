@@ -1,0 +1,80 @@
+field: 5c0f30f6-a3c5-41a9-a362-bb1d11e5a96a
+fieldLayouts:
+  d20ed03c-bca6-49d8-8742-7c42c93ed0f5:
+    tabs:
+      -
+        fields:
+          30e6cd6c-1104-4f85-8db1-45724be0edd3:
+            required: false
+            sortOrder: 1
+          930f73ae-6790-49ff-b5c4-4a3fd65bd438:
+            required: false
+            sortOrder: 2
+          9acb8729-3280-48f1-89b5-dd299de6e3ca:
+            required: false
+            sortOrder: 3
+        name: Content
+        sortOrder: 1
+fields:
+  30e6cd6c-1104-4f85-8db1-45724be0edd3:
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: Heading
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  930f73ae-6790-49ff-b5c4-4a3fd65bd438:
+    contentColumnType: text
+    fieldGroup: null
+    handle: left
+    instructions: ''
+    name: Left
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: ''
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Simple.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  9acb8729-3280-48f1-89b5-dd299de6e3ca:
+    contentColumnType: text
+    fieldGroup: null
+    handle: right
+    instructions: ''
+    name: Right
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: ''
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Simple.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+handle: twoColumn
+name: 'Two Column'
+sortOrder: 9

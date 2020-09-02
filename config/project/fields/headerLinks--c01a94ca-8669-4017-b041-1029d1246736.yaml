@@ -1,0 +1,33 @@
+contentColumnType: string
+fieldGroup: fdef0470-69ff-44e4-9c16-10dfb7e4514a
+handle: headerLinks
+instructions: ''
+name: 'Header Links'
+searchable: true
+settings:
+  columns:
+    __assoc__:
+      -
+        - b97b6968-8c94-426d-af1b-f6bde6e64cd8
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - cdebf0d6-4249-4ca0-95ac-4308e8842034
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+  contentTable: '{{%stc_headerlinks}}'
+  fieldLayout: table
+  maxRows: ''
+  minRows: ''
+  propagationMethod: all
+  selectionLabel: 'Add a header link'
+  staticField: ''
+translationKeyFormat: null
+translationMethod: site
+type: verbb\supertable\fields\SuperTableField

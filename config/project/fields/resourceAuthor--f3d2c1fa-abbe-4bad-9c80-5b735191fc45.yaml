@@ -1,0 +1,19 @@
+contentColumnType: string
+fieldGroup: d6c20ebe-0e7a-49a2-bcfe-2288dc28b60d
+handle: resourceAuthor
+instructions: ''
+name: 'Resource Author'
+searchable: true
+settings:
+  limit: '1'
+  localizeRelations: false
+  selectionLabel: 'Add a resource author'
+  source: null
+  sources:
+    - 'section:e310d298-9f4f-46f8-9f8b-20c53f889b0b'
+  targetSiteId: null
+  validateRelatedElements: ''
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

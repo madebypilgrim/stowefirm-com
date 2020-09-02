@@ -1,0 +1,16 @@
+contentColumnType: text
+fieldGroup: fdef0470-69ff-44e4-9c16-10dfb7e4514a
+handle: headerSummary
+instructions: ''
+name: 'Header Summary'
+searchable: true
+settings:
+  charLimit: ''
+  code: ''
+  columnType: text
+  initialRows: '2'
+  multiline: '1'
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

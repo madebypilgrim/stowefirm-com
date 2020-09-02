@@ -1,0 +1,8 @@
+handle: pageImages
+hasUrls: true
+name: 'Page Images'
+settings:
+  path: '@assetBasePath/images/page'
+sortOrder: 1
+type: craft\volumes\Local
+url: '@assetBaseUrl/images/page'

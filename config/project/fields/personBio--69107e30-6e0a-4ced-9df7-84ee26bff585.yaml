@@ -1,0 +1,20 @@
+contentColumnType: text
+fieldGroup: 7de2d421-8c75-4ed8-9888-b219b274a91a
+handle: personBio
+instructions: ''
+name: 'Person Bio'
+searchable: true
+settings:
+  availableTransforms: '*'
+  availableVolumes: ''
+  cleanupHtml: true
+  columnType: text
+  purifierConfig: ''
+  purifyHtml: '1'
+  redactorConfig: Simple.json
+  removeEmptyTags: '1'
+  removeInlineStyles: '1'
+  removeNbsp: '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field

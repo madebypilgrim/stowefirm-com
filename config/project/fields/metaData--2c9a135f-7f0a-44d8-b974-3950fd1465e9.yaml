@@ -1,0 +1,47 @@
+contentColumnType: string
+fieldGroup: c73bb305-095a-4864-9867-24695b93debf
+handle: metaData
+instructions: ''
+name: 'Meta Data'
+searchable: true
+settings:
+  columns:
+    __assoc__:
+      -
+        - 6ff6ce64-6002-447e-8410-63216b23e6f1
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 767e1c9d-62c2-4417-aa0b-13d41a50b6c6
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 86831f20-ba65-46e2-b3a5-d55c4d81b460
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+      -
+        - 894ac8a2-8ca0-419a-83d2-7b2924971d69
+        -
+          __assoc__:
+            -
+              - width
+              - ''
+  contentTable: '{{%stc_metadata}}'
+  fieldLayout: row
+  maxRows: ''
+  minRows: ''
+  propagationMethod: all
+  selectionLabel: ''
+  staticField: '1'
+translationKeyFormat: null
+translationMethod: site
+type: verbb\supertable\fields\SuperTableField

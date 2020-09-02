@@ -1,0 +1,54 @@
+field: 5c0f30f6-a3c5-41a9-a362-bb1d11e5a96a
+fieldLayouts:
+  ada829b2-15be-462d-b22d-d92f2f8e5f27:
+    tabs:
+      -
+        fields:
+          24a65a48-2436-4802-acbe-147fd3422ddb:
+            required: false
+            sortOrder: 1
+          6f4285ac-b455-4d58-ba3a-d92f4228c375:
+            required: false
+            sortOrder: 2
+        name: Content
+        sortOrder: 1
+fields:
+  24a65a48-2436-4802-acbe-147fd3422ddb:
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: Heading
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  6f4285ac-b455-4d58-ba3a-d92f4228c375:
+    contentColumnType: string
+    fieldGroup: null
+    handle: entries
+    instructions: ''
+    name: Entries
+    searchable: true
+    settings:
+      limit: '3'
+      localizeRelations: false
+      selectionLabel: 'Add an entry'
+      source: null
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: ''
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+handle: featuredEntries
+name: 'Featured Entries'
+sortOrder: 3

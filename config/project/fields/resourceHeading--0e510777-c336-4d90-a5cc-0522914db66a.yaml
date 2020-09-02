@@ -1,0 +1,16 @@
+contentColumnType: text
+fieldGroup: d6c20ebe-0e7a-49a2-bcfe-2288dc28b60d
+handle: resourceHeading
+instructions: ''
+name: 'Resource Heading'
+searchable: true
+settings:
+  charLimit: ''
+  code: ''
+  columnType: text
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

@@ -1,0 +1,17 @@
+contentColumnType: string
+fieldGroup: c73bb305-095a-4864-9867-24695b93debf
+handle: pageCtas
+instructions: ''
+name: 'Page CTAs'
+searchable: true
+settings:
+  contentTable: '{{%stc_pagectas}}'
+  fieldLayout: table
+  maxRows: '4'
+  minRows: ''
+  propagationMethod: all
+  selectionLabel: 'Add a page CTA'
+  staticField: ''
+translationKeyFormat: null
+translationMethod: site
+type: verbb\supertable\fields\SuperTableField

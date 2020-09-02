@@ -1,0 +1,51 @@
+field: c01a94ca-8669-4017-b041-1029d1246736
+fieldLayouts:
+  1dd42192-83d7-497e-afaa-5c5fe3e0c935:
+    tabs:
+      -
+        fields:
+          b97b6968-8c94-426d-af1b-f6bde6e64cd8:
+            required: false
+            sortOrder: 2
+          cdebf0d6-4249-4ca0-95ac-4308e8842034:
+            required: false
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  b97b6968-8c94-426d-af1b-f6bde6e64cd8:
+    contentColumnType: string
+    fieldGroup: null
+    handle: linkPage
+    instructions: ''
+    name: 'Link Page'
+    searchable: false
+    settings:
+      limit: '1'
+      localizeRelations: false
+      selectionLabel: 'Add a link page'
+      source: null
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: ''
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  cdebf0d6-4249-4ca0-95ac-4308e8842034:
+    contentColumnType: text
+    fieldGroup: null
+    handle: linkTitle
+    instructions: ''
+    name: 'Link Title'
+    searchable: false
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText

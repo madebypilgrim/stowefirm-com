@@ -1,0 +1,8 @@
+baseUrl: $SITE_URL
+handle: default
+hasUrls: true
+language: en-US
+name: 'Stowe Firm'
+primary: true
+siteGroup: 6229ed0a-60db-4c61-8111-102a2297bb13
+sortOrder: 1

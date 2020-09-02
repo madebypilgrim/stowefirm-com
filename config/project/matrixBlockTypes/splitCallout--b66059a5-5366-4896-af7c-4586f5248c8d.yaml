@@ -1,0 +1,138 @@
+field: 5c0f30f6-a3c5-41a9-a362-bb1d11e5a96a
+fieldLayouts:
+  b3600521-28a2-4c5a-a3c6-52f6fd58b7fd:
+    tabs:
+      -
+        fields:
+          0452b32b-090c-4f29-895d-5372a4834c0f:
+            required: false
+            sortOrder: 2
+          ab8b8f8d-734f-4d4f-9c12-5507c10c3514:
+            required: false
+            sortOrder: 3
+          b6abf77e-73f5-4dea-a7af-89ee054360ba:
+            required: false
+            sortOrder: 1
+          c92f0b65-dbe3-4474-8f74-bf0d819ada08:
+            required: false
+            sortOrder: 4
+        name: Content
+        sortOrder: 1
+fields:
+  0452b32b-090c-4f29-895d-5372a4834c0f:
+    contentColumnType: text
+    fieldGroup: null
+    handle: body
+    instructions: ''
+    name: Body
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: ''
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Simple.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  ab8b8f8d-734f-4d4f-9c12-5507c10c3514:
+    contentColumnType: string
+    fieldGroup: null
+    handle: cta
+    instructions: ''
+    name: CTA
+    searchable: true
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 037847e1-61cc-4fd8-88a9-10bb8ed17d62
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 1c2976f8-3abb-4527-ae03-3b7080d05d5a
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 569cc6f7-33d7-4977-8679-4a9debfb95c1
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_6_cta}}'
+      fieldLayout: table
+      maxRows: '1'
+      minRows: ''
+      propagationMethod: all
+      selectionLabel: 'Add a CTA'
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  b6abf77e-73f5-4dea-a7af-89ee054360ba:
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: Heading
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  c92f0b65-dbe3-4474-8f74-bf0d819ada08:
+    contentColumnType: string
+    fieldGroup: null
+    handle: background
+    instructions: ''
+    name: Background
+    searchable: true
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Light
+            -
+              - value
+              - light
+            -
+              - default
+              - light
+        -
+          __assoc__:
+            -
+              - label
+              - Dark
+            -
+              - value
+              - dark
+            -
+              - default
+              - dark
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: splitCallout
+name: 'Split Callout'
+sortOrder: 7

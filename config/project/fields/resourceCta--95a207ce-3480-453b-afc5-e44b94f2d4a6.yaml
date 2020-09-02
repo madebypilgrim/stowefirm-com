@@ -1,0 +1,17 @@
+contentColumnType: string
+fieldGroup: d6c20ebe-0e7a-49a2-bcfe-2288dc28b60d
+handle: resourceCta
+instructions: ''
+name: 'Resource CTA'
+searchable: true
+settings:
+  contentTable: '{{%stc_resourcecta}}'
+  fieldLayout: table
+  maxRows: '1'
+  minRows: ''
+  propagationMethod: all
+  selectionLabel: 'Add a resource CTA'
+  staticField: ''
+translationKeyFormat: null
+translationMethod: site
+type: verbb\supertable\fields\SuperTableField
