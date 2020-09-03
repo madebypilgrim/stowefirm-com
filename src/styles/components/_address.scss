@@ -39,7 +39,7 @@ $handle: "address";
         > address {
             @include font("body-sm");
             margin-top: $spacing-sm;
-            color: $color-fg-gray-md;
+            color: $color-fg-gray-dk;
 
             @media (min-width: $screen-sm-min) {
                 width: 50%;
