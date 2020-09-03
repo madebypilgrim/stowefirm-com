@@ -64,6 +64,7 @@ $handle: "address";
             a {
                 @include link;
                 line-height: $spacing-sm;
+                color: $color-fg-gray-dk;
             }
 
             em {
