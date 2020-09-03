@@ -41,6 +41,10 @@ $handle: "cards";
             width: 100%;
             height: 100%;
             overflow: hidden;
+
+            .#{$handle}--stack & {
+                height: auto;
+            }
         }
 
         img {
@@ -65,7 +69,7 @@ $handle: "cards";
         @media (min-width: $screen-md-min) {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
             align-items: flex-start;
             padding: $spacing-md;
         }
