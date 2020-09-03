@@ -39,7 +39,6 @@ $handle: "address";
         > address {
             @include font("body-sm");
             margin-top: $spacing-sm;
-            color: $color-fg-gray-dk;
 
             @media (min-width: $screen-sm-min) {
                 width: 50%;
@@ -53,7 +52,6 @@ $handle: "address";
         > div {
             @include font("body-sm");
             margin-top: $spacing-sm;
-            color: $color-fg-gray-md;
 
             @media (min-width: $screen-sm-min) {
                 width: 50%;
@@ -66,7 +64,6 @@ $handle: "address";
             a {
                 @include link;
                 line-height: $spacing-sm;
-                color: $color-fg-gray-md;
             }
 
             em {
